@@ -1,0 +1,22 @@
+Fitter Status : Successful - Tue Apr 10 11:25:40 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Standard Edition
+Revision Name : DE4Gen2x8If128
+Top-level Entity Name : DE4Gen2x8If128
+Family : Stratix IV
+Device : EP4SGX230KF40C2
+Timing Models : Final
+Logic utilization : 12 %
+    Combinational ALUTs : 10,995 / 182,400 ( 6 % )
+    Memory ALUTs : 88 / 91,200 ( < 1 % )
+    Dedicated logic registers : 20,887 / 182,400 ( 11 % )
+Total registers : 20887
+Total pins : 48 / 888 ( 5 % )
+Total virtual pins : 0
+Total block memory bits : 7,926,493 / 14,625,792 ( 54 % )
+DSP block 18-bit elements : 0 / 1,288 ( 0 % )
+Total GXB Receiver Channel PCS : 8 / 24 ( 33 % )
+Total GXB Receiver Channel PMA : 8 / 36 ( 22 % )
+Total GXB Transmitter Channel PCS : 8 / 24 ( 33 % )
+Total GXB Transmitter Channel PMA : 8 / 36 ( 22 % )
+Total PLLs : 1 / 8 ( 13 % )
+Total DLLs : 0 / 4 ( 0 % )

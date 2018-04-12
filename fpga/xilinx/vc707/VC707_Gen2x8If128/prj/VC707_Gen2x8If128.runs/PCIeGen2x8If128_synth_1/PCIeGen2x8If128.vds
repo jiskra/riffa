@@ -1,0 +1,151 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Thu Mar 15 13:34:22 2018
+# Process ID: 3111
+# Current directory: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/prj/VC707_Gen2x8If128.runs/PCIeGen2x8If128_synth_1
+# Command line: vivado -log PCIeGen2x8If128.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PCIeGen2x8If128.tcl
+# Log file: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/prj/VC707_Gen2x8If128.runs/PCIeGen2x8If128_synth_1/PCIeGen2x8If128.vds
+# Journal file: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/prj/VC707_Gen2x8If128.runs/PCIeGen2x8If128_synth_1/vivado.jou
+#-----------------------------------------------------------
+source PCIeGen2x8If128.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1250.188 ; gain = 82.000 ; free physical = 12287 ; free virtual = 111671
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/synth/PCIeGen2x8If128.v:66]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pcie2_top' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie2_top.v:59]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_core_top' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_core_top.v:65]
+INFO: [Synth 8-638] synthesizing module 'xpm_cdc_single' [/opt/Xilinx/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:99]
+INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_single' (1#1) [/opt/Xilinx/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:99]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pcie_top' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_top.v:62]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_axi_basic_top' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_top.v:68]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_axi_basic_rx' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_rx.v:70]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_axi_basic_rx_pipeline' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_rx_pipeline.v:70]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_axi_basic_rx_pipeline' (2#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_rx_pipeline.v:70]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_axi_basic_rx_null_gen' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_rx_null_gen.v:71]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_axi_basic_rx_null_gen' (3#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_rx_null_gen.v:71]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_axi_basic_rx' (4#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_rx.v:70]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_axi_basic_tx' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_tx.v:70]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_axi_basic_tx_thrtl_ctl' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_tx_thrtl_ctl.v:71]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_axi_basic_tx_thrtl_ctl' (5#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_tx_thrtl_ctl.v:71]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_axi_basic_tx_pipeline' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_tx_pipeline.v:71]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_axi_basic_tx_pipeline' (6#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_tx_pipeline.v:71]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_axi_basic_tx' (7#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_tx.v:70]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_axi_basic_top' (8#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_axi_basic_top.v:68]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pcie_7x' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_7x.v:63]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pcie_bram_top_7x' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_bram_top_7x.v:72]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pcie_brams_7x' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_brams_7x.v:65]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pcie_bram_7x' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_bram_7x.v:63]
+INFO: [Synth 8-638] synthesizing module 'BRAM_SDP_MACRO' [/opt/Xilinx/Vivado/2017.2/data/verilog/src/unimacro/BRAM_SDP_MACRO.v:34]
+INFO: [Synth 8-638] synthesizing module 'RAMB36E1' [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:42488]
+INFO: [Synth 8-256] done synthesizing module 'RAMB36E1' (9#1) [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:42488]
+INFO: [Synth 8-256] done synthesizing module 'BRAM_SDP_MACRO' (10#1) [/opt/Xilinx/Vivado/2017.2/data/verilog/src/unimacro/BRAM_SDP_MACRO.v:34]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pcie_bram_7x' (11#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_bram_7x.v:63]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pcie_brams_7x' (12#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_brams_7x.v:65]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pcie_bram_top_7x' (13#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_bram_top_7x.v:72]
+INFO: [Synth 8-638] synthesizing module 'PCIE_2_1' [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:28345]
+INFO: [Synth 8-256] done synthesizing module 'PCIE_2_1' (14#1) [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:28345]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pcie_7x' (15#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_7x.v:63]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pcie_pipe_pipeline' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_pipe_pipeline.v:63]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pcie_pipe_lane' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_pipe_lane.v:63]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pcie_pipe_lane' (16#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_pipe_lane.v:63]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pcie_pipe_misc' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_pipe_misc.v:63]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pcie_pipe_misc' (17#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_pipe_misc.v:63]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pcie_pipe_pipeline' (18#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_pipe_pipeline.v:63]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pcie_top' (19#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie_top.v:62]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_gt_top' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gt_top.v:62]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_gt_rx_valid_filter_7x' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gt_rx_valid_filter_7x.v:62]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_gt_rx_valid_filter_7x' (20#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gt_rx_valid_filter_7x.v:62]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pipe_wrapper' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_wrapper.v:156]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pipe_clock' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_clock.v:67]
+INFO: [Synth 8-638] synthesizing module 'BUFG' [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (21#1) [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-638] synthesizing module 'BUFGCTRL' [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:661]
+INFO: [Synth 8-256] done synthesizing module 'BUFGCTRL' (22#1) [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:661]
+INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20759]
+INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (23#1) [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20759]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pipe_clock' (24#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_clock.v:67]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pipe_reset' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_reset.v:67]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pipe_reset' (25#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_reset.v:67]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_qpll_reset' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_qpll_reset.v:66]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_qpll_reset' (26#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_qpll_reset.v:66]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pipe_rate' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_rate.v:67]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pipe_rate' (27#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_rate.v:67]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pipe_drp' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_drp.v:66]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pipe_drp' (28#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_drp.v:66]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pipe_eq' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_eq.v:67]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_rxeq_scan' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_rxeq_scan.v:66]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_rxeq_scan' (29#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_rxeq_scan.v:66]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pipe_eq' (30#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_eq.v:67]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_gt_common' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gt_common.v:56]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_qpll_drp' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_qpll_drp.v:67]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_qpll_drp' (31#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_qpll_drp.v:67]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_qpll_wrapper' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_qpll_wrapper.v:67]
+INFO: [Synth 8-638] synthesizing module 'GTXE2_COMMON' [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:11315]
+INFO: [Synth 8-256] done synthesizing module 'GTXE2_COMMON' (32#1) [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:11315]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_gtp_cpllpd_ovrd' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gtp_cpllpd_ovrd.v:54]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_gtp_cpllpd_ovrd' (33#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gtp_cpllpd_ovrd.v:54]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_qpll_wrapper' (34#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_qpll_wrapper.v:67]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_gt_common' (35#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gt_common.v:56]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pipe_user' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_user.v:67]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pipe_user' (36#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_user.v:67]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_pipe_sync' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_sync.v:71]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pipe_sync' (37#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_sync.v:71]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_gt_wrapper' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gt_wrapper.v:67]
+INFO: [Synth 8-638] synthesizing module 'GTXE2_CHANNEL' [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:10642]
+INFO: [Synth 8-256] done synthesizing module 'GTXE2_CHANNEL' (38#1) [/opt/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:10642]
+INFO: [Synth 8-638] synthesizing module 'PCIeGen2x8If128_gtx_cpllpd_ovrd' [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gtx_cpllpd_ovrd.v:54]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_gtx_cpllpd_ovrd' (39#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gtx_cpllpd_ovrd.v:54]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_gt_wrapper' (40#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gt_wrapper.v:67]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pipe_wrapper' (41#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pipe_wrapper.v:156]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_gt_top' (42#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_gt_top.v:62]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_core_top' (43#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_core_top.v:65]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128_pcie2_top' (44#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128_pcie2_top.v:59]
+INFO: [Synth 8-256] done synthesizing module 'PCIeGen2x8If128' (45#1) [/home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/synth/PCIeGen2x8If128.v:66]
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1326.688 ; gain = 158.500 ; free physical = 12253 ; free virtual = 111640
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1326.688 ; gain = 158.500 ; free physical = 12265 ; free virtual = 111652
+INFO: [Device 21-403] Loading part xc7vx485tffg1761-2
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.06 . Memory (MB): peak = 1839.023 ; gain = 0.000 ; free physical = 11753 ; free virtual = 111239
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1839.023 ; gain = 670.836 ; free physical = 11779 ; free virtual = 111238
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1839.023 ; gain = 670.836 ; free physical = 11779 ; free virtual = 111238
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1839.023 ; gain = 670.836 ; free physical = 11780 ; free virtual = 111239
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1839.023 ; gain = 670.836 ; free physical = 11768 ; free virtual = 111209
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:54 . Memory (MB): peak = 1839.023 ; gain = 670.836 ; free physical = 11576 ; free virtual = 111133
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:01:01 . Memory (MB): peak = 1877.008 ; gain = 708.820 ; free physical = 11225 ; free virtual = 110798
+Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:03 . Memory (MB): peak = 1924.031 ; gain = 755.844 ; free physical = 11181 ; free virtual = 110753
+Finished Technology Mapping : Time (s): cpu = 00:01:01 ; elapsed = 00:01:10 . Memory (MB): peak = 1972.828 ; gain = 804.641 ; free physical = 11092 ; free virtual = 110697
+Finished IO Insertion : Time (s): cpu = 00:01:02 ; elapsed = 00:01:11 . Memory (MB): peak = 1972.828 ; gain = 804.641 ; free physical = 11036 ; free virtual = 110652
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:02 ; elapsed = 00:01:11 . Memory (MB): peak = 1972.828 ; gain = 804.641 ; free physical = 11028 ; free virtual = 110643
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:04 ; elapsed = 00:01:13 . Memory (MB): peak = 1972.828 ; gain = 804.641 ; free physical = 11005 ; free virtual = 110621
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:04 ; elapsed = 00:01:13 . Memory (MB): peak = 1972.828 ; gain = 804.641 ; free physical = 10988 ; free virtual = 110603
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:05 ; elapsed = 00:01:14 . Memory (MB): peak = 1972.828 ; gain = 804.641 ; free physical = 10977 ; free virtual = 110593
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:05 ; elapsed = 00:01:14 . Memory (MB): peak = 1972.828 ; gain = 804.641 ; free physical = 10977 ; free virtual = 110592
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |BUFG          |     5|
+|2     |BUFGCTRL      |     1|
+|3     |CARRY4        |   102|
+|4     |GTXE2_CHANNEL |     8|
+|5     |GTXE2_COMMON  |     2|
+|6     |LUT1          |   407|
+|7     |LUT2          |   429|
+|8     |LUT3          |   691|
+|9     |LUT4          |   402|
+|10    |LUT5          |  1167|
+|11    |LUT6          |  1157|
+|12    |MMCME2_ADV    |     1|
+|13    |MUXF7         |   112|
+|14    |MUXF8         |     8|
+|15    |PCIE_2_1      |     1|
+|16    |RAMB36E1      |     4|
+|17    |SRL16E        |     6|
+|18    |SRLC32E       |    56|
+|19    |FDCE          |     9|
+|20    |FDPE          |     2|
+|21    |FDRE          |  5781|
+|22    |FDSE          |   159|
++------+--------------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:05 ; elapsed = 00:01:14 . Memory (MB): peak = 1972.828 ; gain = 804.641 ; free physical = 10977 ; free virtual = 110592
+synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:29 . Memory (MB): peak = 2543.328 ; gain = 1433.570 ; free physical = 10700 ; free virtual = 110340

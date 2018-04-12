@@ -1,0 +1,258 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
+| Date         : Thu Mar 15 13:45:02 2018
+| Host         : UbuntuHW15 running 64-bit Ubuntu 16.04.4 LTS
+| Command      : report_methodology -file VC707_Gen2x8If128_methodology_drc_routed.rpt -rpx VC707_Gen2x8If128_methodology_drc_routed.rpx
+| Design       : VC707_Gen2x8If128
+| Device       : xc7vx485tffg1761-2
+| Speed File   : -2
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 42
++-----------+----------+------------------------------------------------+------------+
+| Rule      | Severity | Description                                    | Violations |
++-----------+----------+------------------------------------------------+------------+
+| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal     | 29         |
+| TIMING-3  | Warning  | Invalid primary clock on Clock Modifying Block | 1          |
+| TIMING-17 | Warning  | Non-clocked sequential cell                    | 2          |
+| XDCB-5    | Warning  | Runtime inefficient way to find pin objects    | 10         |
++-----------+----------+------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+SYNTH-6#1 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/engine_layer_inst/tx_engine_classic_inst/txc_engine_inst/txc_engine_inst/tx_data_pipeline_inst/txdf_inst/gen_regs_fifos[0].fifo_inst_/mem/rMemory_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#2 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/engine_layer_inst/tx_engine_classic_inst/txc_engine_inst/txc_engine_inst/tx_data_pipeline_inst/txdf_inst/gen_regs_fifos[1].fifo_inst_/mem/rMemory_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#3 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/engine_layer_inst/tx_engine_classic_inst/txc_engine_inst/txc_engine_inst/tx_data_pipeline_inst/txdf_inst/gen_regs_fifos[2].fifo_inst_/mem/rMemory_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#4 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/engine_layer_inst/tx_engine_classic_inst/txc_engine_inst/txc_engine_inst/tx_data_pipeline_inst/txdf_inst/gen_regs_fifos[3].fifo_inst_/mem/rMemory_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#5 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/engine_layer_inst/tx_engine_classic_inst/txr_engine_inst/txr_engine_inst/tx_data_pipeline_inst/txdf_inst/gen_regs_fifos[0].fifo_inst_/mem/rMemory_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#6 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/engine_layer_inst/tx_engine_classic_inst/txr_engine_inst/txr_engine_inst/tx_data_pipeline_inst/txdf_inst/gen_regs_fifos[1].fifo_inst_/mem/rMemory_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#7 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/engine_layer_inst/tx_engine_classic_inst/txr_engine_inst/txr_engine_inst/tx_data_pipeline_inst/txdf_inst/gen_regs_fifos[2].fifo_inst_/mem/rMemory_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#8 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/engine_layer_inst/tx_engine_classic_inst/txr_engine_inst/txr_engine_inst/tx_data_pipeline_inst/txdf_inst/gen_regs_fifos[3].fifo_inst_/mem/rMemory_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#9 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/mainFifo/fifo/mem/rRAM_reg_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#10 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/mainFifo/fifo/mem/rRAM_reg_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#11 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/mainFifo/fifo/mem/rRAM_reg_2, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#12 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/mainFifo/fifo/mem/rRAM_reg_3, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#13 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/sgRxFifo/mem/rRAM_reg_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#14 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/sgRxFifo/mem/rRAM_reg_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#15 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/sgRxFifo/mem/rRAM_reg_2, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#16 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/sgTxFifo/mem/rRAM_reg_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#17 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/sgTxFifo/mem/rRAM_reg_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#18 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/rxPort/sgTxFifo/mem/rRAM_reg_2, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#19 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/txPort/buffer/fifo/mem/rRAM_reg_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#20 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/channels[0].channel/channel/txPort/buffer/fifo/mem/rRAM_reg_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#21 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/reorderQueue/data_input/posRam/rRAM_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#22 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/reorderQueue/rams[0].ram/rRAM_reg_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#23 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/reorderQueue/rams[0].ram/rRAM_reg_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#24 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/reorderQueue/rams[1].ram/rRAM_reg_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#25 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/reorderQueue/rams[1].ram/rRAM_reg_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#26 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/reorderQueue/rams[2].ram/rRAM_reg_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#27 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/reorderQueue/rams[2].ram/rRAM_reg_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#28 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/reorderQueue/rams[3].ram/rRAM_reg_0, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#29 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance riffa/riffa_inst/reorderQueue/rams[3].ram/rRAM_reg_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+TIMING-3#1 Warning
+Invalid primary clock on Clock Modifying Block  
+A primary clock pcie_refclk is created on the output pin or net refclk_ibuf/O of a Clock Modifying Block
+Related violations: <none>
+
+TIMING-17#1 Warning
+Non-clocked sequential cell  
+The clock pin riffa/riffa_inst/channels[0].channel/channel/rxPort/mainFifo/fifo/asyncCompare/rDir_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Warning
+Non-clocked sequential cell  
+The clock pin riffa/riffa_inst/channels[0].channel/channel/txPort/gate/fifo/asyncCompare/rDir_reg/C is not reached by a timing clock
+Related violations: <none>
+
+XDCB-5#1 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/CFGMSGRECEIVEDPMETO]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '18' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 155)
+Related violations: <none>
+
+XDCB-5#2 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/CPLLLOCK]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '19' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 156)
+Related violations: <none>
+
+XDCB-5#3 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/QPLLLOCK]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '20' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 157)
+Related violations: <none>
+
+XDCB-5#4 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXCDRLOCK]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '17' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 154)
+Related violations: <none>
+
+XDCB-5#5 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXDLYSRESETDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '15' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 152)
+Related violations: <none>
+
+XDCB-5#6 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXELECIDLE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '11' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 148)
+Related violations: <none>
+
+XDCB-5#7 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXPHALIGNDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '16' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 153)
+Related violations: <none>
+
+XDCB-5#8 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/TXDLYSRESETDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '14' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 151)
+Related violations: <none>
+
+XDCB-5#9 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/TXPHALIGNDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '13' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 150)
+Related violations: <none>
+
+XDCB-5#10 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/TXPHINITDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '12' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/phung/Documents/fpga_overlay/riffa/fpga/xilinx/vc707/VC707_Gen2x8If128/ip/source/PCIeGen2x8If128-PCIE_X1Y0.xdc (Line: 149)
+Related violations: <none>
+
+

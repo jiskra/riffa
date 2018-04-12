@@ -1,0 +1,1 @@
+cmd_/home/phung/Documents/fpga_overlay/riffa/driver/linux/riffa.o := ld -m elf_x86_64   -r -o /home/phung/Documents/fpga_overlay/riffa/driver/linux/riffa.o /home/phung/Documents/fpga_overlay/riffa/driver/linux/riffa_driver.o /home/phung/Documents/fpga_overlay/riffa/driver/linux/circ_queue.o 

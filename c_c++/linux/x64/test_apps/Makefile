@@ -52,7 +52,7 @@ LDFLAGS += $(foreach library,$(program_LIBRARIES),-l$(library))
 all: $(program_NAME)
 
 $(program_NAME): $(program_OBJS)
-	$(CC) $(CPPFLAGS) $(program_OBJS) -o $(program_NAME) $(LDFLAGS)
+	$(CC) -pthread -fsanitize=address,undefined $(CPPFLAGS) $(program_OBJS) -o $(program_NAME) $(LDFLAGS)
 
 clean:
 	@- $(RM) $(program_NAME)

@@ -1,0 +1,1 @@
+cmd_/home/phung/Documents/fpga_overlay/riffa/driver/linux/riffa.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/phung/Documents/fpga_overlay/riffa/driver/linux/riffa.ko /home/phung/Documents/fpga_overlay/riffa/driver/linux/riffa.o /home/phung/Documents/fpga_overlay/riffa/driver/linux/riffa.mod.o ;  true
