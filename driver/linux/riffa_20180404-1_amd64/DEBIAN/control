@@ -1,9 +1,0 @@
-Package: riffa
-Priority: extra
-Section: checkinstall
-Installed-Size: 188
-Maintainer: riffa
-Architecture: amd64
-Version: 20180404-1
-Provides: riffa
-Description: riffa driver

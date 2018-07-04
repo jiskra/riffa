@@ -45,6 +45,7 @@
 #include <stdlib.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <pthread.h>
 #include <fcntl.h>
 #include "riffa.h"
 
@@ -93,7 +94,7 @@ void fpga_close(fpga_t * fpga)
 }
 
 //int fpga_send(fpga_t * fpga, int chnl, void * data, int len, int destoff, int last, long long timeout)
-int fpga_send(void *arg)
+void* fpga_send(void *arg)
 {
 	struct thread_info *tinfo_send = (struct thread_info *) arg;
 
@@ -109,11 +110,11 @@ int fpga_send(void *arg)
 
 	int number_of_words_sent = ioctl(tinfo_send->fpga->fd, IOCTL_SEND, &io_send);
 
-	return number_of_words_sent;
+	pthread_exit((void *)(intptr_t)number_of_words_sent);
 }
 
 //int fpga_recv(fpga_t * fpga, int chnl, void * data, int len, long long timeout)
-int fpga_recv(void *arg)
+void* fpga_recv(void *arg)
 {
 	struct thread_info *tinfo_recv = (struct thread_info *) arg;
 
@@ -127,7 +128,7 @@ int fpga_recv(void *arg)
 
 	int number_of_words_recv = ioctl(tinfo_recv->fpga->fd, IOCTL_RECV, &io_recv);
 
-	return number_of_words_recv;
+	pthread_exit((void *)(intptr_t)number_of_words_recv);
 }
 
 void fpga_reset(fpga_t * fpga)

@@ -53,7 +53,7 @@
 module tx_port_channel_gate_128 
     #(parameter C_DATA_WIDTH = 9'd128,
       // Local parameters
-      parameter C_FIFO_DEPTH = 8,
+      parameter C_FIFO_DEPTH = 1024*16,  // modified by Cheng Fei such that this FIFO could do enough buffering due to the Tx permission latency
       parameter C_FIFO_DATA_WIDTH = C_DATA_WIDTH + 1)
     (input                          RST,
 

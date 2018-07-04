@@ -57,16 +57,13 @@ int main(int argc, char** argv) {
 	fpga_t * fpga;
 	fpga_info_list info;
 	int option;
-	int i;
+	unsigned int i;
 	int id;
 	int chnl;
-	size_t numWords;
-	int sent;
-	int recvd;
-	int failure = 0;
+	unsigned int numWords;
 	unsigned int * sendBuffer;
 	unsigned int * recvBuffer;
-	int err;
+
 	GET_TIME_INIT(3);
 
 	if (argc < 2) {
@@ -84,7 +81,7 @@ int main(int argc, char** argv) {
 			return -1;
 		}
 		printf("Number of devices: %d\n", info.num_fpgas);
-		for (i = 0; i < info.num_fpgas; i++) {
+		for (i = 0; i < (unsigned int)info.num_fpgas; i++) {
 			printf("%d: id:%d\n", i, info.id[i]);
 			printf("%d: num_chnls:%d\n", i, info.num_chnls[i]);
 			printf("%d: name:%s\n", i, info.name[i]);
@@ -119,12 +116,12 @@ int main(int argc, char** argv) {
 			return -1;
 		}
 
-		size_t maxWords, minWords;
+		unsigned int maxWords, minWords;
 		id = atoi(argv[2]);
 		chnl = atoi(argv[3]);
 		minWords = 4; // Must be at least 4 for the channel tester app
 		maxWords = atoi(argv[4]);
-		printf("Running bandwidth test from %zu up to %zu words\n", minWords, maxWords);
+		printf("Running bandwidth test from %d up to %d words\n", minWords, maxWords);
 
 		// Get the device with id
 		fpga = fpga_open(id);
@@ -149,8 +146,7 @@ int main(int argc, char** argv) {
 			return -1;
 		}
 
-		int numWords;
-		for (numWords = minWords; numWords <= maxWords; numWords += (2*numWords <= maxWords) ? numWords : (maxWords-numWords)) { // adaptively change the buffer size for the final iteration
+		for (numWords = minWords; numWords <= maxWords; numWords += (2*numWords <= maxWords) ? numWords : (maxWords-numWords)) { // adaptively change the buffer size for the final iteration, and double the transaction size for every iteration
 			//int j;
 			//for (j = 0; j < NUM_TESTS + 1; ++j) {
 				// Initialize the data
@@ -171,7 +167,7 @@ int main(int argc, char** argv) {
 				exit(1);
 				*/
 
-				int ret_val[NTH]; // retval[0] is number of words sent;  retval[1] is number of words received
+				unsigned int ret_val[NTH]; // retval[0] is number of words sent;  retval[1] is number of words received
 
 				int loop = 0;  // for pthread_join()
 
@@ -219,7 +215,7 @@ int main(int argc, char** argv) {
 				GET_TIME_VAL(1);
 
 				const double MILLI_CONVERSION = 1000.0;  // converts milliseconds to seconds
-
+				const unsigned int BIRECTION = 2; // two ways, so total number of data transferred is doubled
 				double total_execution_time = ((TIME_VAL_TO_MS(1) - TIME_VAL_TO_MS(0)) / MILLI_CONVERSION);   // in seconds
 
 				printf("number of words sent = %d\n\r", ret_val[0]);
@@ -237,10 +233,10 @@ int main(int argc, char** argv) {
 					for (i = WORDS_PER_TRANSACTION; i < numWords; i++) {  // the first 4 32-bit words are always corrupted, please refer to explanation given at https://pergamos.lib.uoa.gr/uoa/dl/frontend/file/lib/default/data/1326221/theFile#page=38
 						if (recvBuffer[i] != sendBuffer[i]) {
 							printf("recvBuffer[%d]: %d, expected %d\n", i, recvBuffer[i], sendBuffer[i]);
-							return;
+							return -1;
 						}
 					}
-					printf("Overall bandwidth: %f GBps\n\n", numWords*(double)BYTES_PER_WORD/(double)GIGA_CONVERSION/total_execution_time);
+					printf("Overall bandwidth: %f GBps\n\n", (double)BIRECTION*numWords*(double)BYTES_PER_WORD/(double)GIGA_CONVERSION/total_execution_time);
 				}
 		}
 
