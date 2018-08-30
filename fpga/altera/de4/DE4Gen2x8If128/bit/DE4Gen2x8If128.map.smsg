@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at tx_port_128.v(89): object "WBUFCOUNT" differs only in case from object "wBufCount" in the same scope File: /home/phung/Documents/fpga_overlay/riffa/fpga/riffa_hdl/tx_port_128.v Line: 89

@@ -56,6 +56,7 @@ module interrupt #(
 	input [C_NUM_CHNL-1:0] RX_TXN_DONE,		// The rx_port transaction is done
 	input [C_NUM_CHNL-1:0] TX_TXN,			// New tx_port transaction
 	input [C_NUM_CHNL-1:0] TX_SG_BUF_RECVD,	// The scatter gather data for a tx_port transaction has been read
+	input [C_NUM_CHNL-1:0] TX_TXN_STARTING, // The Tx write transaction is just about to start
 	input [C_NUM_CHNL-1:0] TX_TXN_DONE,		// The tx_port transaction is done
 	input VECT_0_RST,						// Interrupt vector 0 reset
 	input VECT_1_RST,						// Interrupt vector 1 reset
@@ -81,13 +82,13 @@ assign VECT_1 = rVect1;
 
 // Align the input signals to the interrupt vector. 
 // VECT_0/VECT_1 are organized from right to left (LSB to MSB) as:
-// [ 0] TX_TXN			for channel 0 in VECT_0, channel 6 in VECT_1
+// [ 0] TX_TXN_STARTING			for channel 0 in VECT_0, channel 6 in VECT_1
 // [ 1] TX_SG_BUF_RECVD	for channel 0 in VECT_0, channel 6 in VECT_1
 // [ 2] TX_TXN_DONE		for channel 0 in VECT_0, channel 6 in VECT_1
 // [ 3] RX_SG_BUF_RECVD	for channel 0 in VECT_0, channel 6 in VECT_1
 // [ 4] RX_TXN_DONE		for channel 0 in VECT_0, channel 6 in VECT_1
 // ...
-// [25] TX_TXN			for channel 5 in VECT_0, channel 11 in VECT_1
+// [25] TX_TXN_STARTING			for channel 5 in VECT_0, channel 11 in VECT_1
 // [26] TX_SG_BUF_RECVD	for channel 5 in VECT_0, channel 11 in VECT_1
 // [27] TX_TXN_DONE		for channel 5 in VECT_0, channel 11 in VECT_1
 // [28] RX_SG_BUF_RECVD	for channel 5 in VECT_0, channel 11 in VECT_1
@@ -98,14 +99,14 @@ genvar i;
 generate
 	for (i = 0; i < C_NUM_CHNL; i = i + 1) begin: vectMap
 		if (i < 6) begin : vectMap0
-			assign wVect0[(5*i)+0] = TX_TXN[i];
+			assign wVect0[(5*i)+0] = TX_TXN_STARTING[i];
 			assign wVect0[(5*i)+1] = TX_SG_BUF_RECVD[i];
 			assign wVect0[(5*i)+2] = TX_TXN_DONE[i];
 			assign wVect0[(5*i)+3] = RX_SG_BUF_RECVD[i];
 			assign wVect0[(5*i)+4] = RX_TXN_DONE[i];
 		end
 		else begin : vectMap1
-			assign wVect1[(5*(i-6))+0] = TX_TXN[i];
+			assign wVect1[(5*(i-6))+0] = TX_TXN_STARTING[i];
 			assign wVect1[(5*(i-6))+1] = TX_SG_BUF_RECVD[i];
 			assign wVect1[(5*(i-6))+2] = TX_TXN_DONE[i];
 			assign wVect1[(5*(i-6))+3] = RX_SG_BUF_RECVD[i];

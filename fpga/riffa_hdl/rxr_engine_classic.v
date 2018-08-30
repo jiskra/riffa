@@ -130,7 +130,7 @@ module rxr_engine_classic
     localparam C_STD_START_DELAY = (64/C_PCI_DATA_WIDTH);
 
     wire [63:0]                                           wAddrFmt;
-    wire [63:0]                                           wMetadata;
+    wire [63:0]                                           wMetadata /* synthesis keep */ ;
     wire [`TLP_TYPE_W-1:0]                                wType;
     wire [`TLP_LEN_W-1:0]                                 wLength;
     wire                                                  wAddrDW0Bit2;
@@ -144,10 +144,10 @@ module rxr_engine_classic
     wire [2:0]                                            wHdrLengthM1;
     wire [(C_PCI_DATA_WIDTH/32)-1:0]                      wEndMask;
     wire                                                  _wEndFlag;
-    wire                                                  wEndFlag;
+    wire                                                  wEndFlag /* synthesis keep */ ;
     wire [C_OFFSET_WIDTH-1:0]                             wEndOffset;
     wire [(C_PCI_DATA_WIDTH/32)-1:0]                      wStartMask;
-    wire [3:0]                                            wStartFlags;
+    wire [3:0]                                            wStartFlags /* synthesis keep */ ;
     wire                                                  wStartFlag;
     wire                                                  _wStartFlag;
     wire [clog2s(C_MAX_START_OFFSET)-1:0]                 wStartOffset;
@@ -167,7 +167,7 @@ module rxr_engine_classic
     wire                                                  wRxrDataStartFlag;
     wire [C_OFFSET_WIDTH-1:0]                             wRxrDataStartOffset;
 
-    wire [C_RX_PIPELINE_DEPTH:0]                          wRxSrSop;
+    wire [C_RX_PIPELINE_DEPTH:0]                          wRxSrSop /* synthesis keep */ ;
 
     reg                                                   rValid,_rValid;
     reg                                                   rRST;

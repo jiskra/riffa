@@ -214,6 +214,7 @@ module riffa
     wire [C_NUM_CHNL-1:0]                         wChnlSgRxBufRecvd;
     wire [C_NUM_CHNL-1:0]                         wChnlRxDone;
     wire [C_NUM_CHNL-1:0]                         wChnlTxRequest;
+	 wire [C_NUM_CHNL-1:0]								  wchnlTxStarting;
     wire [C_NUM_CHNL-1:0]                         wChnlTxDone;
     wire [C_NUM_CHNL-1:0]                         wChnlSgTxBufRecvd;
 
@@ -575,6 +576,7 @@ module riffa
          .RX_TXN_DONE                   (wChnlRxDone),
          .TX_TXN                        (wChnlTxRequest),
          .TX_SG_BUF_RECVD               (wChnlSgTxBufRecvd),
+			.TX_TXN_STARTING					 (wchnlTxStarting),
          .TX_TXN_DONE                   (wChnlTxDone),
          .VECT_0_RST                    (wIntrVectorReady[0]),
          .VECT_1_RST                    (wIntrVectorReady[1]),
@@ -589,8 +591,12 @@ module riffa
          .CLK                           (CLK),
          .CONFIG_INTERRUPT_MSIENABLE    (CONFIG_INTERRUPT_MSIENABLE),
          .INTR_MSI_RDY                  (INTR_MSI_RDY));
-
-
+			
+			
+	 parameter C_FIFO_DEPTH = 512;
+	 parameter C_FIFO_DEPTH_WIDTH = clog2((2**clog2(C_FIFO_DEPTH))+1);    
+	 wire	[(C_NUM_CHNL*C_FIFO_DEPTH_WIDTH)-1:0]	wbufcount;  // Tx fifo count
+	 
     tx_multiplexer
         #(/*AUTOINSTPARAM*/
           // Parameters
@@ -598,7 +604,9 @@ module riffa
           .C_NUM_CHNL                   (C_NUM_CHNL),
           .C_TAG_WIDTH                  (C_TAG_WIDTH),
           .C_VENDOR                     (C_VENDOR),
-          .C_DEPTH_PACKETS              (C_DEPTH_PACKETS))
+          .C_DEPTH_PACKETS              (C_DEPTH_PACKETS),
+			 .C_FIFO_DEPTH						 (C_FIFO_DEPTH),
+			 .C_FIFO_DEPTH_WIDTH				 (C_FIFO_DEPTH_WIDTH))
     tx_mux_inst
         (
          // Outputs
@@ -644,8 +652,9 @@ module riffa
          .CLK                           (CLK),
          .TXR_DATA_READY                (TXR_DATA_READY),
          .TXR_META_READY                (TXR_META_READY),
-         .TXR_SENT                      (TXR_SENT));
-    
+         .TXR_SENT                      (TXR_SENT),
+			.WBUFCOUNT							 (wbufcount[(C_FIFO_DEPTH_WIDTH*(C_NUM_CHNL-1)) +:C_FIFO_DEPTH_WIDTH]));
+	 
     // Generate and link up the channels.
     generate
         for (i = 0; i < C_NUM_CHNL; i = i + 1) begin : channels
@@ -688,6 +697,7 @@ module riffa
                   .TXN_TX_OFF_LAST(wChnlTxOfflast[(`SIG_OFFLAST_W*i) +: `SIG_OFFLAST_W]),
                   .TXN_TX_DONE_LEN(wChnlTxDoneLen[(`SIG_TXDONELEN_W*i) +:`SIG_TXDONELEN_W]),
                   .TXN_TX_DONE_ACK(wChnlTxDoneReady[i]),
+						.TXN_TX_STARTING(wchnlTxStarting[i]),
                 
                   .RX_REQ(wTxEngRdReq[i]),
                   .RX_REQ_ACK(wTxEngRdAck[i]),
@@ -733,7 +743,8 @@ module riffa
                   .CHNL_TX_OFF(CHNL_TX_OFF[(31*i) +:31]), 
                   .CHNL_TX_DATA(CHNL_TX_DATA[(C_PCI_DATA_WIDTH*i) +:C_PCI_DATA_WIDTH]), 
                   .CHNL_TX_DATA_VALID(CHNL_TX_DATA_VALID[i]), 
-                  .CHNL_TX_DATA_REN(CHNL_TX_DATA_REN[i])
+                  .CHNL_TX_DATA_REN(CHNL_TX_DATA_REN[i]),
+						.WBUFCOUNT(wbufcount[(C_FIFO_DEPTH_WIDTH*i) +:C_FIFO_DEPTH_WIDTH])
                   );
 
         end

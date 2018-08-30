@@ -1,0 +1,262 @@
+Restore Archived Project report for DE4Gen2x8If128
+Tue Jul 24 20:35:45 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Tue Jul 24 20:35:45 2018 ;
+; Revision Name                   ; DE4Gen2x8If128                        ;
+; Top-level Entity Name           ; DE4Gen2x8If128                        ;
+; Family                          ; Stratix IV                            ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored '/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/dse/dse1/dse1_1/DE4Gen2x8If128.qar' into the 'dse/dse1/dse1_1' directory
+Info: Generated report 'DE4Gen2x8If128.restore.rpt'
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Files Restored                                                                                                    ;
++-------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                         ;
++-------------------------------------------------------------------------------------------------------------------+
+; qar_info.json                                                                                                     ;
+; altera/de4/DE4Gen2x8If128/constr/DE4Gen2x8If128.sdc                                                               ;
+; altera/de4/DE4Gen2x8If128/hdl/DE4Gen2x8If128.v                                                                    ;
+; altera/de4/DE4Gen2x8If128/ip/ALTGXPCIeGen2x8.qip                                                                  ;
+; altera/de4/DE4Gen2x8If128/ip/ALTGXPCIeGen2x8.v                                                                    ;
+; altera/de4/DE4Gen2x8If128/ip/ALTGXPCIeGen2x8_bb.v                                                                 ;
+; altera/de4/DE4Gen2x8If128/ip/ALTPLL50I50O125O250O.ppf                                                             ;
+; altera/de4/DE4Gen2x8If128/ip/ALTPLL50I50O125O250O.qip                                                             ;
+; altera/de4/DE4Gen2x8If128/ip/ALTPLL50I50O125O250O.v                                                               ;
+; altera/de4/DE4Gen2x8If128/ip/ALTPLL50I50O125O250O_bb.v                                                            ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128.html                                                                 ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128.ppf                                                                  ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128.ppx                                                                  ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128.qip                                                                  ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128.sdc                                                                  ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128.tcl                                                                  ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128.v                                                                    ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_bb.v                                                                 ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_core.v                                                               ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_core.vo                                                              ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/PCIeGen2x8If128_example.sdc                    ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/PCIeGen2x8If128_example_chaining_pipen1b.v     ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/PCIeGen2x8If128_example_chaining_top.qpf       ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/PCIeGen2x8If128_example_chaining_top.qsf       ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/PCIeGen2x8If128_example_chaining_top.v         ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/PCIeGen2x8If128_plus.v                         ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/PCIeGen2x8If128_rs_hip.v                       ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/altpcierd_example_app_chaining.v               ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/testbench/PCIeGen2x8If128_chaining_testbench.v ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/testbench/altpcietb_bfm_driver_chaining.v      ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/testbench/runtb.bat                            ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/testbench/runtb.do                             ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/testbench/runtb.sh                             ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/testbench/sim_filelist                         ;
+; altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_serdes.v                                                             ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_64b_x1_pipen1b.v                         ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_64b_x4_pipen1b.v                         ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_64b_x8_pipen1b.v                         ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_hip_256_pipen1b.v                        ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_hip_pipen1b.v                            ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pclk_align.v                             ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pclk_pll.v                               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_phasefifo.v                              ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_100_125.v                            ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_100_250.v                            ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_125_250.v                            ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_15625_125.v                          ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_250_100.v                            ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_phy0.v                               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_phy1_62p5.v                          ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_phy2.v                               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_phy3_62p5.v                          ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_phy4_62p5.v                          ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_pll_phy5_62p5.v                          ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_reconfig_3cgx.v                          ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_reconfig_4sgx.v                          ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_rs_serdes.v                              ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_1sgx_x1_12500.v                   ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_1sgx_x1_15625.v                   ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_1sgx_x4_12500.v                   ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_1sgx_x4_15625.v                   ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_2agx_x1d_gen1_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_2agx_x1d_gen1_16p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_2agx_x4d_gen1_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_2agx_x4d_gen1_16p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_2agx_x8d_gen1_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_2sgx_x1d_10000.v                  ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_2sgx_x4d_10000.v                  ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_2sgx_x8d_10000.v                  ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_3cgx_x1d_gen1_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_3cgx_x1d_gen1_16p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_3cgx_x2d_gen1_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_3cgx_x4d_gen1_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_4sgx_x1d_gen1_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_4sgx_x1d_gen1_16p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_4sgx_x1d_gen2_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_4sgx_x4d_gen1_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_4sgx_x4d_gen1_16p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_4sgx_x4d_gen2_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_4sgx_x8d_gen1_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcie_serdes_4sgx_x8d_gen2_08p.v               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/altpcierd_reconfig_clk_pll.v                     ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/pciexp1x125_ltssm.ocp                            ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/pciexp4x125_ltssm.ocp                            ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/pciexp64_dlink.ocp                               ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/pciexp64_dlink.v                                 ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/pciexp64_trans.v                                 ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/pciexp_dcram.v                                   ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/pciexpx8f_confctrl.v                             ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/pciexpx8f_ltssm.ocp                              ;
+; altera/de4/DE4Gen2x8If128/ip/ip_compiler_for_pci_express-library/pciexpx8f_pexreg.ocp                             ;
+; altera/de4/DE4Gen2x8If128/prj/DE4Gen2x8If128.dse                                                                  ;
+; altera/de4/DE4Gen2x8If128/prj/DE4Gen2x8If128.qpf                                                                  ;
+; altera/de4/DE4Gen2x8If128/prj/DE4Gen2x8If128.qsf                                                                  ;
+; altera/de4/DE4Gen2x8If128/prj/db/stp2_auto_stripped.stp                                                           ;
+; altera/de4/DE4Gen2x8If128/prj/stp2.stp                                                                            ;
+; altera/de4/riffa_wrapper_de4.v                                                                                    ;
+; riffa_hdl/altera.vh                                                                                               ;
+; riffa_hdl/async_fifo.v                                                                                            ;
+; riffa_hdl/async_fifo_fwft.v                                                                                       ;
+; riffa_hdl/channel.v                                                                                               ;
+; riffa_hdl/channel_128.v                                                                                           ;
+; riffa_hdl/channel_32.v                                                                                            ;
+; riffa_hdl/channel_64.v                                                                                            ;
+; riffa_hdl/chnl_tester.v                                                                                           ;
+; riffa_hdl/counter.v                                                                                               ;
+; riffa_hdl/cross_domain_signal.v                                                                                   ;
+; riffa_hdl/demux.v                                                                                                 ;
+; riffa_hdl/engine_layer.v                                                                                          ;
+; riffa_hdl/ff.v                                                                                                    ;
+; riffa_hdl/fifo.v                                                                                                  ;
+; riffa_hdl/fifo_packer_128.v                                                                                       ;
+; riffa_hdl/fifo_packer_32.v                                                                                        ;
+; riffa_hdl/fifo_packer_64.v                                                                                        ;
+; riffa_hdl/functions.vh                                                                                            ;
+; riffa_hdl/interrupt.v                                                                                             ;
+; riffa_hdl/interrupt_controller.v                                                                                  ;
+; riffa_hdl/mux.v                                                                                                   ;
+; riffa_hdl/offset_flag_to_one_hot.v                                                                                ;
+; riffa_hdl/offset_to_mask.v                                                                                        ;
+; riffa_hdl/one_hot_mux.v                                                                                           ;
+; riffa_hdl/pipeline.v                                                                                              ;
+; riffa_hdl/ram_1clk_1w_1r.v                                                                                        ;
+; riffa_hdl/ram_2clk_1w_1r.v                                                                                        ;
+; riffa_hdl/recv_credit_flow_ctrl.v                                                                                 ;
+; riffa_hdl/register.v                                                                                              ;
+; riffa_hdl/registers.v                                                                                             ;
+; riffa_hdl/reorder_queue.v                                                                                         ;
+; riffa_hdl/reorder_queue_input.v                                                                                   ;
+; riffa_hdl/reorder_queue_output.v                                                                                  ;
+; riffa_hdl/reset_controller.v                                                                                      ;
+; riffa_hdl/reset_extender.v                                                                                        ;
+; riffa_hdl/riffa.v                                                                                                 ;
+; riffa_hdl/riffa.vh                                                                                                ;
+; riffa_hdl/rotate.v                                                                                                ;
+; riffa_hdl/rx_engine_classic.v                                                                                     ;
+; riffa_hdl/rx_engine_ultrascale.v                                                                                  ;
+; riffa_hdl/rx_port_128.v                                                                                           ;
+; riffa_hdl/rx_port_32.v                                                                                            ;
+; riffa_hdl/rx_port_64.v                                                                                            ;
+; riffa_hdl/rx_port_channel_gate.v                                                                                  ;
+; riffa_hdl/rx_port_reader.v                                                                                        ;
+; riffa_hdl/rx_port_requester_mux.v                                                                                 ;
+; riffa_hdl/rxc_engine_classic.v                                                                                    ;
+; riffa_hdl/rxc_engine_ultrascale.v                                                                                 ;
+; riffa_hdl/rxr_engine_classic.v                                                                                    ;
+; riffa_hdl/rxr_engine_ultrascale.v                                                                                 ;
+; riffa_hdl/schedules.vh                                                                                            ;
+; riffa_hdl/scsdpram.v                                                                                              ;
+; riffa_hdl/sg_list_reader_128.v                                                                                    ;
+; riffa_hdl/sg_list_reader_32.v                                                                                     ;
+; riffa_hdl/sg_list_reader_64.v                                                                                     ;
+; riffa_hdl/sg_list_requester.v                                                                                     ;
+; riffa_hdl/shiftreg.v                                                                                              ;
+; riffa_hdl/sync_fifo.v                                                                                             ;
+; riffa_hdl/syncff.v                                                                                                ;
+; riffa_hdl/tlp.vh                                                                                                  ;
+; riffa_hdl/translation_altera.v                                                                                    ;
+; riffa_hdl/translation_xilinx.v                                                                                    ;
+; riffa_hdl/trellis.vh                                                                                              ;
+; riffa_hdl/tx_alignment_pipeline.v                                                                                 ;
+; riffa_hdl/tx_data_fifo.v                                                                                          ;
+; riffa_hdl/tx_data_pipeline.v                                                                                      ;
+; riffa_hdl/tx_data_shift.v                                                                                         ;
+; riffa_hdl/tx_engine.v                                                                                             ;
+; riffa_hdl/tx_engine_classic.v                                                                                     ;
+; riffa_hdl/tx_engine_selector.v                                                                                    ;
+; riffa_hdl/tx_engine_ultrascale.v                                                                                  ;
+; riffa_hdl/tx_hdr_fifo.v                                                                                           ;
+; riffa_hdl/tx_multiplexer.v                                                                                        ;
+; riffa_hdl/tx_multiplexer_128.v                                                                                    ;
+; riffa_hdl/tx_multiplexer_32.v                                                                                     ;
+; riffa_hdl/tx_multiplexer_64.v                                                                                     ;
+; riffa_hdl/tx_port_128.v                                                                                           ;
+; riffa_hdl/tx_port_32.v                                                                                            ;
+; riffa_hdl/tx_port_64.v                                                                                            ;
+; riffa_hdl/tx_port_buffer_128.v                                                                                    ;
+; riffa_hdl/tx_port_buffer_32.v                                                                                     ;
+; riffa_hdl/tx_port_buffer_64.v                                                                                     ;
+; riffa_hdl/tx_port_channel_gate_128.v                                                                              ;
+; riffa_hdl/tx_port_channel_gate_32.v                                                                               ;
+; riffa_hdl/tx_port_channel_gate_64.v                                                                               ;
+; riffa_hdl/tx_port_monitor_128.v                                                                                   ;
+; riffa_hdl/tx_port_monitor_32.v                                                                                    ;
+; riffa_hdl/tx_port_monitor_64.v                                                                                    ;
+; riffa_hdl/tx_port_writer.v                                                                                        ;
+; riffa_hdl/txc_engine_classic.v                                                                                    ;
+; riffa_hdl/txc_engine_ultrascale.v                                                                                 ;
+; riffa_hdl/txr_engine_classic.v                                                                                    ;
+; riffa_hdl/txr_engine_ultrascale.v                                                                                 ;
+; riffa_hdl/types.vh                                                                                                ;
+; riffa_hdl/ultrascale.vh                                                                                           ;
+; riffa_hdl/widths.vh                                                                                               ;
+; riffa_hdl/xilinx.vh                                                                                               ;
+; altera/de4/DE4Gen2x8If128/prj/assignment_defaults.qdf                                                             ;
++-------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+

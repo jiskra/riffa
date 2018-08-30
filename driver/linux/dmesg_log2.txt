@@ -1,0 +1,133 @@
+[18127.788494] chnl_recv_wrapcheck len = 2048
+[18127.788494] after recv DEFINE_WAIT(wait)
+[18127.788495] pop_circ_queue()
+[18127.788495] pop_circ_queue while(1) loop
+[18127.788495] pop_circ_queue()
+[18127.788496] pop_circ_queue while(1) loop
+[18127.788496] before recv schedule_timeout()
+[18127.788732] chnl_send_wrapcheck len = 2048
+[18127.788733] after send DEFINE_WAIT(wait)
+[18127.788734] before send message queue is cleared
+[18127.788734] pop_circ_queue()
+[18127.788735] pop_circ_queue while(1) loop
+[18127.788735] after send message queue is cleared
+[18127.788736] riffa: fpga:0 chnl:0, send (len:1024 off:0 last:1)
+[18127.788739] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[18127.788740] pop_circ_queue()
+[18127.788740] pop_circ_queue while(1) loop
+[18127.788740] before send prepare_to_wait()
+[18127.788740] after send prepare_to_wait()
+[18127.788741] pop_circ_queue()
+[18127.788741] pop_circ_queue while(1) loop
+[18127.788741] before send schedule_timeout()
+[18127.788743] push_circ_queue() val1=2 , val2=1
+[18127.788744] push_circ_queue() val1=1 , val2=1024
+[18127.788745] riffa: fpga:0 chnl:0, recv txn (len:1024 off:0 last:1)
+[18127.788746] push_circ_queue() val1=4 , val2=0
+[18127.788746] riffa: fpga:0 chnl:0, send sg buf read
+[18127.788749] after recv schedule_timeout()
+[18127.788750] pop_circ_queue()
+[18127.788750] pop_circ_queue while(1) loop
+[18127.788751] pop_circ_queue() val1=2 , val2=1
+[18127.788751] after send schedule_timeout()
+[18127.788752] push_circ_queue() val1=3 , val2=1024
+[18127.788752] pop_circ_queue()
+[18127.788753] pop_circ_queue while(1) loop
+[18127.788753] msg_type: 2
+[18127.788754] EVENT_TXN_OFFLAST chnl_recv()
+[18127.788754] riffa: fpga:0 chnl:0, send txn done
+[18127.788755] pop_circ_queue() val1=4 , val2=0
+[18127.788756] pop_circ_queue()
+[18127.788756] pop_circ_queue while(1) loop
+[18127.788757] pop_circ_queue()
+[18127.788757] pop_circ_queue() val1=1 , val2=1024
+[18127.788758] msg_type: 1
+[18127.788758] pop_circ_queue while(1) loop
+[18127.788759] EVENT_TXN_LEN chnl_recv()
+[18127.788759] pop_circ_queue() val1=3 , val2=1024
+[18127.788760] EVENT_TXN_LEN length = 4096
+[18127.788760] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[18127.788761] riffa: fpga:0 chnl:0, sent 1024 words
+[18127.788762] chnl_send_wrapcheck ret = 1024
+[18127.788762] after send DEFINE_WAIT(wait)
+[18127.788762] before send message queue is cleared
+[18127.788763] pop_circ_queue()
+[18127.788763] pop_circ_queue while(1) loop
+[18127.788763] riffa: fpga:0 chnl:0, recv sg buf populated, 2 sent
+[18127.788764] pop_circ_queue()
+[18127.788764] after send message queue is cleared
+[18127.788765] pop_circ_queue while(1) loop
+[18127.788766] riffa: fpga:0 chnl:0, send (len:1024 off:0 last:1)
+[18127.788766] push_circ_queue() val1=4 , val2=0
+[18127.788767] pop_circ_queue()
+[18127.788767] riffa: fpga:0 chnl:0, recv sg buf read
+[18127.788768] pop_circ_queue while(1) loop
+[18127.788768] pop_circ_queue() val1=4 , val2=0
+[18127.788769] msg_type: 4
+[18127.788769] EVENT_SG_BUF_READ chnl_recv()
+[18127.788769] pop_circ_queue()
+[18127.788770] push_circ_queue() val1=3 , val2=1024
+[18127.788771] riffa: fpga:0 chnl:0, send sg buf populated, 2 sent
+[18127.788771] riffa: fpga:0 chnl:0, recv txn done
+[18127.788772] pop_circ_queue while(1) loop
+[18127.788772] pop_circ_queue()
+[18127.788773] pop_circ_queue while(1) loop
+[18127.788773] pop_circ_queue() val1=3 , val2=1024
+[18127.788774] push_circ_queue() val1=2 , val2=1
+[18127.788774] msg_type: 3
+[18127.788775] EVENT_TXN_DONE chnl_recv()
+[18127.788775] before send prepare_to_wait()
+[18127.788776] after send prepare_to_wait()
+[18127.788777] push_circ_queue() val1=1 , val2=1024
+[18127.788778] riffa: fpga:0 chnl:0, recv txn (len:1024 off:0 last:1)
+[18127.788778] riffa: fpga:0 chnl:0, received 1024 words
+[18127.788779] pop_circ_queue()
+[18127.788779] chnl_recv_wrapcheck ret = 1024
+[18127.788780] after recv DEFINE_WAIT(wait)
+[18127.788781] push_circ_queue() val1=4 , val2=0
+[18127.788781] pop_circ_queue while(1) loop
+[18127.788782] riffa: fpga:0 chnl:0, send sg buf read
+[18127.788782] pop_circ_queue()
+[18127.788783] push_circ_queue() val1=3 , val2=1024
+[18127.788783] pop_circ_queue() val1=4 , val2=0
+[18127.788784] pop_circ_queue while(1) loop
+[18127.788784] pop_circ_queue()
+[18127.788785] pop_circ_queue while(1) loop
+[18127.788786] riffa: fpga:0 chnl:0, send txn done
+[18127.788786] pop_circ_queue() val1=2 , val2=1
+[18127.788787] pop_circ_queue() val1=3 , val2=1024
+[18127.788787] msg_type: 2
+[18127.788788] EVENT_TXN_OFFLAST chnl_recv()
+[18127.788788] pop_circ_queue()
+[18127.788789] riffa: fpga:0 chnl:0, sent 1024 words
+[18127.788789] chnl_send_wrapcheck ret = 2048
+[18127.788790] pop_circ_queue while(1) loop
+[18127.788790] pop_circ_queue() val1=1 , val2=1024
+[18127.788791] msg_type: 1
+[18127.788791] EVENT_TXN_LEN chnl_recv()
+[18127.788791] EVENT_TXN_LEN length = 4096
+[18127.788792] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[18127.788799] riffa: fpga:0 chnl:0, recv sg buf populated, 2 sent
+[18127.788799] pop_circ_queue()
+[18127.788800] pop_circ_queue while(1) loop
+[18127.788800] pop_circ_queue()
+[18127.788800] pop_circ_queue while(1) loop
+[18127.788801] before recv schedule_timeout()
+[18127.788802] push_circ_queue() val1=4 , val2=0
+[18127.788803] riffa: fpga:0 chnl:0, recv sg buf read
+[18127.788806] after recv schedule_timeout()
+[18127.788807] push_circ_queue() val1=3 , val2=1024
+[18127.788807] pop_circ_queue()
+[18127.788807] pop_circ_queue while(1) loop
+[18127.788808] riffa: fpga:0 chnl:0, recv txn done
+[18127.788809] pop_circ_queue() val1=4 , val2=0
+[18127.788809] msg_type: 4
+[18127.788810] EVENT_SG_BUF_READ chnl_recv()
+[18127.788810] pop_circ_queue()
+[18127.788810] pop_circ_queue while(1) loop
+[18127.788811] pop_circ_queue() val1=3 , val2=1024
+[18127.788811] msg_type: 3
+[18127.788811] EVENT_TXN_DONE chnl_recv()
+[18127.788812] riffa: fpga:0 chnl:0, received 1024 words
+[18127.788813] chnl_recv_wrapcheck ret = 2048
+

@@ -47,6 +47,9 @@
 
 #include <linux/ioctl.h>
 
+// send and receive data in smaller batch size
+//#define BATCH_TRANSACTION 1
+
 #define DEBUG 1
 
 #ifdef DEBUG

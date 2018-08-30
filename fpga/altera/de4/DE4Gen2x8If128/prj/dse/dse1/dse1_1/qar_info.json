@@ -1,0 +1,7 @@
+{
+	"common_dir" : "/home/phung/Documents/fpga_overlay/riffa/fpga/",
+	"acds_version" : "Version 17.1.0",
+	"platform" : "linux",
+	"os" : "Ubuntu 18.04",
+	"qpf" : "altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/PCIeGen2x8If128_example_chaining_top.qpf"
+}

@@ -1,0 +1,24 @@
+Info: *******************************************************************
+Info: Running Quartus Prime Shell
+Info: Command: quartus_sh --flow compile DE4Gen2x8If128.qsf
+Info: Quartus(args): compile DE4Gen2x8If128.qsf
+Info: Project Name = /home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/dse/dse1/dse1_1/altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/DE4Gen2x8If128
+Info: Revision Name = DE4Gen2x8If128
+Warning: Tcl Script File ../ip/ALTGXPCIeGen2x8.qip not found
+Warning: Tcl Script File ../ip/ALTPLL50I50O125O250O.qip not found
+Warning: Tcl Script File ../ip/PCIeGen2x8If128.qip not found
+{"object_type": "report_status", "percent" : 0}
+Info: *******************************************************************
+Info: Running Quartus Prime Signal Tap
+Info: Command: quartus_stp DE4Gen2x8If128 -c DE4Gen2x8If128
+Warning: Tcl Script File ../ip/ALTGXPCIeGen2x8.qip not found
+Warning: Tcl Script File ../ip/ALTPLL50I50O125O250O.qip not found
+Warning: Tcl Script File ../ip/PCIeGen2x8If128.qip not found
+Error: File "stp2.stp" is not a valid Signal Tap File -- ignoring
+Error: Quartus Prime Signal Tap was unsuccessful. 1 error, 3 warnings
+Error: Quartus Prime Full Compilation was unsuccessful. 3 errors, 3 warnings
+Error: Flow compile (for project /home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/dse/dse1/dse1_1/altera/de4/DE4Gen2x8If128/ip/PCIeGen2x8If128_examples/chaining_dma/DE4Gen2x8If128) was not successful
+Error: ERROR: Error(s) found while running an executable. See report file(s) for error message(s). Message log indicates which executable was run last.
+
+Error: Evaluation of Tcl script /opt/intelFPGA/17.1/quartus/common/tcl/internal/qsh_flow.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 10 errors, 6 warnings

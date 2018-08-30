@@ -84,8 +84,9 @@ define assert-variables
 	@printf "\n"
 endef
 
+all: CC += -pthread -pedantic -Wall -Werror -Wextra -fsanitize=thread -fno-omit-frame-pointer
 all: builddvr
-debug: CC += -DDEBUG -g -pthread
+debug: CC += -DDEBUG -g -pthread -pedantic -Wall -Werror -Wextra -fsanitize=thread -fno-omit-frame-pointer
 debug: DBUGVAL = DEBUG
 debug: builddvr
 builddvr: $(NAME).ko $(NAME).so.$(LIB_VER)
@@ -139,6 +140,8 @@ install: $(NAME).so.$(LIB_VER) $(NAME).ko
 	ln -sf /usr/local/lib/lib$(NAME).so.$(LIB_VER) /usr/local/lib/lib$(NAME).so
 	ldconfig
 	depmod
+	make unload
+	make load
 
 uninstall: 
 	rm -f /usr/local/lib/lib$(NAME).so*

@@ -1,0 +1,556 @@
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:4 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:4 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv timed out
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 4 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 16
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 4 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:8 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:8 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 8 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 32
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 8 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:16 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:16 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 16 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 64
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 16 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:32 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:32 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 32 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 128
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 32 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:64 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:64 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 64 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 256
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 64 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:128 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:128 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 128 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 512
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 128 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:256 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:256 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 256 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 1024
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 256 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:512 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:512 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 512 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 2048
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 512 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:1024 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:1024 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 1024 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 4096
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 2 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 1024 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:2048 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 2 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:2048 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 2048 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 8192
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 3 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 2048 words
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:4096 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 4 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn (len:4096 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 4096 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 2
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_OFFLAST chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 1
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN chnl_recv()
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN length = 16384
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf populated, 5 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv sg buf read
+[Tue Aug  7 20:01:41 2018] msg_type: 4
+[Tue Aug  7 20:01:41 2018] EVENT_SG_BUF_READ chnl_recv()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:8192 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 8 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv txn done
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] msg_type: 3
+[Tue Aug  7 20:01:41 2018] EVENT_TXN_DONE chnl_recv()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, received 4096 words
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 8192 words
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:16384 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 16 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 16384 words
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv timed out
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:32768 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 32 sent
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 32768 words
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv timed out
+[Tue Aug  7 20:01:41 2018] after recv DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] after send DEFINE_WAIT(wait)
+[Tue Aug  7 20:01:41 2018] before send message queue is cleared
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] after send message queue is cleared
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send (len:65536 off:0 last:1)
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf populated, 64 sent
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send sg buf read
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] after send prepare_to_wait()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] before send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, send txn done
+[Tue Aug  7 20:01:41 2018] after send schedule_timeout()
+[Tue Aug  7 20:01:41 2018] pop_circ_queue while(1) loop
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, sent 65536 words
+[Tue Aug  7 20:01:41 2018] after recv schedule_timeout()
+[Tue Aug  7 20:01:41 2018] riffa: fpga:0 chnl:0, recv timed out
+

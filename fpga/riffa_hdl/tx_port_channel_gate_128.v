@@ -53,7 +53,7 @@
 module tx_port_channel_gate_128 
     #(parameter C_DATA_WIDTH = 9'd128,
       // Local parameters
-      parameter C_FIFO_DEPTH = 1024*16,  // modified by Cheng Fei such that this FIFO could do enough buffering due to the Tx permission latency
+      parameter C_FIFO_DEPTH = 16,
       parameter C_FIFO_DATA_WIDTH = C_DATA_WIDTH + 1)
     (input                          RST,
 
@@ -89,7 +89,7 @@ module tx_port_channel_gate_128
     reg                             rOpen=0, _rOpen=0;
 
     assign CHNL_TX_ACK = rAck;
-    assign CHNL_TX_DATA_REN = (rOpen & !wFifoFull); // S_TXPORTGATE128_OPEN
+    assign CHNL_TX_DATA_REN = ((rState == `S_TXPORTGATE128_OPEN) && (!wFifoFull)); // (rOpen & !wFifoFull); 
 
     // Buffer the input signals that come from outside the tx_port.
     always @ (posedge CHNL_CLK) begin

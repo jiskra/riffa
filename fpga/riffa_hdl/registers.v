@@ -196,9 +196,9 @@ module registers
     wire                                       wTxcMetaEp;
     wire                                       wTxcDataReady;
 
-    wire [clog2s(C_NUM_CHNL)-1:0]              wReqChnl;
+    wire [clog2s(C_NUM_CHNL)-1:0]              wReqChnl /*synthesis keep*/ ;
     wire [C_FIELDS_WIDTH-1:0]                  wReqField;
-    wire [(1<<C_FIELDS_WIDTH)-1:0]             wReqFieldDemux;
+    wire [(1<<C_FIELDS_WIDTH)-1:0]             wReqFieldDemux /*synthesis keep*/ ;
 
     wire [C_NUM_CHNL-1:0]                      wChnlSgrxLenValid;
     wire [C_NUM_CHNL-1:0]                      wChnlSgrxAddrLowValid;

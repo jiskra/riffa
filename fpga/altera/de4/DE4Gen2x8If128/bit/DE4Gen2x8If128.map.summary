@@ -1,16 +1,16 @@
-Analysis & Synthesis Status : Successful - Wed Jul  4 15:41:45 2018
+Analysis & Synthesis Status : Successful - Wed Aug 29 18:21:04 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Standard Edition
 Revision Name : DE4Gen2x8If128
 Top-level Entity Name : DE4Gen2x8If128
 Family : Stratix IV
 Logic utilization : N/A
-    Combinational ALUTs : 10,970
+    Combinational ALUTs : 12,536
     Memory ALUTs : 0
-    Dedicated logic registers : 21,074
-Total registers : 21074
+    Dedicated logic registers : 28,448
+Total registers : 28448
 Total pins : 31
 Total virtual pins : 0
-Total block memory bits : 10,039,389
+Total block memory bits : 12,781,930
 DSP block 18-bit elements : 0
 Total GXB Receiver Channel PCS : 8
 Total GXB Receiver Channel PMA : 8

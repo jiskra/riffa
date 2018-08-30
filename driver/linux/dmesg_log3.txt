@@ -1,0 +1,1082 @@
+[21273.874588] chnl_recv_wrapcheck len = 2048
+[21273.874589] after recv DEFINE_WAIT(wait)
+[21273.874590] pop_circ_queue()
+[21273.874590] pop_circ_queue while(1) loop
+[21273.874590] pop_circ_queue()
+[21273.874591] pop_circ_queue while(1) loop
+[21273.874591] before recv schedule_timeout()
+[21273.874823] chnl_send_wrapcheck len = 2048
+[21273.874824] after send DEFINE_WAIT(wait)
+[21273.874825] before send message queue is cleared
+[21273.874825] pop_circ_queue()
+[21273.874825] pop_circ_queue while(1) loop
+[21273.874826] after send message queue is cleared
+[21273.874827] riffa: fpga:0 chnl:0, send (len:1024 off:0 last:1)
+[21273.874830] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[21273.874830] pop_circ_queue()
+[21273.874831] pop_circ_queue while(1) loop
+[21273.874831] before send prepare_to_wait()
+[21273.874831] after send prepare_to_wait()
+[21273.874832] pop_circ_queue()
+[21273.874832] pop_circ_queue while(1) loop
+[21273.874832] before send schedule_timeout()
+[21273.874834] push_circ_queue() val1=2 , val2=1
+[21273.874835] push_circ_queue() val1=1 , val2=1024
+[21273.874836] riffa: fpga:0 chnl:0, recv txn (len:1024 off:0 last:1)
+[21273.874836] push_circ_queue() val1=4 , val2=0
+[21273.874837] riffa: fpga:0 chnl:0, send sg buf read
+[21273.874840] after send schedule_timeout()
+[21273.874841] push_circ_queue() val1=3 , val2=1024
+[21273.874842] riffa: fpga:0 chnl:0, send txn done
+[21273.874842] pop_circ_queue()
+[21273.874842] pop_circ_queue while(1) loop
+[21273.874843] pop_circ_queue() val1=4 , val2=0
+[21273.874843] pop_circ_queue()
+[21273.874844] pop_circ_queue while(1) loop
+[21273.874844] pop_circ_queue() val1=3 , val2=1024
+[21273.874845] riffa: fpga:0 chnl:0, sent 1024 words
+[21273.874845] chnl_send_wrapcheck ret = 1024
+[21273.874846] after send DEFINE_WAIT(wait)
+[21273.874846] before send message queue is cleared
+[21273.874846] pop_circ_queue()
+[21273.874846] pop_circ_queue while(1) loop
+[21273.874847] after send message queue is cleared
+[21273.874847] riffa: fpga:0 chnl:0, send (len:1024 off:0 last:1)
+[21273.874849] riffa: fpga:0 chnl:0, send sg buf populated, 2 sent
+[21273.874849] pop_circ_queue()
+[21273.874850] pop_circ_queue while(1) loop
+[21273.874850] before send prepare_to_wait()
+[21273.874850] after send prepare_to_wait()
+[21273.874851] pop_circ_queue()
+[21273.874851] pop_circ_queue while(1) loop
+[21273.874851] push_circ_queue() val1=4 , val2=0
+[21273.874852] before send schedule_timeout()
+[21273.874852] riffa: fpga:0 chnl:0, send sg buf read
+[21273.874855] after send schedule_timeout()
+[21273.874855] push_circ_queue() val1=3 , val2=1024
+[21273.874856] riffa: fpga:0 chnl:0, send txn done
+[21273.874857] pop_circ_queue()
+[21273.874857] pop_circ_queue while(1) loop
+[21273.874858] pop_circ_queue() val1=4 , val2=0
+[21273.874858] pop_circ_queue()
+[21273.874858] pop_circ_queue while(1) loop
+[21273.874859] pop_circ_queue() val1=3 , val2=1024
+[21273.874859] riffa: fpga:0 chnl:0, sent 1024 words
+[21273.874860] chnl_send_wrapcheck ret = 2048
+[21273.874861] after recv schedule_timeout()
+[21273.874862] pop_circ_queue()
+[21273.874862] pop_circ_queue while(1) loop
+[21273.874863] pop_circ_queue() val1=2 , val2=1
+[21273.874864] msg_type: 2
+[21273.874864] EVENT_TXN_OFFLAST chnl_recv()
+[21273.874864] pop_circ_queue()
+[21273.874864] pop_circ_queue while(1) loop
+[21273.874865] pop_circ_queue() val1=1 , val2=1024
+[21273.874865] msg_type: 1
+[21273.874866] EVENT_TXN_LEN chnl_recv()
+[21273.874866] EVENT_TXN_LEN length = 4096
+[21273.874866] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[21273.874870] riffa: fpga:0 chnl:0, recv sg buf populated, 2 sent
+[21273.874870] pop_circ_queue()
+[21273.874870] pop_circ_queue while(1) loop
+[21273.874871] pop_circ_queue()
+[21273.874871] pop_circ_queue while(1) loop
+[21273.874871] before recv schedule_timeout()
+[21273.874872] push_circ_queue() val1=4 , val2=0
+[21273.874873] riffa: fpga:0 chnl:0, recv sg buf read
+[21273.874876] push_circ_queue() val1=3 , val2=1024
+[21273.874876] after recv schedule_timeout()
+[21273.874877] pop_circ_queue()
+[21273.874877] riffa: fpga:0 chnl:0, recv txn done
+[21273.874878] pop_circ_queue while(1) loop
+[21273.874879] pop_circ_queue() val1=4 , val2=0
+[21273.874879] msg_type: 4
+[21273.874879] push_circ_queue() val1=2 , val2=1
+[21273.874880] push_circ_queue() val1=1 , val2=1024
+[21273.874880] EVENT_SG_BUF_READ chnl_recv()
+[21273.874881] riffa: fpga:0 chnl:0, recv txn (len:1024 off:0 last:1)
+[21273.874882] pop_circ_queue()
+[21273.874882] pop_circ_queue while(1) loop
+[21273.874883] pop_circ_queue() val1=3 , val2=1024
+[21273.874883] msg_type: 3
+[21273.874883] EVENT_TXN_DONE chnl_recv()
+[21273.874885] riffa: fpga:0 chnl:0, received 1024 words
+[21273.874885] chnl_recv_wrapcheck ret = 1024
+[21273.874885] after recv DEFINE_WAIT(wait)
+[21273.874886] pop_circ_queue()
+[21273.874886] pop_circ_queue while(1) loop
+[21273.874886] pop_circ_queue() val1=2 , val2=1
+[21273.874887] msg_type: 2
+[21273.874887] EVENT_TXN_OFFLAST chnl_recv()
+[21273.874887] pop_circ_queue()
+[21273.874887] pop_circ_queue while(1) loop
+[21273.874888] pop_circ_queue() val1=1 , val2=1024
+[21273.874888] msg_type: 1
+[21273.874888] EVENT_TXN_LEN chnl_recv()
+[21273.874889] EVENT_TXN_LEN length = 4096
+[21273.874889] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[21273.874890] riffa: fpga:0 chnl:0, recv sg buf populated, 2 sent
+[21273.874891] pop_circ_queue()
+[21273.874891] pop_circ_queue while(1) loop
+[21273.874891] pop_circ_queue()
+[21273.874891] pop_circ_queue while(1) loop
+[21273.874892] before recv schedule_timeout()
+[21273.874892] push_circ_queue() val1=4 , val2=0
+[21273.874893] riffa: fpga:0 chnl:0, recv sg buf read
+[21273.874895] after recv schedule_timeout()
+[21273.874896] pop_circ_queue()
+[21273.874896] pop_circ_queue while(1) loop
+[21273.874897] pop_circ_queue() val1=4 , val2=0
+[21273.874897] msg_type: 4
+[21273.874897] EVENT_SG_BUF_READ chnl_recv()
+[21273.874897] pop_circ_queue()
+[21273.874898] pop_circ_queue while(1) loop
+[21273.874898] pop_circ_queue()
+[21273.874898] pop_circ_queue while(1) loop
+[21273.874899] before recv schedule_timeout()
+[21273.893335] after recv schedule_timeout()
+[21273.893338] riffa: fpga:0 chnl:0, recv timed out
+[21273.893343] chnl_recv_wrapcheck ret = 1024
+[21273.893344] after recv DEFINE_WAIT(wait)
+[21273.893344] pop_circ_queue()
+[21273.893344] pop_circ_queue while(1) loop
+[21273.893345] pop_circ_queue()
+[21273.893345] pop_circ_queue while(1) loop
+[21273.893346] before recv schedule_timeout()
+[21273.909340] after recv schedule_timeout()
+[21273.909342] riffa: fpga:0 chnl:0, recv timed out
+[21273.909345] chnl_recv_wrapcheck ret = 1024
+[21273.909345] after recv DEFINE_WAIT(wait)
+[21273.909346] pop_circ_queue()
+[21273.909346] pop_circ_queue while(1) loop
+[21273.909347] pop_circ_queue()
+[21273.909347] pop_circ_queue while(1) loop
+[21273.909347] before recv schedule_timeout()
+[21273.925338] after recv schedule_timeout()
+[21273.925340] riffa: fpga:0 chnl:0, recv timed out
+[21273.925342] chnl_recv_wrapcheck ret = 1024
+[21273.925343] after recv DEFINE_WAIT(wait)
+[21273.925343] pop_circ_queue()
+[21273.925344] pop_circ_queue while(1) loop
+[21273.925344] pop_circ_queue()
+[21273.925345] pop_circ_queue while(1) loop
+[21273.925345] before recv schedule_timeout()
+[21273.941333] after recv schedule_timeout()
+[21273.941335] riffa: fpga:0 chnl:0, recv timed out
+[21273.941337] chnl_recv_wrapcheck ret = 1024
+[21273.941338] after recv DEFINE_WAIT(wait)
+[21273.941338] pop_circ_queue()
+[21273.941339] pop_circ_queue while(1) loop
+[21273.941339] pop_circ_queue()
+[21273.941340] pop_circ_queue while(1) loop
+[21273.941340] before recv schedule_timeout()
+[21273.957337] after recv schedule_timeout()
+[21273.957339] riffa: fpga:0 chnl:0, recv timed out
+[21273.957341] chnl_recv_wrapcheck ret = 1024
+[21273.957342] after recv DEFINE_WAIT(wait)
+[21273.957342] pop_circ_queue()
+[21273.957343] pop_circ_queue while(1) loop
+[21273.957343] pop_circ_queue()
+[21273.957344] pop_circ_queue while(1) loop
+[21273.957344] before recv schedule_timeout()
+[21273.973331] after recv schedule_timeout()
+[21273.973333] riffa: fpga:0 chnl:0, recv timed out
+[21273.973336] chnl_recv_wrapcheck ret = 1024
+[21273.973337] after recv DEFINE_WAIT(wait)
+[21273.973337] pop_circ_queue()
+[21273.973337] pop_circ_queue while(1) loop
+[21273.973338] pop_circ_queue()
+[21273.973338] pop_circ_queue while(1) loop
+[21273.973339] before recv schedule_timeout()
+[21273.989338] after recv schedule_timeout()
+[21273.989340] riffa: fpga:0 chnl:0, recv timed out
+[21273.989343] chnl_recv_wrapcheck ret = 1024
+[21273.989343] after recv DEFINE_WAIT(wait)
+[21273.989344] pop_circ_queue()
+[21273.989344] pop_circ_queue while(1) loop
+[21273.989345] pop_circ_queue()
+[21273.989345] pop_circ_queue while(1) loop
+[21273.989345] before recv schedule_timeout()
+[21274.005339] after recv schedule_timeout()
+[21274.005342] riffa: fpga:0 chnl:0, recv timed out
+[21274.005345] chnl_recv_wrapcheck ret = 1024
+[21274.005346] after recv DEFINE_WAIT(wait)
+[21274.005347] pop_circ_queue()
+[21274.005347] pop_circ_queue while(1) loop
+[21274.005348] pop_circ_queue()
+[21274.005348] pop_circ_queue while(1) loop
+[21274.005349] before recv schedule_timeout()
+[21274.021334] after recv schedule_timeout()
+[21274.021337] riffa: fpga:0 chnl:0, recv timed out
+[21274.021339] chnl_recv_wrapcheck ret = 1024
+[21274.021340] after recv DEFINE_WAIT(wait)
+[21274.021340] pop_circ_queue()
+[21274.021341] pop_circ_queue while(1) loop
+[21274.021341] pop_circ_queue()
+[21274.021341] pop_circ_queue while(1) loop
+[21274.021342] before recv schedule_timeout()
+[21274.037337] after recv schedule_timeout()
+[21274.037339] riffa: fpga:0 chnl:0, recv timed out
+[21274.037341] chnl_recv_wrapcheck ret = 1024
+[21274.037342] after recv DEFINE_WAIT(wait)
+[21274.037342] pop_circ_queue()
+[21274.037343] pop_circ_queue while(1) loop
+[21274.037343] pop_circ_queue()
+[21274.037343] pop_circ_queue while(1) loop
+[21274.037344] before recv schedule_timeout()
+[21274.053335] after recv schedule_timeout()
+[21274.053337] riffa: fpga:0 chnl:0, recv timed out
+[21274.053340] chnl_recv_wrapcheck ret = 1024
+[21274.053341] after recv DEFINE_WAIT(wait)
+[21274.053341] pop_circ_queue()
+[21274.053342] pop_circ_queue while(1) loop
+[21274.053342] pop_circ_queue()
+[21274.053343] pop_circ_queue while(1) loop
+[21274.053343] before recv schedule_timeout()
+[21274.069335] after recv schedule_timeout()
+[21274.069339] riffa: fpga:0 chnl:0, recv timed out
+[21274.069342] chnl_recv_wrapcheck ret = 1024
+[21274.069343] after recv DEFINE_WAIT(wait)
+[21274.069343] pop_circ_queue()
+[21274.069344] pop_circ_queue while(1) loop
+[21274.069344] pop_circ_queue()
+[21274.069345] pop_circ_queue while(1) loop
+[21274.069345] before recv schedule_timeout()
+[21274.085334] after recv schedule_timeout()
+[21274.085336] riffa: fpga:0 chnl:0, recv timed out
+[21274.085339] chnl_recv_wrapcheck ret = 1024
+[21274.085340] after recv DEFINE_WAIT(wait)
+[21274.085340] pop_circ_queue()
+[21274.085341] pop_circ_queue while(1) loop
+[21274.085341] pop_circ_queue()
+[21274.085342] pop_circ_queue while(1) loop
+[21274.085342] before recv schedule_timeout()
+[21274.101331] after recv schedule_timeout()
+[21274.101333] riffa: fpga:0 chnl:0, recv timed out
+[21274.101336] chnl_recv_wrapcheck ret = 1024
+[21274.101337] after recv DEFINE_WAIT(wait)
+[21274.101337] pop_circ_queue()
+[21274.101338] pop_circ_queue while(1) loop
+[21274.101338] pop_circ_queue()
+[21274.101339] pop_circ_queue while(1) loop
+[21274.101339] before recv schedule_timeout()
+[21274.117338] after recv schedule_timeout()
+[21274.117341] riffa: fpga:0 chnl:0, recv timed out
+[21274.117344] chnl_recv_wrapcheck ret = 1024
+[21274.117344] after recv DEFINE_WAIT(wait)
+[21274.117344] pop_circ_queue()
+[21274.117345] pop_circ_queue while(1) loop
+[21274.117345] pop_circ_queue()
+[21274.117346] pop_circ_queue while(1) loop
+[21274.117346] before recv schedule_timeout()
+[21274.133334] after recv schedule_timeout()
+[21274.133336] riffa: fpga:0 chnl:0, recv timed out
+[21274.133339] chnl_recv_wrapcheck ret = 1024
+[21274.133339] after recv DEFINE_WAIT(wait)
+[21274.133340] pop_circ_queue()
+[21274.133340] pop_circ_queue while(1) loop
+[21274.133340] pop_circ_queue()
+[21274.133341] pop_circ_queue while(1) loop
+[21274.133341] before recv schedule_timeout()
+[21274.149333] after recv schedule_timeout()
+[21274.149335] riffa: fpga:0 chnl:0, recv timed out
+[21274.149337] chnl_recv_wrapcheck ret = 1024
+[21274.149337] after recv DEFINE_WAIT(wait)
+[21274.149338] pop_circ_queue()
+[21274.149338] pop_circ_queue while(1) loop
+[21274.149339] pop_circ_queue()
+[21274.149339] pop_circ_queue while(1) loop
+[21274.149339] before recv schedule_timeout()
+[21274.165332] after recv schedule_timeout()
+[21274.165333] riffa: fpga:0 chnl:0, recv timed out
+[21274.165335] chnl_recv_wrapcheck ret = 1024
+[21274.165336] after recv DEFINE_WAIT(wait)
+[21274.165336] pop_circ_queue()
+[21274.165336] pop_circ_queue while(1) loop
+[21274.165337] pop_circ_queue()
+[21274.165337] pop_circ_queue while(1) loop
+[21274.165337] before recv schedule_timeout()
+[21274.181332] after recv schedule_timeout()
+[21274.181333] riffa: fpga:0 chnl:0, recv timed out
+[21274.181335] chnl_recv_wrapcheck ret = 1024
+[21274.181335] after recv DEFINE_WAIT(wait)
+[21274.181336] pop_circ_queue()
+[21274.181336] pop_circ_queue while(1) loop
+[21274.181337] pop_circ_queue()
+[21274.181337] pop_circ_queue while(1) loop
+[21274.181337] before recv schedule_timeout()
+[21274.197332] after recv schedule_timeout()
+[21274.197334] riffa: fpga:0 chnl:0, recv timed out
+[21274.197335] chnl_recv_wrapcheck ret = 1024
+[21274.197336] after recv DEFINE_WAIT(wait)
+[21274.197336] pop_circ_queue()
+[21274.197336] pop_circ_queue while(1) loop
+[21274.197337] pop_circ_queue()
+[21274.197337] pop_circ_queue while(1) loop
+[21274.197337] before recv schedule_timeout()
+[21274.213332] after recv schedule_timeout()
+[21274.213333] riffa: fpga:0 chnl:0, recv timed out
+[21274.213335] chnl_recv_wrapcheck ret = 1024
+[21274.213335] after recv DEFINE_WAIT(wait)
+[21274.213336] pop_circ_queue()
+[21274.213336] pop_circ_queue while(1) loop
+[21274.213337] pop_circ_queue()
+[21274.213337] pop_circ_queue while(1) loop
+[21274.213337] before recv schedule_timeout()
+[21274.229331] after recv schedule_timeout()
+[21274.229333] riffa: fpga:0 chnl:0, recv timed out
+[21274.229335] chnl_recv_wrapcheck ret = 1024
+[21274.229336] after recv DEFINE_WAIT(wait)
+[21274.229336] pop_circ_queue()
+[21274.229336] pop_circ_queue while(1) loop
+[21274.229337] pop_circ_queue()
+[21274.229337] pop_circ_queue while(1) loop
+[21274.229337] before recv schedule_timeout()
+[21274.245331] after recv schedule_timeout()
+[21274.245333] riffa: fpga:0 chnl:0, recv timed out
+[21274.245335] chnl_recv_wrapcheck ret = 1024
+[21274.245335] after recv DEFINE_WAIT(wait)
+[21274.245335] pop_circ_queue()
+[21274.245336] pop_circ_queue while(1) loop
+[21274.245336] pop_circ_queue()
+[21274.245336] pop_circ_queue while(1) loop
+[21274.245337] before recv schedule_timeout()
+[21274.261331] after recv schedule_timeout()
+[21274.261333] riffa: fpga:0 chnl:0, recv timed out
+[21274.261336] chnl_recv_wrapcheck ret = 1024
+[21274.261337] after recv DEFINE_WAIT(wait)
+[21274.261337] pop_circ_queue()
+[21274.261337] pop_circ_queue while(1) loop
+[21274.261338] pop_circ_queue()
+[21274.261338] pop_circ_queue while(1) loop
+[21274.261338] before recv schedule_timeout()
+[21274.277330] after recv schedule_timeout()
+[21274.277332] riffa: fpga:0 chnl:0, recv timed out
+[21274.277333] chnl_recv_wrapcheck ret = 1024
+[21274.277334] after recv DEFINE_WAIT(wait)
+[21274.277334] pop_circ_queue()
+[21274.277334] pop_circ_queue while(1) loop
+[21274.277334] pop_circ_queue()
+[21274.277335] pop_circ_queue while(1) loop
+[21274.277335] before recv schedule_timeout()
+[21274.293330] after recv schedule_timeout()
+[21274.293331] riffa: fpga:0 chnl:0, recv timed out
+[21274.293333] chnl_recv_wrapcheck ret = 1024
+[21274.293333] after recv DEFINE_WAIT(wait)
+[21274.293333] pop_circ_queue()
+[21274.293334] pop_circ_queue while(1) loop
+[21274.293334] pop_circ_queue()
+[21274.293334] pop_circ_queue while(1) loop
+[21274.293335] before recv schedule_timeout()
+[21274.309329] after recv schedule_timeout()
+[21274.309330] riffa: fpga:0 chnl:0, recv timed out
+[21274.309332] chnl_recv_wrapcheck ret = 1024
+[21274.309332] after recv DEFINE_WAIT(wait)
+[21274.309332] pop_circ_queue()
+[21274.309333] pop_circ_queue while(1) loop
+[21274.309333] pop_circ_queue()
+[21274.309334] pop_circ_queue while(1) loop
+[21274.309334] before recv schedule_timeout()
+[21274.325329] after recv schedule_timeout()
+[21274.325331] riffa: fpga:0 chnl:0, recv timed out
+[21274.325333] chnl_recv_wrapcheck ret = 1024
+[21274.325333] after recv DEFINE_WAIT(wait)
+[21274.325333] pop_circ_queue()
+[21274.325334] pop_circ_queue while(1) loop
+[21274.325334] pop_circ_queue()
+[21274.325334] pop_circ_queue while(1) loop
+[21274.325335] before recv schedule_timeout()
+[21274.341327] after recv schedule_timeout()
+[21274.341328] riffa: fpga:0 chnl:0, recv timed out
+[21274.341330] chnl_recv_wrapcheck ret = 1024
+[21274.341330] after recv DEFINE_WAIT(wait)
+[21274.341331] pop_circ_queue()
+[21274.341331] pop_circ_queue while(1) loop
+[21274.341331] pop_circ_queue()
+[21274.341332] pop_circ_queue while(1) loop
+[21274.341332] before recv schedule_timeout()
+[21274.357329] after recv schedule_timeout()
+[21274.357330] riffa: fpga:0 chnl:0, recv timed out
+[21274.357332] chnl_recv_wrapcheck ret = 1024
+[21274.357332] after recv DEFINE_WAIT(wait)
+[21274.357332] pop_circ_queue()
+[21274.357333] pop_circ_queue while(1) loop
+[21274.357333] pop_circ_queue()
+[21274.357333] pop_circ_queue while(1) loop
+[21274.357334] before recv schedule_timeout()
+[21274.373331] after recv schedule_timeout()
+[21274.373332] riffa: fpga:0 chnl:0, recv timed out
+[21274.373334] chnl_recv_wrapcheck ret = 1024
+[21274.373335] after recv DEFINE_WAIT(wait)
+[21274.373335] pop_circ_queue()
+[21274.373335] pop_circ_queue while(1) loop
+[21274.373336] pop_circ_queue()
+[21274.373336] pop_circ_queue while(1) loop
+[21274.373336] before recv schedule_timeout()
+[21274.389326] after recv schedule_timeout()
+[21274.389327] riffa: fpga:0 chnl:0, recv timed out
+[21274.389329] chnl_recv_wrapcheck ret = 1024
+[21274.389329] after recv DEFINE_WAIT(wait)
+[21274.389330] pop_circ_queue()
+[21274.389330] pop_circ_queue while(1) loop
+[21274.389330] pop_circ_queue()
+[21274.389331] pop_circ_queue while(1) loop
+[21274.389331] before recv schedule_timeout()
+[21274.405329] after recv schedule_timeout()
+[21274.405330] riffa: fpga:0 chnl:0, recv timed out
+[21274.405332] chnl_recv_wrapcheck ret = 1024
+[21274.405332] after recv DEFINE_WAIT(wait)
+[21274.405333] pop_circ_queue()
+[21274.405333] pop_circ_queue while(1) loop
+[21274.405333] pop_circ_queue()
+[21274.405334] pop_circ_queue while(1) loop
+[21274.405334] before recv schedule_timeout()
+[21274.421329] after recv schedule_timeout()
+[21274.421330] riffa: fpga:0 chnl:0, recv timed out
+[21274.421332] chnl_recv_wrapcheck ret = 1024
+[21274.421332] after recv DEFINE_WAIT(wait)
+[21274.421333] pop_circ_queue()
+[21274.421333] pop_circ_queue while(1) loop
+[21274.421333] pop_circ_queue()
+[21274.421334] pop_circ_queue while(1) loop
+[21274.421334] before recv schedule_timeout()
+[21274.437325] after recv schedule_timeout()
+[21274.437327] riffa: fpga:0 chnl:0, recv timed out
+[21274.437330] chnl_recv_wrapcheck ret = 1024
+[21274.437330] after recv DEFINE_WAIT(wait)
+[21274.437330] pop_circ_queue()
+[21274.437331] pop_circ_queue while(1) loop
+[21274.437331] pop_circ_queue()
+[21274.437332] pop_circ_queue while(1) loop
+[21274.437332] before recv schedule_timeout()
+[21274.453326] after recv schedule_timeout()
+[21274.453327] riffa: fpga:0 chnl:0, recv timed out
+[21274.453329] chnl_recv_wrapcheck ret = 1024
+[21274.453330] after recv DEFINE_WAIT(wait)
+[21274.453330] pop_circ_queue()
+[21274.453330] pop_circ_queue while(1) loop
+[21274.453331] pop_circ_queue()
+[21274.453331] pop_circ_queue while(1) loop
+[21274.453331] before recv schedule_timeout()
+[21274.469326] after recv schedule_timeout()
+[21274.469328] riffa: fpga:0 chnl:0, recv timed out
+[21274.469330] chnl_recv_wrapcheck ret = 1024
+[21274.469330] after recv DEFINE_WAIT(wait)
+[21274.469331] pop_circ_queue()
+[21274.469331] pop_circ_queue while(1) loop
+[21274.469331] pop_circ_queue()
+[21274.469332] pop_circ_queue while(1) loop
+[21274.469332] before recv schedule_timeout()
+[21274.485326] after recv schedule_timeout()
+[21274.485327] riffa: fpga:0 chnl:0, recv timed out
+[21274.485329] chnl_recv_wrapcheck ret = 1024
+[21274.485329] after recv DEFINE_WAIT(wait)
+[21274.485329] pop_circ_queue()
+[21274.485330] pop_circ_queue while(1) loop
+[21274.485330] pop_circ_queue()
+[21274.485330] pop_circ_queue while(1) loop
+[21274.485331] before recv schedule_timeout()
+[21274.501326] after recv schedule_timeout()
+[21274.501328] riffa: fpga:0 chnl:0, recv timed out
+[21274.501329] chnl_recv_wrapcheck ret = 1024
+[21274.501330] after recv DEFINE_WAIT(wait)
+[21274.501330] pop_circ_queue()
+[21274.501330] pop_circ_queue while(1) loop
+[21274.501331] pop_circ_queue()
+[21274.501331] pop_circ_queue while(1) loop
+[21274.501331] before recv schedule_timeout()
+[21274.517324] after recv schedule_timeout()
+[21274.517326] riffa: fpga:0 chnl:0, recv timed out
+[21274.517328] chnl_recv_wrapcheck ret = 1024
+[21274.517328] after recv DEFINE_WAIT(wait)
+[21274.517329] pop_circ_queue()
+[21274.517329] pop_circ_queue while(1) loop
+[21274.517329] pop_circ_queue()
+[21274.517330] pop_circ_queue while(1) loop
+[21274.517330] before recv schedule_timeout()
+[21274.533325] after recv schedule_timeout()
+[21274.533326] riffa: fpga:0 chnl:0, recv timed out
+[21274.533328] chnl_recv_wrapcheck ret = 1024
+[21274.533328] after recv DEFINE_WAIT(wait)
+[21274.533329] pop_circ_queue()
+[21274.533329] pop_circ_queue while(1) loop
+[21274.533329] pop_circ_queue()
+[21274.533330] pop_circ_queue while(1) loop
+[21274.533330] before recv schedule_timeout()
+[21274.549328] after recv schedule_timeout()
+[21274.549329] riffa: fpga:0 chnl:0, recv timed out
+[21274.549331] chnl_recv_wrapcheck ret = 1024
+[21274.549331] after recv DEFINE_WAIT(wait)
+[21274.549331] pop_circ_queue()
+[21274.549332] pop_circ_queue while(1) loop
+[21274.549332] pop_circ_queue()
+[21274.549333] pop_circ_queue while(1) loop
+[21274.549333] before recv schedule_timeout()
+[21274.565324] after recv schedule_timeout()
+[21274.565326] riffa: fpga:0 chnl:0, recv timed out
+[21274.565327] chnl_recv_wrapcheck ret = 1024
+[21274.565328] after recv DEFINE_WAIT(wait)
+[21274.565328] pop_circ_queue()
+[21274.565328] pop_circ_queue while(1) loop
+[21274.565329] pop_circ_queue()
+[21274.565329] pop_circ_queue while(1) loop
+[21274.565329] before recv schedule_timeout()
+[21274.581321] after recv schedule_timeout()
+[21274.581322] riffa: fpga:0 chnl:0, recv timed out
+[21274.581324] chnl_recv_wrapcheck ret = 1024
+[21274.581325] after recv DEFINE_WAIT(wait)
+[21274.581325] pop_circ_queue()
+[21274.581325] pop_circ_queue while(1) loop
+[21274.581326] pop_circ_queue()
+[21274.581326] pop_circ_queue while(1) loop
+[21274.581326] before recv schedule_timeout()
+[21274.597324] after recv schedule_timeout()
+[21274.597325] riffa: fpga:0 chnl:0, recv timed out
+[21274.597327] chnl_recv_wrapcheck ret = 1024
+[21274.597328] after recv DEFINE_WAIT(wait)
+[21274.597328] pop_circ_queue()
+[21274.597329] pop_circ_queue while(1) loop
+[21274.597329] pop_circ_queue()
+[21274.597330] pop_circ_queue while(1) loop
+[21274.597330] before recv schedule_timeout()
+[21274.613323] after recv schedule_timeout()
+[21274.613324] riffa: fpga:0 chnl:0, recv timed out
+[21274.613326] chnl_recv_wrapcheck ret = 1024
+[21274.613326] after recv DEFINE_WAIT(wait)
+[21274.613327] pop_circ_queue()
+[21274.613327] pop_circ_queue while(1) loop
+[21274.613328] pop_circ_queue()
+[21274.613328] pop_circ_queue while(1) loop
+[21274.613328] before recv schedule_timeout()
+[21274.629324] after recv schedule_timeout()
+[21274.629325] riffa: fpga:0 chnl:0, recv timed out
+[21274.629327] chnl_recv_wrapcheck ret = 1024
+[21274.629327] after recv DEFINE_WAIT(wait)
+[21274.629328] pop_circ_queue()
+[21274.629328] pop_circ_queue while(1) loop
+[21274.629328] pop_circ_queue()
+[21274.629329] pop_circ_queue while(1) loop
+[21274.629329] before recv schedule_timeout()
+[21274.645327] after recv schedule_timeout()
+[21274.645328] riffa: fpga:0 chnl:0, recv timed out
+[21274.645330] chnl_recv_wrapcheck ret = 1024
+[21274.645331] after recv DEFINE_WAIT(wait)
+[21274.645331] pop_circ_queue()
+[21274.645332] pop_circ_queue while(1) loop
+[21274.645332] pop_circ_queue()
+[21274.645332] pop_circ_queue while(1) loop
+[21274.645333] before recv schedule_timeout()
+[21274.661322] after recv schedule_timeout()
+[21274.661323] riffa: fpga:0 chnl:0, recv timed out
+[21274.661325] chnl_recv_wrapcheck ret = 1024
+[21274.661325] after recv DEFINE_WAIT(wait)
+[21274.661326] pop_circ_queue()
+[21274.661326] pop_circ_queue while(1) loop
+[21274.661326] pop_circ_queue()
+[21274.661327] pop_circ_queue while(1) loop
+[21274.661327] before recv schedule_timeout()
+[21274.677323] after recv schedule_timeout()
+[21274.677325] riffa: fpga:0 chnl:0, recv timed out
+[21274.677326] chnl_recv_wrapcheck ret = 1024
+[21274.677327] after recv DEFINE_WAIT(wait)
+[21274.677327] pop_circ_queue()
+[21274.677327] pop_circ_queue while(1) loop
+[21274.677328] pop_circ_queue()
+[21274.677328] pop_circ_queue while(1) loop
+[21274.677328] before recv schedule_timeout()
+[21274.697323] after recv schedule_timeout()
+[21274.697324] riffa: fpga:0 chnl:0, recv timed out
+[21274.697326] chnl_recv_wrapcheck ret = 1024
+[21274.697326] after recv DEFINE_WAIT(wait)
+[21274.697327] pop_circ_queue()
+[21274.697327] pop_circ_queue while(1) loop
+[21274.697327] pop_circ_queue()
+[21274.697328] pop_circ_queue while(1) loop
+[21274.697328] before recv schedule_timeout()
+[21274.713322] after recv schedule_timeout()
+[21274.713324] riffa: fpga:0 chnl:0, recv timed out
+[21274.713325] chnl_recv_wrapcheck ret = 1024
+[21274.713326] after recv DEFINE_WAIT(wait)
+[21274.713326] pop_circ_queue()
+[21274.713326] pop_circ_queue while(1) loop
+[21274.713327] pop_circ_queue()
+[21274.713327] pop_circ_queue while(1) loop
+[21274.713328] before recv schedule_timeout()
+[21274.729320] after recv schedule_timeout()
+[21274.729321] riffa: fpga:0 chnl:0, recv timed out
+[21274.729323] chnl_recv_wrapcheck ret = 1024
+[21274.729323] after recv DEFINE_WAIT(wait)
+[21274.729323] pop_circ_queue()
+[21274.729324] pop_circ_queue while(1) loop
+[21274.729324] pop_circ_queue()
+[21274.729324] pop_circ_queue while(1) loop
+[21274.729324] before recv schedule_timeout()
+[21274.749322] after recv schedule_timeout()
+[21274.749323] riffa: fpga:0 chnl:0, recv timed out
+[21274.749325] chnl_recv_wrapcheck ret = 1024
+[21274.749325] after recv DEFINE_WAIT(wait)
+[21274.749326] pop_circ_queue()
+[21274.749326] pop_circ_queue while(1) loop
+[21274.749326] pop_circ_queue()
+[21274.749327] pop_circ_queue while(1) loop
+[21274.749327] before recv schedule_timeout()
+[21274.769318] after recv schedule_timeout()
+[21274.769319] riffa: fpga:0 chnl:0, recv timed out
+[21274.769321] chnl_recv_wrapcheck ret = 1024
+[21274.769321] after recv DEFINE_WAIT(wait)
+[21274.769321] pop_circ_queue()
+[21274.769322] pop_circ_queue while(1) loop
+[21274.769322] pop_circ_queue()
+[21274.769322] pop_circ_queue while(1) loop
+[21274.769323] before recv schedule_timeout()
+[21274.785321] after recv schedule_timeout()
+[21274.785323] riffa: fpga:0 chnl:0, recv timed out
+[21274.785324] chnl_recv_wrapcheck ret = 1024
+[21274.785325] after recv DEFINE_WAIT(wait)
+[21274.785325] pop_circ_queue()
+[21274.785325] pop_circ_queue while(1) loop
+[21274.785326] pop_circ_queue()
+[21274.785326] pop_circ_queue while(1) loop
+[21274.785326] before recv schedule_timeout()
+[21274.801322] after recv schedule_timeout()
+[21274.801324] riffa: fpga:0 chnl:0, recv timed out
+[21274.801326] chnl_recv_wrapcheck ret = 1024
+[21274.801326] after recv DEFINE_WAIT(wait)
+[21274.801326] pop_circ_queue()
+[21274.801326] pop_circ_queue while(1) loop
+[21274.801327] pop_circ_queue()
+[21274.801327] pop_circ_queue while(1) loop
+[21274.801327] before recv schedule_timeout()
+[21274.817321] after recv schedule_timeout()
+[21274.817323] riffa: fpga:0 chnl:0, recv timed out
+[21274.817324] chnl_recv_wrapcheck ret = 1024
+[21274.817325] after recv DEFINE_WAIT(wait)
+[21274.817325] pop_circ_queue()
+[21274.817325] pop_circ_queue while(1) loop
+[21274.817326] pop_circ_queue()
+[21274.817326] pop_circ_queue while(1) loop
+[21274.817326] before recv schedule_timeout()
+[21274.833322] after recv schedule_timeout()
+[21274.833324] riffa: fpga:0 chnl:0, recv timed out
+[21274.833326] chnl_recv_wrapcheck ret = 1024
+[21274.833326] after recv DEFINE_WAIT(wait)
+[21274.833326] pop_circ_queue()
+[21274.833327] pop_circ_queue while(1) loop
+[21274.833327] pop_circ_queue()
+[21274.833327] pop_circ_queue while(1) loop
+[21274.833328] before recv schedule_timeout()
+[21274.849318] after recv schedule_timeout()
+[21274.849319] riffa: fpga:0 chnl:0, recv timed out
+[21274.849321] chnl_recv_wrapcheck ret = 1024
+[21274.849321] after recv DEFINE_WAIT(wait)
+[21274.849321] pop_circ_queue()
+[21274.849322] pop_circ_queue while(1) loop
+[21274.849322] pop_circ_queue()
+[21274.849322] pop_circ_queue while(1) loop
+[21274.849323] before recv schedule_timeout()
+[21274.865320] after recv schedule_timeout()
+[21274.865321] riffa: fpga:0 chnl:0, recv timed out
+[21274.865323] chnl_recv_wrapcheck ret = 1024
+[21274.865323] after recv DEFINE_WAIT(wait)
+[21274.865324] pop_circ_queue()
+[21274.865324] pop_circ_queue while(1) loop
+[21274.865324] pop_circ_queue()
+[21274.865325] pop_circ_queue while(1) loop
+[21274.865325] before recv schedule_timeout()
+[21274.881321] after recv schedule_timeout()
+[21274.881322] riffa: fpga:0 chnl:0, recv timed out
+[21274.881324] chnl_recv_wrapcheck ret = 1024
+[21274.881324] after recv DEFINE_WAIT(wait)
+[21274.881325] pop_circ_queue()
+[21274.881325] pop_circ_queue while(1) loop
+[21274.881325] pop_circ_queue()
+[21274.881326] pop_circ_queue while(1) loop
+[21274.881326] before recv schedule_timeout()
+[21274.897318] after recv schedule_timeout()
+[21274.897319] riffa: fpga:0 chnl:0, recv timed out
+[21274.897321] chnl_recv_wrapcheck ret = 1024
+[21274.897321] after recv DEFINE_WAIT(wait)
+[21274.897322] pop_circ_queue()
+[21274.897322] pop_circ_queue while(1) loop
+[21274.897322] pop_circ_queue()
+[21274.897323] pop_circ_queue while(1) loop
+[21274.897323] before recv schedule_timeout()
+[21274.913321] after recv schedule_timeout()
+[21274.913322] riffa: fpga:0 chnl:0, recv timed out
+[21274.913324] chnl_recv_wrapcheck ret = 1024
+[21274.913324] after recv DEFINE_WAIT(wait)
+[21274.913325] pop_circ_queue()
+[21274.913325] pop_circ_queue while(1) loop
+[21274.913325] pop_circ_queue()
+[21274.913326] pop_circ_queue while(1) loop
+[21274.913326] before recv schedule_timeout()
+[21274.929316] after recv schedule_timeout()
+[21274.929317] riffa: fpga:0 chnl:0, recv timed out
+[21274.929319] chnl_recv_wrapcheck ret = 1024
+[21274.929319] after recv DEFINE_WAIT(wait)
+[21274.929320] pop_circ_queue()
+[21274.929320] pop_circ_queue while(1) loop
+[21274.929320] pop_circ_queue()
+[21274.929321] pop_circ_queue while(1) loop
+[21274.929321] before recv schedule_timeout()
+[21274.945320] after recv schedule_timeout()
+[21274.945322] riffa: fpga:0 chnl:0, recv timed out
+[21274.945323] chnl_recv_wrapcheck ret = 1024
+[21274.945324] after recv DEFINE_WAIT(wait)
+[21274.945324] pop_circ_queue()
+[21274.945324] pop_circ_queue while(1) loop
+[21274.945325] pop_circ_queue()
+[21274.945325] pop_circ_queue while(1) loop
+[21274.945325] before recv schedule_timeout()
+[21274.961317] after recv schedule_timeout()
+[21274.961318] riffa: fpga:0 chnl:0, recv timed out
+[21274.961320] chnl_recv_wrapcheck ret = 1024
+[21274.961320] after recv DEFINE_WAIT(wait)
+[21274.961320] pop_circ_queue()
+[21274.961321] pop_circ_queue while(1) loop
+[21274.961321] pop_circ_queue()
+[21274.961321] pop_circ_queue while(1) loop
+[21274.961322] before recv schedule_timeout()
+[21274.977319] after recv schedule_timeout()
+[21274.977320] riffa: fpga:0 chnl:0, recv timed out
+[21274.977322] chnl_recv_wrapcheck ret = 1024
+[21274.977322] after recv DEFINE_WAIT(wait)
+[21274.977322] pop_circ_queue()
+[21274.977323] pop_circ_queue while(1) loop
+[21274.977323] pop_circ_queue()
+[21274.977323] pop_circ_queue while(1) loop
+[21274.977324] before recv schedule_timeout()
+[21274.993319] after recv schedule_timeout()
+[21274.993321] riffa: fpga:0 chnl:0, recv timed out
+[21274.993322] chnl_recv_wrapcheck ret = 1024
+[21274.993323] after recv DEFINE_WAIT(wait)
+[21274.993323] pop_circ_queue()
+[21274.993323] pop_circ_queue while(1) loop
+[21274.993323] pop_circ_queue()
+[21274.993324] pop_circ_queue while(1) loop
+[21274.993324] before recv schedule_timeout()
+[21275.009319] after recv schedule_timeout()
+[21275.009320] riffa: fpga:0 chnl:0, recv timed out
+[21275.009321] chnl_recv_wrapcheck ret = 1024
+[21275.009322] after recv DEFINE_WAIT(wait)
+[21275.009322] pop_circ_queue()
+[21275.009322] pop_circ_queue while(1) loop
+[21275.009323] pop_circ_queue()
+[21275.009323] pop_circ_queue while(1) loop
+[21275.009323] before recv schedule_timeout()
+[21275.025318] after recv schedule_timeout()
+[21275.025319] riffa: fpga:0 chnl:0, recv timed out
+[21275.025321] chnl_recv_wrapcheck ret = 1024
+[21275.025321] after recv DEFINE_WAIT(wait)
+[21275.025321] pop_circ_queue()
+[21275.025322] pop_circ_queue while(1) loop
+[21275.025322] pop_circ_queue()
+[21275.025323] pop_circ_queue while(1) loop
+[21275.025323] before recv schedule_timeout()
+[21275.041318] after recv schedule_timeout()
+[21275.041319] riffa: fpga:0 chnl:0, recv timed out
+[21275.041321] chnl_recv_wrapcheck ret = 1024
+[21275.041321] after recv DEFINE_WAIT(wait)
+[21275.041322] pop_circ_queue()
+[21275.041322] pop_circ_queue while(1) loop
+[21275.041322] pop_circ_queue()
+[21275.041322] pop_circ_queue while(1) loop
+[21275.041323] before recv schedule_timeout()
+[21275.057318] after recv schedule_timeout()
+[21275.057319] riffa: fpga:0 chnl:0, recv timed out
+[21275.057321] chnl_recv_wrapcheck ret = 1024
+[21275.057321] after recv DEFINE_WAIT(wait)
+[21275.057321] pop_circ_queue()
+[21275.057322] pop_circ_queue while(1) loop
+[21275.057322] pop_circ_queue()
+[21275.057322] pop_circ_queue while(1) loop
+[21275.057323] before recv schedule_timeout()
+[21275.073314] after recv schedule_timeout()
+[21275.073315] riffa: fpga:0 chnl:0, recv timed out
+[21275.073317] chnl_recv_wrapcheck ret = 1024
+[21275.073317] after recv DEFINE_WAIT(wait)
+[21275.073318] pop_circ_queue()
+[21275.073318] pop_circ_queue while(1) loop
+[21275.073318] pop_circ_queue()
+[21275.073319] pop_circ_queue while(1) loop
+[21275.073319] before recv schedule_timeout()
+[21275.089317] after recv schedule_timeout()
+[21275.089318] riffa: fpga:0 chnl:0, recv timed out
+[21275.089320] chnl_recv_wrapcheck ret = 1024
+[21275.089320] after recv DEFINE_WAIT(wait)
+[21275.089320] pop_circ_queue()
+[21275.089321] pop_circ_queue while(1) loop
+[21275.089321] pop_circ_queue()
+[21275.089321] pop_circ_queue while(1) loop
+[21275.089322] before recv schedule_timeout()
+[21275.105317] after recv schedule_timeout()
+[21275.105318] riffa: fpga:0 chnl:0, recv timed out
+[21275.105320] chnl_recv_wrapcheck ret = 1024
+[21275.105321] after recv DEFINE_WAIT(wait)
+[21275.105321] pop_circ_queue()
+[21275.105321] pop_circ_queue while(1) loop
+[21275.105321] pop_circ_queue()
+[21275.105322] pop_circ_queue while(1) loop
+[21275.105322] before recv schedule_timeout()
+[21275.121317] after recv schedule_timeout()
+[21275.121318] riffa: fpga:0 chnl:0, recv timed out
+[21275.121320] chnl_recv_wrapcheck ret = 1024
+[21275.121320] after recv DEFINE_WAIT(wait)
+[21275.121320] pop_circ_queue()
+[21275.121321] pop_circ_queue while(1) loop
+[21275.121321] pop_circ_queue()
+[21275.121321] pop_circ_queue while(1) loop
+[21275.121322] before recv schedule_timeout()
+[21275.137316] after recv schedule_timeout()
+[21275.137317] riffa: fpga:0 chnl:0, recv timed out
+[21275.137319] chnl_recv_wrapcheck ret = 1024
+[21275.137319] after recv DEFINE_WAIT(wait)
+[21275.137320] pop_circ_queue()
+[21275.137320] pop_circ_queue while(1) loop
+[21275.137320] pop_circ_queue()
+[21275.137321] pop_circ_queue while(1) loop
+[21275.137321] before recv schedule_timeout()
+[21275.153316] after recv schedule_timeout()
+[21275.153317] riffa: fpga:0 chnl:0, recv timed out
+[21275.153319] chnl_recv_wrapcheck ret = 1024
+[21275.153319] after recv DEFINE_WAIT(wait)
+[21275.153320] pop_circ_queue()
+[21275.153320] pop_circ_queue while(1) loop
+[21275.153320] pop_circ_queue()
+[21275.153321] pop_circ_queue while(1) loop
+[21275.153321] before recv schedule_timeout()
+[21275.169316] after recv schedule_timeout()
+[21275.169317] riffa: fpga:0 chnl:0, recv timed out
+[21275.169319] chnl_recv_wrapcheck ret = 1024
+[21275.169319] after recv DEFINE_WAIT(wait)
+[21275.169319] pop_circ_queue()
+[21275.169320] pop_circ_queue while(1) loop
+[21275.169320] pop_circ_queue()
+[21275.169320] pop_circ_queue while(1) loop
+[21275.169321] before recv schedule_timeout()
+[21275.185315] after recv schedule_timeout()
+[21275.185316] riffa: fpga:0 chnl:0, recv timed out
+[21275.185318] chnl_recv_wrapcheck ret = 1024
+[21275.185318] after recv DEFINE_WAIT(wait)
+[21275.185318] pop_circ_queue()
+[21275.185319] pop_circ_queue while(1) loop
+[21275.185319] pop_circ_queue()
+[21275.185319] pop_circ_queue while(1) loop
+[21275.185320] before recv schedule_timeout()
+[21275.201319] after recv schedule_timeout()
+[21275.201320] riffa: fpga:0 chnl:0, recv timed out
+[21275.201322] chnl_recv_wrapcheck ret = 1024
+[21275.201322] after recv DEFINE_WAIT(wait)
+[21275.201323] pop_circ_queue()
+[21275.201323] pop_circ_queue while(1) loop
+[21275.201323] pop_circ_queue()
+[21275.201324] pop_circ_queue while(1) loop
+[21275.201324] before recv schedule_timeout()
+[21275.217315] after recv schedule_timeout()
+[21275.217316] riffa: fpga:0 chnl:0, recv timed out
+[21275.217318] chnl_recv_wrapcheck ret = 1024
+[21275.217318] after recv DEFINE_WAIT(wait)
+[21275.217318] pop_circ_queue()
+[21275.217319] pop_circ_queue while(1) loop
+[21275.217319] pop_circ_queue()
+[21275.217319] pop_circ_queue while(1) loop
+[21275.217320] before recv schedule_timeout()
+[21275.233315] after recv schedule_timeout()
+[21275.233317] riffa: fpga:0 chnl:0, recv timed out
+[21275.233318] chnl_recv_wrapcheck ret = 1024
+[21275.233319] after recv DEFINE_WAIT(wait)
+[21275.233319] pop_circ_queue()
+[21275.233319] pop_circ_queue while(1) loop
+[21275.233320] pop_circ_queue()
+[21275.233320] pop_circ_queue while(1) loop
+[21275.233320] before recv schedule_timeout()
+[21275.249314] after recv schedule_timeout()
+[21275.249315] riffa: fpga:0 chnl:0, recv timed out
+[21275.249317] chnl_recv_wrapcheck ret = 1024
+[21275.249317] after recv DEFINE_WAIT(wait)
+[21275.249318] pop_circ_queue()
+[21275.249318] pop_circ_queue while(1) loop
+[21275.249318] pop_circ_queue()
+[21275.249319] pop_circ_queue while(1) loop
+[21275.249319] before recv schedule_timeout()
+[21275.265314] after recv schedule_timeout()
+[21275.265315] riffa: fpga:0 chnl:0, recv timed out
+[21275.265317] chnl_recv_wrapcheck ret = 1024
+[21275.265317] after recv DEFINE_WAIT(wait)
+[21275.265317] pop_circ_queue()
+[21275.265318] pop_circ_queue while(1) loop
+[21275.265318] pop_circ_queue()
+[21275.265318] pop_circ_queue while(1) loop
+[21275.265319] before recv schedule_timeout()
+[21275.281313] after recv schedule_timeout()
+[21275.281315] riffa: fpga:0 chnl:0, recv timed out
+[21275.281316] chnl_recv_wrapcheck ret = 1024
+[21275.281317] after recv DEFINE_WAIT(wait)
+[21275.281317] pop_circ_queue()
+[21275.281318] pop_circ_queue while(1) loop
+[21275.281318] pop_circ_queue()
+[21275.281318] pop_circ_queue while(1) loop
+[21275.281318] before recv schedule_timeout()
+[21275.297313] after recv schedule_timeout()
+[21275.297314] riffa: fpga:0 chnl:0, recv timed out
+[21275.297316] chnl_recv_wrapcheck ret = 1024
+[21275.297317] after recv DEFINE_WAIT(wait)
+[21275.297317] pop_circ_queue()
+[21275.297317] pop_circ_queue while(1) loop
+[21275.297317] pop_circ_queue()
+[21275.297318] pop_circ_queue while(1) loop
+[21275.297318] before recv schedule_timeout()
+[21275.313313] after recv schedule_timeout()
+[21275.313314] riffa: fpga:0 chnl:0, recv timed out
+[21275.313316] chnl_recv_wrapcheck ret = 1024
+[21275.313317] after recv DEFINE_WAIT(wait)
+[21275.313317] pop_circ_queue()
+[21275.313317] pop_circ_queue while(1) loop
+[21275.313318] pop_circ_queue()
+[21275.313318] pop_circ_queue while(1) loop
+[21275.313318] before recv schedule_timeout()
+[21275.329314] after recv schedule_timeout()
+[21275.329315] riffa: fpga:0 chnl:0, recv timed out
+[21275.329317] chnl_recv_wrapcheck ret = 1024
+[21275.329317] after recv DEFINE_WAIT(wait)
+[21275.329317] pop_circ_queue()
+[21275.329318] pop_circ_queue while(1) loop
+[21275.329318] pop_circ_queue()
+[21275.329318] pop_circ_queue while(1) loop
+[21275.329319] before recv schedule_timeout()
+[21275.345311] after recv schedule_timeout()
+[21275.345313] riffa: fpga:0 chnl:0, recv timed out
+[21275.345314] chnl_recv_wrapcheck ret = 1024
+[21275.345315] after recv DEFINE_WAIT(wait)
+[21275.345315] pop_circ_queue()
+[21275.345315] pop_circ_queue while(1) loop
+[21275.345316] pop_circ_queue()
+[21275.345316] pop_circ_queue while(1) loop
+[21275.345316] before recv schedule_timeout()
+[21275.361313] after recv schedule_timeout()
+[21275.361314] riffa: fpga:0 chnl:0, recv timed out
+[21275.361316] chnl_recv_wrapcheck ret = 1024
+[21275.361316] after recv DEFINE_WAIT(wait)
+[21275.361316] pop_circ_queue()
+[21275.361317] pop_circ_queue while(1) loop
+[21275.361317] pop_circ_queue()
+[21275.361317] pop_circ_queue while(1) loop
+[21275.361318] before recv schedule_timeout()
+[21275.377318] after recv schedule_timeout()
+[21275.377319] riffa: fpga:0 chnl:0, recv timed out
+[21275.377321] chnl_recv_wrapcheck ret = 1024
+[21275.377321] after recv DEFINE_WAIT(wait)
+[21275.377322] pop_circ_queue()
+[21275.377322] pop_circ_queue while(1) loop
+[21275.377322] pop_circ_queue()
+[21275.377323] pop_circ_queue while(1) loop
+[21275.377323] before recv schedule_timeout()
+[21275.393312] after recv schedule_timeout()
+[21275.393314] riffa: fpga:0 chnl:0, recv timed out
+[21275.393315] chnl_recv_wrapcheck ret = 1024
+[21275.393316] after recv DEFINE_WAIT(wait)
+[21275.393316] pop_circ_queue()
+[21275.393316] pop_circ_queue while(1) loop
+[21275.393317] pop_circ_queue()
+[21275.393317] pop_circ_queue while(1) loop
+[21275.393317] before recv schedule_timeout()
+[21275.409311] after recv schedule_timeout()
+[21275.409312] riffa: fpga:0 chnl:0, recv timed out
+[21275.409314] chnl_recv_wrapcheck ret = 1024
+[21275.409314] after recv DEFINE_WAIT(wait)
+[21275.409314] pop_circ_queue()
+[21275.409315] pop_circ_queue while(1) loop
+[21275.409315] pop_circ_queue()
+[21275.409316] pop_circ_queue while(1) loop
+[21275.409316] before recv schedule_timeout()
+[21275.425316] after recv schedule_timeout()
+[21275.425317] riffa: fpga:0 chnl:0, recv timed out
+[21275.425319] chnl_recv_wrapcheck ret = 1024
+[21275.425319] after recv DEFINE_WAIT(wait)
+[21275.425319] pop_circ_queue()
+[21275.425320] pop_circ_queue while(1) loop
+[21275.425320] pop_circ_queue()
+[21275.425320] pop_circ_queue while(1) loop
+[21275.425321] before recv schedule_timeout()
+[21275.441316] after recv schedule_timeout()
+[21275.441317] riffa: fpga:0 chnl:0, recv timed out
+[21275.441319] chnl_recv_wrapcheck ret = 1024
+[21275.441319] after recv DEFINE_WAIT(wait)
+[21275.441319] pop_circ_queue()
+[21275.441320] pop_circ_queue while(1) loop
+[21275.441320] pop_circ_queue()
+[21275.441320] pop_circ_queue while(1) loop
+[21275.441321] before recv schedule_timeout()
+[21275.457308] after recv schedule_timeout()
+[21275.457309] riffa: fpga:0 chnl:0, recv timed out
+[21275.457311] chnl_recv_wrapcheck ret = 1024
+[21275.457311] after recv DEFINE_WAIT(wait)
+[21275.457312] pop_circ_queue()
+[21275.457312] pop_circ_queue while(1) loop
+[21275.457312] pop_circ_queue()
+[21275.457313] pop_circ_queue while(1) loop
+[21275.457313] before recv schedule_timeout()
+[21275.473310] after recv schedule_timeout()
+[21275.473312] riffa: fpga:0 chnl:0, recv timed out
+[21275.473313] chnl_recv_wrapcheck ret = 1024
+[21275.473314] after recv DEFINE_WAIT(wait)
+[21275.473314] pop_circ_queue()
+[21275.473314] pop_circ_queue while(1) loop
+[21275.473315] pop_circ_queue()
+[21275.473315] pop_circ_queue while(1) loop
+[21275.473315] before recv schedule_timeout()
+[21275.489309] after recv schedule_timeout()
+[21275.489310] riffa: fpga:0 chnl:0, recv timed out
+[21275.489312] chnl_recv_wrapcheck ret = 1024
+[21275.489312] after recv DEFINE_WAIT(wait)
+[21275.489312] pop_circ_queue()
+[21275.489312] pop_circ_queue while(1) loop
+[21275.489313] pop_circ_queue()
+[21275.489313] pop_circ_queue while(1) loop
+[21275.489313] before recv schedule_timeout()
+[21275.505310] after recv schedule_timeout()
+[21275.505312] riffa: fpga:0 chnl:0, recv timed out
+[21275.505313] chnl_recv_wrapcheck ret = 1024
+[21275.505314] after recv DEFINE_WAIT(wait)
+[21275.505314] pop_circ_queue()
+[21275.505314] pop_circ_queue while(1) loop
+[21275.505315] pop_circ_queue()
+[21275.505315] pop_circ_queue while(1) loop
+[21275.505315] before recv schedule_timeout()
+[21275.521307] after recv schedule_timeout()
+[21275.521308] riffa: fpga:0 chnl:0, recv timed out
+[21275.521310] chnl_recv_wrapcheck ret = 1024
+[21275.521310] after recv DEFINE_WAIT(wait)
+[21275.521311] pop_circ_queue()
+[21275.521311] pop_circ_queue while(1) loop
+[21275.521312] pop_circ_queue()
+[21275.521312] pop_circ_queue while(1) loop
+[21275.521312] before recv schedule_timeout()
+[21275.537309] after recv schedule_timeout()
+[21275.537310] riffa: fpga:0 chnl:0, recv timed out
+[21275.537312] chnl_recv_wrapcheck ret = 1024
+[21275.537312] after recv DEFINE_WAIT(wait)
+[21275.537313] pop_circ_queue()
+[21275.537313] pop_circ_queue while(1) loop
+[21275.537313] pop_circ_queue()
+[21275.537314] pop_circ_queue while(1) loop
+[21275.537314] before recv schedule_timeout()
+[21275.538999] after recv schedule_timeout()
+[21275.539000] chnl_recv_wrapcheck ret = 512
+[21275.539000] after recv DEFINE_WAIT(wait)
+[21275.539001] pop_circ_queue()
+[21275.539001] pop_circ_queue while(1) loop
+[21275.539001] pop_circ_queue()
+[21275.539002] pop_circ_queue while(1) loop
+[21275.539002] before recv schedule_timeout()
+[21275.539003] after recv schedule_timeout()
+[21275.539004] chnl_recv_wrapcheck ret = 0
+[21275.539004] after recv DEFINE_WAIT(wait)
+[21275.539005] pop_circ_queue()
+[21275.539005] pop_circ_queue while(1) loop
+[21275.539005] pop_circ_queue()
+[21275.539005] pop_circ_queue while(1) loop
+[21275.539006] before recv schedule_timeout()
+[21275.539006] after recv schedule_timeout()
+[21275.539007] chnl_recv_wrapcheck ret = -512
+

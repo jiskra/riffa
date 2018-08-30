@@ -1,0 +1,134 @@
+[11604.212200] chnl_recv_wrapcheck len = 2048
+[11604.212201] after recv DEFINE_WAIT(wait)
+[11604.212201] pop_circ_queue()
+[11604.212202] pop_circ_queue while(1) loop
+[11604.212202] pop_circ_queue()
+[11604.212203] pop_circ_queue while(1) loop
+[11604.212203] before recv schedule_timeout()
+[11604.212414] chnl_send_wrapcheck len = 2048
+[11604.212415] after send DEFINE_WAIT(wait)
+[11604.212415] before send message queue is cleared
+[11604.212415] pop_circ_queue()
+[11604.212416] pop_circ_queue while(1) loop
+[11604.212416] after send message queue is cleared
+[11604.212417] riffa: fpga:0 chnl:0, send (len:1024 off:0 last:1)
+[11604.212419] riffa: fpga:0 chnl:0, send sg buf populated, 1 sent
+[11604.212420] pop_circ_queue()
+[11604.212420] pop_circ_queue while(1) loop
+[11604.212420] before send prepare_to_wait()
+[11604.212420] after send prepare_to_wait()
+[11604.212421] pop_circ_queue()
+[11604.212422] push_circ_queue() val1=2 , val2=1
+[11604.212422] push_circ_queue() val1=1 , val2=1024
+[11604.212423] pop_circ_queue while(1) loop
+[11604.212424] before send schedule_timeout()
+[11604.212425] riffa: fpga:0 chnl:0, recv txn (len:1024 off:0 last:1)
+[11604.212428] push_circ_queue() val1=4 , val2=0
+[11604.212429] after recv schedule_timeout()
+[11604.212429] pop_circ_queue()
+[11604.212429] pop_circ_queue while(1) loop
+[11604.212430] riffa: fpga:0 chnl:0, send sg buf read
+[11604.212431] pop_circ_queue() val1=2 , val2=1
+[11604.212432] push_circ_queue() val1=3 , val2=1024
+[11604.212432] riffa: fpga:0 chnl:0, send txn done
+[11604.212433] msg_type: 2
+[11604.212433] EVENT_TXN_OFFLAST chnl_recv()
+[11604.212433] pop_circ_queue()
+[11604.212434] pop_circ_queue while(1) loop
+[11604.212434] pop_circ_queue() val1=1 , val2=1024
+[11604.212435] msg_type: 1
+[11604.212435] EVENT_TXN_LEN chnl_recv()
+[11604.212435] EVENT_TXN_LEN length = 4096
+[11604.212436] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[11604.212436] after send schedule_timeout()
+[11604.212436] pop_circ_queue()
+[11604.212437] pop_circ_queue while(1) loop
+[11604.212437] pop_circ_queue() val1=4 , val2=0
+[11604.212438] pop_circ_queue()
+[11604.212438] riffa: fpga:0 chnl:0, recv sg buf populated, 2 sent
+[11604.212439] pop_circ_queue while(1) loop
+[11604.212439] pop_circ_queue()
+[11604.212439] pop_circ_queue while(1) loop
+[11604.212441] pop_circ_queue() val1=3 , val2=1024
+[11604.212442] push_circ_queue() val1=4 , val2=0
+[11604.212442] pop_circ_queue()
+[11604.212443] riffa: fpga:0 chnl:0, recv sg buf read
+[11604.212443] riffa: fpga:0 chnl:0, sent 1024 words
+[11604.212444] push_circ_queue() val1=3 , val2=1024
+[11604.212444] pop_circ_queue while(1) loop
+[11604.212445] riffa: fpga:0 chnl:0, recv txn done
+[11604.212446] pop_circ_queue() val1=4 , val2=0
+[11604.212447] chnl_send_wrapcheck ret = 1024
+[11604.212447] msg_type: 4
+[11604.212448] EVENT_SG_BUF_READ chnl_recv()
+[11604.212448] after send DEFINE_WAIT(wait)
+[11604.212449] pop_circ_queue()
+[11604.212449] before send message queue is cleared
+[11604.212449] pop_circ_queue()
+[11604.212450] pop_circ_queue while(1) loop
+[11604.212450] pop_circ_queue while(1) loop
+[11604.212451] pop_circ_queue() val1=3 , val2=1024
+[11604.212451] msg_type: 3
+[11604.212452] after send message queue is cleared
+[11604.212453] EVENT_TXN_DONE chnl_recv()
+[11604.212453] riffa: fpga:0 chnl:0, send (len:1024 off:0 last:1)
+[11604.212455] riffa: fpga:0 chnl:0, received 1024 words
+[11604.212456] riffa: fpga:0 chnl:0, send sg buf populated, 2 sent
+[11604.212456] pop_circ_queue()
+[11604.212457] pop_circ_queue while(1) loop
+[11604.212457] chnl_recv_wrapcheck ret = 1024
+[11604.212458] push_circ_queue() val1=2 , val2=1
+[11604.212458] after recv DEFINE_WAIT(wait)
+[11604.212459] pop_circ_queue()
+[11604.212459] before send prepare_to_wait()
+[11604.212460] after send prepare_to_wait()
+[11604.212461] push_circ_queue() val1=1 , val2=1024
+[11604.212461] pop_circ_queue while(1) loop
+[11604.212462] riffa: fpga:0 chnl:0, recv txn (len:1024 off:0 last:1)
+[11604.212463] pop_circ_queue()
+[11604.212464] push_circ_queue() val1=4 , val2=0
+[11604.212465] riffa: fpga:0 chnl:0, send sg buf read
+[11604.212465] pop_circ_queue() val1=2 , val2=1
+[11604.212466] msg_type: 2
+[11604.212466] pop_circ_queue while(1) loop
+[11604.212467] pop_circ_queue() val1=4 , val2=0
+[11604.212468] EVENT_TXN_OFFLAST chnl_recv()
+[11604.212468] pop_circ_queue()
+[11604.212468] pop_circ_queue()
+[11604.212469] push_circ_queue() val1=3 , val2=1024
+[11604.212470] pop_circ_queue while(1) loop
+[11604.212471] pop_circ_queue() val1=1 , val2=1024
+[11604.212471] pop_circ_queue while(1) loop
+[11604.212472] before send prepare_to_wait()
+[11604.212473] riffa: fpga:0 chnl:0, send txn done
+[11604.212473] msg_type: 1
+[11604.212474] after send prepare_to_wait()
+[11604.212474] EVENT_TXN_LEN chnl_recv()
+[11604.212474] EVENT_TXN_LEN length = 4096
+[11604.212475] pop_circ_queue()
+[11604.212475] EVENT_TXN_LEN (length > 0 || overflow > 0)
+[11604.212476] pop_circ_queue while(1) loop
+[11604.212477] pop_circ_queue() val1=3 , val2=1024
+[11604.212477] riffa: fpga:0 chnl:0, recv sg buf populated, 2 sent
+[11604.212478] riffa: fpga:0 chnl:0, sent 1024 words
+[11604.212478] chnl_send_wrapcheck ret = 2048
+[11604.212479] pop_circ_queue()
+[11604.212479] pop_circ_queue while(1) loop
+[11604.212480] push_circ_queue() val1=4 , val2=0
+[11604.212480] pop_circ_queue()
+[11604.212481] pop_circ_queue while(1) loop
+[11604.212482] riffa: fpga:0 chnl:0, recv sg buf read
+[11604.212482] pop_circ_queue() val1=4 , val2=0
+[11604.212483] msg_type: 4
+[11604.212483] EVENT_SG_BUF_READ chnl_recv()
+[11604.212484] push_circ_queue() val1=3 , val2=1024
+[11604.212484] pop_circ_queue()
+[11604.212485] pop_circ_queue while(1) loop
+[11604.212486] riffa: fpga:0 chnl:0, recv txn done
+[11604.212487] pop_circ_queue() val1=3 , val2=1024
+[11604.212487] msg_type: 3
+[11604.212488] EVENT_TXN_DONE chnl_recv()
+[11604.212488] riffa: fpga:0 chnl:0, received 1024 words
+[11604.212489] chnl_recv_wrapcheck ret = 2048
+phung@UbuntuHW15:~/Documents/fpga_overlay/riffa/c_c++/linux/x64/test_apps$ 
+

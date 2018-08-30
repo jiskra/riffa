@@ -45,6 +45,8 @@
 module channel_128 #(
 	parameter C_DATA_WIDTH = 9'd128,
 	parameter C_MAX_READ_REQ = 2,					// Max read: 000=128B, 001=256B, 010=512B, 011=1024B, 100=2048B, 101=4096B
+	parameter C_FIFO_DEPTH = 512,
+	parameter C_FIFO_DEPTH_WIDTH = clog2((2**clog2(C_FIFO_DEPTH))+1),
 	// Local parameters
 	parameter C_RX_FIFO_DEPTH = 1024,
 	parameter C_TX_FIFO_DEPTH = 512,
@@ -83,6 +85,7 @@ module channel_128 #(
 	output [31:0] TXN_TX_DONE_LEN,					// Write transaction actual transfer length
 	output TXN_TX_DONE,								// Write transaction done
 	input TXN_TX_DONE_ACK,							// Write transaction actual transfer length read
+	output TXN_TX_STARTING, 				// Write transaction is just about to start
 
 	output RX_REQ,									// Read request
 	input RX_REQ_ACK,								// Read request accepted
@@ -128,11 +131,11 @@ module channel_128 #(
 	input [30:0] CHNL_TX_OFF,						// Channel write offset
 	input [C_DATA_WIDTH-1:0] CHNL_TX_DATA,			// Channel write data
 	input CHNL_TX_DATA_VALID,						// Channel write data valid
-	output CHNL_TX_DATA_REN							// Channel write data has been recieved
+	output CHNL_TX_DATA_REN,							// Channel write data has been received
+	output [C_FIFO_DEPTH_WIDTH-1:0] WBUFCOUNT		// Tx fifo count 
 );
 
 `include "functions.vh"
-
 
 wire	[C_DATA_WIDTH-1:0]	wTxSgData;
 wire						wTxSgDataEmpty;
@@ -226,6 +229,7 @@ tx_port_128 #(
 	.TXN_DONE_LEN(TXN_TX_DONE_LEN),
 	.TXN_DONE(TXN_TX_DONE),
 	.TXN_DONE_ACK(TXN_TX_DONE_ACK),
+	.TXN_STARTING(TXN_TX_STARTING),
 	
 	.SG_DATA(wTxSgData),
 	.SG_DATA_EMPTY(wTxSgDataEmpty),
@@ -249,7 +253,8 @@ tx_port_128 #(
 	.CHNL_TX_OFF(CHNL_TX_OFF), 
 	.CHNL_TX_DATA(CHNL_TX_DATA), 
 	.CHNL_TX_DATA_VALID(CHNL_TX_DATA_VALID), 
-	.CHNL_TX_DATA_REN(CHNL_TX_DATA_REN)
+	.CHNL_TX_DATA_REN(CHNL_TX_DATA_REN),
+	.WBUFCOUNT(WBUFCOUNT)
 );
 
 endmodule

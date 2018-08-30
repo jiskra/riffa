@@ -46,6 +46,14 @@
 #include <linux/slab.h>
 #include "circ_queue.h"
 
+#define DBUG 1
+
+#ifdef DEBUG
+#define DEBUG_MSG(...) printk(__VA_ARGS__)
+#else
+#define DEBUG_MSG(...)
+#endif
+
 circ_queue * init_circ_queue(int len)
 {
 	int i;
@@ -53,7 +61,7 @@ circ_queue * init_circ_queue(int len)
 
 	q = kzalloc(sizeof(circ_queue), GFP_KERNEL);
 	if (q == NULL) {
-		printk(KERN_ERR "Not enough memory to allocate circ_queue");
+		DEBUG_MSG(KERN_ERR "Not enough memory to allocate circ_queue");
 		return NULL;
 	}
 
@@ -63,13 +71,13 @@ circ_queue * init_circ_queue(int len)
 
 	q->vals = (unsigned int**) kzalloc(len*sizeof(unsigned int*), GFP_KERNEL);  
 	if (q->vals == NULL) {
-		printk(KERN_ERR "Not enough memory to allocate circ_queue array");
+		DEBUG_MSG(KERN_ERR "Not enough memory to allocate circ_queue array");
 		return NULL;
 	}
 	for (i = 0; i < len; i++) {
 		q->vals[i] = (unsigned int*) kzalloc(2*sizeof(unsigned int), GFP_KERNEL);
 		if (q->vals[i] == NULL) {
-			printk(KERN_ERR "Not enough memory to allocate circ_queue array position");
+			DEBUG_MSG(KERN_ERR "Not enough memory to allocate circ_queue array position");
 			return NULL;
 		}
 	}
@@ -80,16 +88,16 @@ circ_queue * init_circ_queue(int len)
 /**
  * Internal function to help count. Returns the queue size normalized position.
  */
-unsigned int queue_count_to_index(unsigned int count, unsigned int len)
+inline unsigned int queue_count_to_index(unsigned int count, unsigned int len)
 {
 	return (count % len);
 }
 
-int push_circ_queue(circ_queue * q, unsigned int val1, unsigned int val2)
+inline int push_circ_queue(circ_queue * q, unsigned int val1, unsigned int val2)
 {
 	unsigned int currReadIndex;
 	unsigned int currWriteIndex;
-
+	DEBUG_MSG(KERN_INFO "push_circ_queue() val1=%d , val2=%d\n", val1, val2); // added by cheng fei
 	currWriteIndex = atomic_read(&q->writeIndex);
 	currReadIndex  = atomic_read(&q->readIndex);
 	if (queue_count_to_index(currWriteIndex+1, q->len) == queue_count_to_index(currReadIndex, q->len)) {
@@ -107,13 +115,13 @@ int push_circ_queue(circ_queue * q, unsigned int val1, unsigned int val2)
 	return 0;
 }
 
-int pop_circ_queue(circ_queue * q, unsigned int * val1, unsigned int * val2)
+inline int pop_circ_queue(circ_queue * q, unsigned int * val1, unsigned int * val2)
 {
 	unsigned int currReadIndex;
 	unsigned int currMaxReadIndex;
-
+	DEBUG_MSG(KERN_INFO "pop_circ_queue()\n"); // added by cheng fei
 	do
-	{
+	{	DEBUG_MSG(KERN_INFO "pop_circ_queue while(1) loop\n"); // added by cheng fei
 		currReadIndex = atomic_read(&q->readIndex);
 		currMaxReadIndex = atomic_read(&q->writeIndex);
 		if (queue_count_to_index(currReadIndex, q->len) == queue_count_to_index(currMaxReadIndex, q->len)) {
@@ -125,7 +133,7 @@ int pop_circ_queue(circ_queue * q, unsigned int * val1, unsigned int * val2)
 		// Retrieve the data from the queue
 		*val1 = q->vals[queue_count_to_index(currReadIndex, q->len)][0];
 		*val2 = q->vals[queue_count_to_index(currReadIndex, q->len)][1];
-
+		DEBUG_MSG(KERN_INFO "pop_circ_queue() val1=%d , val2=%d\n", *val1, *val2); // added by cheng fei
 		// Try to perfrom now the CAS operation on the read index. If we succeed
 		// label & val already contain what q->readIndex pointed to before we 
 		// increased it.

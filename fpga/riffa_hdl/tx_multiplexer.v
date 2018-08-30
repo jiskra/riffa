@@ -47,12 +47,15 @@ module tx_multiplexer
       parameter C_NUM_CHNL = 12,
       parameter C_TAG_WIDTH = 5,
       parameter C_VENDOR = "ALTERA",
-      parameter C_DEPTH_PACKETS = 10
+      parameter C_DEPTH_PACKETS = 10,
+		parameter C_FIFO_DEPTH = 512,
+	   parameter C_FIFO_DEPTH_WIDTH = clog2((2**clog2(C_FIFO_DEPTH))+1)
       )
     (
      input                                     CLK,
      input                                     RST_IN,
 
+	  input [C_FIFO_DEPTH_WIDTH-1:0] 			  WBUFCOUNT, // Tx fifo count 
      input [C_NUM_CHNL-1:0]                    WR_REQ, // Write request
      input [(C_NUM_CHNL*`SIG_ADDR_W)-1:0]      WR_ADDR, // Write address
      input [(C_NUM_CHNL*`SIG_LEN_W)-1:0]       WR_LEN, // Write data length
@@ -248,14 +251,17 @@ module tx_multiplexer
                  .TXR_META_READY        (TXR_META_READY));
 
         end else if(C_PCI_DATA_WIDTH == 128) begin
-
+		  
             tx_multiplexer_128
                 #(/*AUTOINSTPARAM*/
                   // Parameters
                   .C_PCI_DATA_WIDTH     (C_PCI_DATA_WIDTH),
                   .C_NUM_CHNL           (C_NUM_CHNL),
                   .C_TAG_WIDTH          (C_TAG_WIDTH),
-                  .C_VENDOR             (C_VENDOR))
+                  .C_VENDOR             (C_VENDOR),
+						.C_FIFO_DEPTH			 (C_FIFO_DEPTH),
+						.C_FIFO_DEPTH_WIDTH	 (C_FIFO_DEPTH_WIDTH))
+						
             tx_mux_128_inst
                 (/*AUTOINST*/
                  // Outputs
@@ -296,7 +302,8 @@ module tx_multiplexer
                  .EXT_TAG_VALID         (EXT_TAG_VALID),
                  .RXBUF_SPACE_AVAIL     (RXBUF_SPACE_AVAIL),
                  .TXR_DATA_READY        (TXR_DATA_READY),
-                 .TXR_META_READY        (TXR_META_READY));
+                 .TXR_META_READY        (TXR_META_READY),
+					  .WBUFCOUNT				 (WBUFCOUNT));
 
         end 
     endgenerate

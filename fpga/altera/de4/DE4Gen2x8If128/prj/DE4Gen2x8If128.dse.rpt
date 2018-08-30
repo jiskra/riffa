@@ -1,5 +1,5 @@
 Exploration report for DE4Gen2x8If128
-Tue Mar 06 16:36:25 2018
+Tue Jul 24 20:36:23 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
 
 
@@ -28,21 +28,14 @@ Intel and sold by Intel or its authorized distributors.  Please
 refer to the applicable agreement for further details.
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Exploration Summary                                                                                               ;
-+-----------------+--------------+--------------+---------------+--------------+------------------+-----------------+
-;Exploration Point;Quality of Fit;f(MAX) Geomean;WC Slack: Setup;WC Slack: Hold;WC Slack: Recovery;WC Slack: Removal;
-+-----------------+--------------+--------------+---------------+--------------+------------------+-----------------+
-;dse1_1           ;    -10000.000;No Data       ;No Data        ;No Data       ;No Data           ;No Data          ;
-+-----------------+--------------+--------------+---------------+--------------+------------------+-----------------+
++-----------------+
+; Exploration Summary;
++-----------------+
+;Exploration Point;
++-----------------+
++-----------------+
 
 +-------------+
 ; DSE Messages;
 +-------------+
-Info: Files from a previous exploration of the same group name dse/dse1 already exist and are being deleted. 
-Info: Job 1 : quartus_sh --ipc_json --flow compile DE4Gen2x8If128.qsf
-Info: Explorer server: http://localhost:36421 started.
-Info: Completed exploration. Results: 0 passed; 0 failed.
-Info: Processing ended: Tue Mar 06 16:36:09 2018
-Info: Elapsed time: 0:00:11
 

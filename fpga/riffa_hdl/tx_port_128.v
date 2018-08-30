@@ -46,7 +46,6 @@
 module tx_port_128 #(
 	parameter C_DATA_WIDTH = 9'd128,
 	parameter C_FIFO_DEPTH = 512,
-	// Local parameters
 	parameter C_FIFO_DEPTH_WIDTH = clog2((2**clog2(C_FIFO_DEPTH))+1)
 )
 (
@@ -61,6 +60,7 @@ module tx_port_128 #(
 	output [31:0] TXN_DONE_LEN,				// Write transaction actual transfer length
 	output TXN_DONE,						// Write transaction done
 	input TXN_DONE_ACK,						// Write transaction actual transfer length read
+	output TXN_STARTING, 				// Write transaction is just about to start
 
 	input [C_DATA_WIDTH-1:0] SG_DATA,		// Scatter gather data 
 	input SG_DATA_EMPTY,					// Scatter gather buffer empty
@@ -84,7 +84,8 @@ module tx_port_128 #(
 	input [30:0] CHNL_TX_OFF,				// Channel write offset
 	input [C_DATA_WIDTH-1:0] CHNL_TX_DATA,	// Channel write data
 	input CHNL_TX_DATA_VALID,				// Channel write data valid
-	output CHNL_TX_DATA_REN					// Channel write data has been recieved
+	output CHNL_TX_DATA_REN,					// Channel write data has been received
+	output [C_FIFO_DEPTH_WIDTH-1:0] WBUFCOUNT		// fifo count 
 );
 
 `include "functions.vh"
@@ -94,6 +95,7 @@ wire								wGateEmpty;
 wire	[C_DATA_WIDTH:0]			wGateData;
 
 wire								wBufWen;
+assign WBUFCOUNT=wBufCount;
 wire	[C_FIFO_DEPTH_WIDTH-1:0]	wBufCount;
 wire	[C_DATA_WIDTH-1:0]			wBufData;
 
@@ -215,6 +217,7 @@ tx_port_writer writer (
 	.TXN_DONE(TXN_DONE),
 	.TXN_ERR(wTxnErr),
 	.TXN_DONE_ACK(TXN_DONE_ACK),
+	.TXN_STARTING(TXN_STARTING),
 	.NEW_TXN(wTxn),
 	.NEW_TXN_ACK(wTxnAck),
 	.NEW_TXN_LAST(wTxnLast),

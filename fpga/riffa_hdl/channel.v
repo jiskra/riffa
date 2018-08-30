@@ -37,7 +37,9 @@ module channel
     #(
       parameter C_DATA_WIDTH = 128,
       parameter C_MAX_READ_REQ = 2, // Max read: 000=128B, 001=256B, 010=512B, 011=1024B, 100=2048B, 101=4096B
-      parameter C_DATA_WORD_WIDTH = clog2((C_DATA_WIDTH/32)+1)
+      parameter C_DATA_WORD_WIDTH = clog2((C_DATA_WIDTH/32)+1),
+		parameter C_FIFO_DEPTH = 512,
+	   parameter C_FIFO_DEPTH_WIDTH = clog2((2**clog2(C_FIFO_DEPTH))+1)
       )
     (
      input                         CLK,
@@ -71,7 +73,8 @@ module channel
      output [31:0]                 TXN_TX_DONE_LEN, // Write transaction actual transfer length
      output                        TXN_TX_DONE, // Write transaction done
      input                         TXN_TX_DONE_ACK, // Write transaction actual transfer length read
-
+	  output 							  TXN_TX_STARTING, // Write transaction is just about to start	
+	  
      output                        RX_REQ, // Read request
      input                         RX_REQ_ACK, // Read request accepted
      output [1:0]                  RX_REQ_TAG, // Read request data tag 
@@ -116,7 +119,8 @@ module channel
      input [30:0]                  CHNL_TX_OFF, // Channel write offset
      input [C_DATA_WIDTH-1:0]      CHNL_TX_DATA, // Channel write data
      input                         CHNL_TX_DATA_VALID, // Channel write data valid
-     output                        CHNL_TX_DATA_REN                         // Channel write data has been recieved
+	  output CHNL_TX_DATA_REN,							// Channel write data has been received
+	  output [C_FIFO_DEPTH_WIDTH-1:0] WBUFCOUNT		// Tx fifo count 
      );
     generate
         if(C_DATA_WIDTH == 32) begin
@@ -270,6 +274,8 @@ module channel
                  .CHNL_TX_DATA              (CHNL_TX_DATA[C_DATA_WIDTH-1:0]),
                  .CHNL_TX_DATA_VALID        (CHNL_TX_DATA_VALID));
         end else if(C_DATA_WIDTH == 128) begin
+				wire	[C_FIFO_DEPTH_WIDTH-1:0]	WBUFCOUNT;
+		  
             channel_128
                 #(
                   .C_DATA_WIDTH(C_DATA_WIDTH), 
@@ -287,6 +293,7 @@ module channel
                  .TXN_TX_OFF_LAST           (TXN_TX_OFF_LAST[31:0]),
                  .TXN_TX_DONE_LEN           (TXN_TX_DONE_LEN[31:0]),
                  .TXN_TX_DONE               (TXN_TX_DONE),
+					  .TXN_TX_STARTING			  (TXN_TX_STARTING),
                  .RX_REQ                    (RX_REQ),
                  .RX_REQ_TAG                (RX_REQ_TAG[1:0]),
                  .RX_REQ_ADDR               (RX_REQ_ADDR[63:0]),
@@ -303,6 +310,7 @@ module channel
                  .CHNL_RX_DATA_VALID        (CHNL_RX_DATA_VALID),
                  .CHNL_TX_ACK               (CHNL_TX_ACK),
                  .CHNL_TX_DATA_REN          (CHNL_TX_DATA_REN),
+					  .WBUFCOUNT					  (WBUFCOUNT),
                  // Inputs
                  .CLK                       (CLK),
                  .RST                       (RST),

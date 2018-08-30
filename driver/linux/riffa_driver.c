@@ -130,6 +130,9 @@ static struct class * mymodule_class;
 static dev_t devt;
 static atomic_t used_fpgas[NUM_FPGAS];
 static struct fpga_state * fpgas[NUM_FPGAS];
+//static unsigned int RECV_SG_BUF_READ;
+//static struct sched_param recv_param;
+//static struct sched_param send_param;
 
 ///////////////////////////////////////////////////////
 // MEMORY ALLOCATION & HELPER FUNCTIONS
@@ -275,16 +278,16 @@ static inline void process_intr_vector(struct fpga_state * sc, int off,
 	// [29] RX_TXN_DONE		for channel 5 in VECT_0, channel 11 in VECT_1
 	// Positions 30 - 31 in both VECT_0 and VECT_1 are zero.
 
-	unsigned int offlast;
-	unsigned int len;
+	//unsigned int offlast;
+	unsigned int len = 0;
 	int recv;
 	int send;
 	int chnl;
 	int i;
 
-//printk(KERN_INFO "riffa: intrpt_handler received:%08x\n", vect);
+//DEBUG_MSG(KERN_INFO "riffa: intrpt_handler received:%08x\n", vect);
 	if (vect & 0xC0000000) {
-		printk(KERN_ERR "riffa: fpga:%d, received bad interrupt vector:%08x\n", sc->id, vect);
+		DEBUG_MSG(KERN_ERR "riffa: fpga:%d, received bad interrupt vector:%08x\n", sc->id, vect);
 		return;
 	}
 
@@ -297,38 +300,43 @@ static inline void process_intr_vector(struct fpga_state * sc, int off,
 		if (vect & (1<<((5*i)+1))) { 
 			recv = 1; 
 			// Keep track so the thread can handle this.
-			if (push_circ_queue(sc->recv[chnl]->msgs, EVENT_SG_BUF_READ, 0)) {
-				printk(KERN_ERR "riffa: fpga:%d chnl:%d, recv sg buf read msg queue full\n", sc->id, chnl);
-			}
+			/*if (push_circ_queue(sc->recv[chnl]->msgs, EVENT_SG_BUF_READ, 0)) {
+				DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, recv sg buf read msg queue full\n", sc->id, chnl);
+			}*/
 			DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, recv sg buf read\n", sc->id, chnl);
 		}
 
 		// TX (PC receive) transaction done.
 		if (vect & (1<<((5*i)+2))) { 
-			recv = 1; 
+			recv = 1; //RECV_SG_BUF_READ = 0;
 			// Read the transferred amount.
 			len = read_reg(sc, CHNL_REG(chnl, TX_TNFR_LEN_REG_OFF));
 			// Notify the thread.
 			if (push_circ_queue(sc->recv[chnl]->msgs, EVENT_TXN_DONE, len)) {
-				printk(KERN_ERR "riffa: fpga:%d chnl:%d, recv txn done msg queue full\n", sc->id, chnl);
+				DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, recv txn done msg queue full\n", sc->id, chnl);
 			}
 			DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, recv txn done\n", sc->id, chnl);
 		}
 
-		// New TX (PC receive) transaction.
+		// New TX (PC receive) WRITE transaction.
 		if (vect & (1<<((5*i)+0))) { 
 			recv = 1; 
 			// Read the offset/last and length
-			offlast = read_reg(sc, CHNL_REG(chnl, TX_OFFLAST_REG_OFF));
-			len = read_reg(sc, CHNL_REG(chnl, TX_LEN_REG_OFF));
+			//offlast = read_reg(sc, CHNL_REG(chnl, TX_OFFLAST_REG_OFF));
+			//RECV_SG_BUF_READ = 1;  wake_up(&sc->recv[chnl]->waitq);
+			//len = read_reg(sc, CHNL_REG(chnl, TX_LEN_REG_OFF));
 			// Keep track of this transaction
-			if (push_circ_queue(sc->recv[chnl]->msgs, EVENT_TXN_OFFLAST, offlast)) {
-				printk(KERN_ERR "riffa: fpga:%d chnl:%d, recv txn offlast msg queue full\n", sc->id, chnl);
+			if (push_circ_queue(sc->recv[chnl]->msgs, EVENT_SG_BUF_READ, 0)) {
+				DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, send sg buf read msg queue full\n", sc->id, chnl);
 			}
-			if (push_circ_queue(sc->recv[chnl]->msgs, EVENT_TXN_LEN, len)) {
-				printk(KERN_ERR "riffa: fpga:%d chnl:%d, recv txn len msg queue full\n", sc->id, chnl);
-			}
-			DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, recv txn (len:%d off:%d last:%d)\n", sc->id, chnl, len, (offlast>>1), (offlast & 0x1));
+			/*if (push_circ_queue(sc->recv[chnl]->msgs, EVENT_TXN_OFFLAST, offlast)) {
+				DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, recv txn offlast msg queue full\n", sc->id, chnl);
+			}*/
+			/*if (push_circ_queue(sc->recv[chnl]->msgs, EVENT_TXN_LEN, len)) {
+				DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, recv txn len msg queue full\n", sc->id, chnl);
+			}*/
+			DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, recv txn New TX (PC receive) transaction\n", sc->id, chnl);
+			//DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, recv txn (len:%d off:%d last:%d)\n", sc->id, chnl, len, (offlast>>1), (offlast & 0x1));
 		}
 
 		// RX (PC send) scatter gather buffer is read.
@@ -336,7 +344,7 @@ static inline void process_intr_vector(struct fpga_state * sc, int off,
 			send = 1; 
 			// Keep track so the thread can handle this.
 			if (push_circ_queue(sc->send[chnl]->msgs, EVENT_SG_BUF_READ, 0)) {
-				printk(KERN_ERR "riffa: fpga:%d chnl:%d, send sg buf read msg queue full\n", sc->id, chnl);
+				DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, send sg buf read msg queue full\n", sc->id, chnl);
 			}
 			DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, send sg buf read\n", sc->id, chnl);
 		}
@@ -348,16 +356,27 @@ static inline void process_intr_vector(struct fpga_state * sc, int off,
 			len = read_reg(sc, CHNL_REG(chnl, RX_TNFR_LEN_REG_OFF));
 			// Notify the thread.
 			if (push_circ_queue(sc->send[chnl]->msgs, EVENT_TXN_DONE, len)) {
-				printk(KERN_ERR "riffa: fpga:%d chnl:%d, send txn done msg queue full\n", sc->id, chnl);
+				DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, send txn done msg queue full\n", sc->id, chnl);
 			}
 			DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, send txn done\n", sc->id, chnl);
 		}
 
-		// Wake up the thread?
-		if (recv)
+		if(recv) wake_up(&sc->recv[chnl]->waitq);
+
+		if(send) wake_up(&sc->send[chnl]->waitq);
+
+		// Wake up the thread?  use "else if" to give less priority to send thread
+		/*if (recv && !send)
 			wake_up(&sc->recv[chnl]->waitq);
-		if (send)
+		else if(recv && send)
+			wake_up(&sc->recv[chnl]->waitq);
+		else if (send && !recv)
 			wake_up(&sc->send[chnl]->waitq);
+		else
+			wake_up(&sc->recv[chnl]->waitq);  // in the case of loopback, this is to make sure (software Rx) recv thread wakes up such that the correponding (hardware Tx) fifo does not overflow
+
+		// reset "recv" and "send"
+		recv = 0; send = 0;*/
 	}
 }
 
@@ -377,7 +396,7 @@ static irqreturn_t intrpt_handler(int irq, void *dev_id)
 	vect1 = 0;
 
 	if (sc == NULL) {
-		printk(KERN_ERR "riffa: invalid fpga_state pointer\n");
+		DEBUG_MSG(KERN_ERR "riffa: invalid fpga_state pointer\n");
 		return IRQ_HANDLED;
 	}
 
@@ -428,10 +447,10 @@ static inline struct sg_mapping * fill_sg_buf(struct fpga_state * sc, int chnl,
 	unsigned int * sg_buf_ptr = (unsigned int *)sg_buf;
 	int num_sg = 0;
 	int i;
-
+	DEBUG_MSG(KERN_INFO "fill_sg_buf()\n");
 	// Create the sg_mapping struct.
 	if ((sg_map = (struct sg_mapping *)kmalloc(sizeof(*sg_map), GFP_KERNEL)) == NULL) {
-		printk(KERN_ERR "riffa: fpga:%d chnl:%d, %s could not allocate memory for sg_mapping struct\n", sc->id, chnl, dir);
+		DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, %s could not allocate memory for sg_mapping struct\n", sc->id, chnl, dir);
 		return NULL;
 	}
 
@@ -440,11 +459,11 @@ static inline struct sg_mapping * fill_sg_buf(struct fpga_state * sc, int chnl,
 		num_pages_reqd = ((udata + length - 1)>>PAGE_SHIFT) - (udata>>PAGE_SHIFT) + 1;
 		num_pages_reqd = (num_pages_reqd > sc->num_sg ? sc->num_sg : num_pages_reqd);
 		if ((pages = kmalloc(num_pages_reqd * sizeof(*pages), GFP_KERNEL)) == NULL) {
-			printk(KERN_ERR "riffa: fpga:%d chnl:%d, %s could not allocate memory for pages array\n", sc->id, chnl, dir);
+			DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, %s could not allocate memory for pages array\n", sc->id, chnl, dir);
 			kfree(sg_map);
 			return NULL;
 		}
-
+		DEBUG_MSG(KERN_INFO "num_pages_reqd = %lu\n", num_pages_reqd);
 		// Page in the user pages.
 		down_read(&current->mm->mmap_sem);
 		#if LINUX_VERSION_CODE < KERNEL_VERSION(4,6,0)
@@ -456,7 +475,7 @@ static inline struct sg_mapping * fill_sg_buf(struct fpga_state * sc, int chnl,
 		#endif
 		up_read(&current->mm->mmap_sem);
 		if (num_pages <= 0) {
-			printk(KERN_ERR "riffa: fpga:%d chnl:%d, %s unable to pin any pages in memory\n", sc->id, chnl, dir);
+			DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, %s unable to pin any pages in memory\n", sc->id, chnl, dir);
 			kfree(pages);
 			kfree(sg_map);
 			return NULL;
@@ -464,7 +483,7 @@ static inline struct sg_mapping * fill_sg_buf(struct fpga_state * sc, int chnl,
 
 		// Create the scatterlist array.
 		if ((sgl = kcalloc(num_pages, sizeof(*sgl), GFP_KERNEL)) == NULL) {
-			printk(KERN_ERR "riffa: fpga:%d chnl:%d, %s could not allocate memory for scatterlist array\n", sc->id, chnl, dir);
+			DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, %s could not allocate memory for scatterlist array\n", sc->id, chnl, dir);
 			for (i = 0; i < num_pages; ++i)
 				#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 6, 0)
 				page_cache_release(pages[i]);
@@ -478,9 +497,15 @@ static inline struct sg_mapping * fill_sg_buf(struct fpga_state * sc, int chnl,
 
 		// Set the scatterlist values
 		fp_offset = (udata & (~PAGE_MASK));
+		DEBUG_MSG(KERN_INFO "udata = %lu\n", udata);
+		DEBUG_MSG(KERN_INFO "fp_offset = %d\n", fp_offset);
+		DEBUG_MSG(KERN_INFO "len_rem = %llu\n", len_rem);
+		DEBUG_MSG(KERN_INFO "num_pages = %ld\n", num_pages);
+		DEBUG_MSG(KERN_INFO "PAGE_SIZE = %lu\n", PAGE_SIZE);
 		sg_init_table(sgl, num_pages);
 		for (i = 0; i < num_pages; ++i) {
 			len = ((fp_offset + len_rem) > PAGE_SIZE ? (PAGE_SIZE - fp_offset) : len_rem);
+			DEBUG_MSG(KERN_INFO "len = %d\n", len);			
 			sg_set_page(&sgl[i], pages[i], len, fp_offset);
 			len_rem -= len;
 			fp_offset = 0;
@@ -577,9 +602,10 @@ static inline unsigned int chnl_recv(struct fpga_state * sc, int chnl,
 				char  __user * bufp, unsigned int len, unsigned long long timeout)
 {
 	struct sg_mapping * sg_map;
+	
 	long tymeouto;
 	long tymeout;
-	int nomsg;
+	int nomsg = 1;
 	unsigned int msg_type;
 	unsigned int msg;
 	int last = -1;
@@ -591,7 +617,12 @@ static inline unsigned int chnl_recv(struct fpga_state * sc, int chnl,
 	unsigned long udata = (unsigned long)bufp;
 	unsigned long max_ptr;
 
+	//DEBUG_MSG(KERN_INFO "before recv DEFINE_WAIT(wait)\n");
 	DEFINE_WAIT(wait);
+	DEBUG_MSG(KERN_INFO "after recv DEFINE_WAIT(wait)\n");  // added by cheng fei
+
+	//recv_param.sched_priority = 1;
+	//sched_setscheduler(0, SCHED_RR, &recv_param);
 
 	// Convert timeout to jiffies.
 	tymeout = (timeout == 0 ? MAX_SCHEDULE_TIMEOUT : (timeout * HZ/1000 > LONG_MAX ? LONG_MAX : timeout * HZ/1000));
@@ -601,13 +632,74 @@ static inline unsigned int chnl_recv(struct fpga_state * sc, int chnl,
 	sc->recv[chnl]->sg_map_0 = NULL;
 	sc->recv[chnl]->sg_map_1 = NULL;
 
+	//msg = read_reg(sc, CHNL_REG(chnl, TX_OFFLAST_REG_OFF));  // msg = offlast
+	// Read the offset and last flags (always before reading length)
+	DEBUG_MSG(KERN_INFO "EVENT_TXN_OFFLAST chnl_recv()\n"); // added by cheng fei
+	offset = 0; //(((unsigned long long)(msg>>1))<<2);
+	last = 1; //(msg & 0x1);
+	DEBUG_MSG(KERN_INFO "msg = %d , offset = %lld , last = %d\n", msg, offset, last); // added by cheng fei
+	//break;
+
+//case EVENT_TXN_LEN:
+	// Read the length
+	DEBUG_MSG(KERN_INFO "EVENT_TXN_LEN chnl_recv()\n"); // added by cheng fei
+	length = (unsigned long long)( read_reg(sc, CHNL_REG(chnl, TX_LEN_REG_OFF)) << 2);			
+	//length = (((unsigned long long)msg)<<2);
+	DEBUG_MSG(KERN_INFO "EVENT_TXN_LEN length = %lld\n", length); // added by cheng fei
+	recvd = 0;
+	overflow = 0;
+	// Check for address overflow
+	max_ptr = (unsigned long)(udata + offset + length - 1);
+	if (max_ptr < udata) {
+		DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, recv pointer address overflow\n", sc->id, chnl);
+		overflow = length;
+		length = 0;
+	}
+	// Check for capacity overflow
+	if ((offset + length) > capacity) {
+		DEBUG_MSG(KERN_INFO "EVENT_TXN_LEN (offset + length) > capacity\n"); // added by cheng fei
+		if (offset > capacity) {
+			overflow = length;
+			length = 0;
+		}
+		else {
+			overflow = length + offset - capacity;
+			length = capacity - offset;
+		}
+	}
+	// Use the recv common buffer to share the scatter gather elements.
+	if (length > 0 || overflow > 0) {
+		DEBUG_MSG(KERN_INFO "EVENT_TXN_LEN (length > 0 || overflow > 0)\n"); // added by cheng fei
+		udata = udata + offset;
+		/*sg_map = fill_sg_buf(sc, chnl, sc->recv[chnl]->buf_addr, udata, length, overflow, DMA_FROM_DEVICE);
+		if (sg_map == NULL || sg_map->num_sg == 0)
+			return (unsigned int)(recvd>>2);
+		// Update based on the sg_mapping
+		udata += sg_map->length;
+		DEBUG_MSG(KERN_INFO "before, length = %lld\n", length); 
+		length -= sg_map->length;
+		DEBUG_MSG(KERN_INFO "after, length = %lld\n", length); 
+		overflow -= sg_map->overflow;
+		sc->recv[chnl]->sg_map_1 = sg_map;*/
+		// Let FPGA know about the scatter gather buffer.
+		write_reg(sc, CHNL_REG(chnl, TX_SG_ADDR_LO_REG_OFF), (sc->recv[chnl]->buf_hw_addr & 0xFFFFFFFF));
+		write_reg(sc, CHNL_REG(chnl, TX_SG_ADDR_HI_REG_OFF), ((sc->recv[chnl]->buf_hw_addr>>32) & 0xFFFFFFFF));
+		write_reg(sc, CHNL_REG(chnl, TX_SG_LEN_REG_OFF), 4 * sc->num_sg);
+		DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, recv sg buf populated, %d sent\n", sc->id, chnl, sc->num_sg);
+
+		schedule_timeout(tymeout); // in loopback case, allows software send thread to send its outgoing data
+	}
+
 	// Continue until we get a message or timeout.
 	while (1) {
 		while ((nomsg = pop_circ_queue(sc->recv[chnl]->msgs, &msg_type, &msg))) {
 			prepare_to_wait(&sc->recv[chnl]->waitq, &wait, TASK_INTERRUPTIBLE);
 			// Another check before we schedule.
-			if ((nomsg = pop_circ_queue(sc->recv[chnl]->msgs, &msg_type, &msg)))
+			if ((nomsg = pop_circ_queue(sc->recv[chnl]->msgs, &msg_type, &msg))){
+				DEBUG_MSG(KERN_INFO "before recv schedule_timeout()\n");  // added by cheng fei
 				tymeout = schedule_timeout(tymeout);
+				DEBUG_MSG(KERN_INFO "after recv schedule_timeout()\n");   // added by cheng fei
+			}
 			finish_wait(&sc->recv[chnl]->waitq, &wait);
 			if (signal_pending(current)) {
 				free_sg_buf(sc, sc->recv[chnl]->sg_map_0);
@@ -617,68 +709,30 @@ static inline unsigned int chnl_recv(struct fpga_state * sc, int chnl,
 			if (!nomsg)
 				break;
 			if (tymeout == 0) {
-				printk(KERN_ERR "riffa: fpga:%d chnl:%d, recv timed out\n", sc->id, chnl);
-				free_sg_buf(sc, sc->recv[chnl]->sg_map_0);
+				DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, recv timed out\n", sc->id, chnl);
+				/*free_sg_buf(sc, sc->recv[chnl]->sg_map_0);
 				free_sg_buf(sc, sc->recv[chnl]->sg_map_1);
-				return (unsigned int)(recvd>>2);
+				return (unsigned int)(recvd>>2);*/
 			}
 		}
 		tymeout = tymeouto;
-		printk(KERN_INFO "msg_type: %d\n", msg_type); // added by cheng fei
+		DEBUG_MSG(KERN_INFO "msg_type: %d\n", msg_type); // added by cheng fei
 		// Process the message.
-		switch (msg_type) {
-		case EVENT_TXN_OFFLAST:
-			// Read the offset and last flags (always before reading length)
-			offset = (((unsigned long long)(msg>>1))<<2);
-			last = (msg & 0x1);
-			break;
+		//if(RECV_SG_BUF_READ) msg_type = EVENT_SG_BUF_READ;
 
-		case EVENT_TXN_LEN:
-			// Read the length
-			length = (((unsigned long long)msg)<<2);
-			recvd = 0;
-			overflow = 0;
-			// Check for address overflow
-			max_ptr = (unsigned long)(udata + offset + length - 1);
-			if (max_ptr < udata) {
-				printk(KERN_ERR "riffa: fpga:%d chnl:%d, recv pointer address overflow\n", sc->id, chnl);
-				overflow = length;
-				length = 0;
-			}
-			// Check for capacity overflow
-			if ((offset + length) > capacity) {
-				if (offset > capacity) {
-					overflow = length;
-					length = 0;
-				}
-				else {
-					overflow = length + offset - capacity;
-					length = capacity - offset;
-				}
-			}
-			// Use the recv common buffer to share the scatter gather elements.
-			if (length > 0 || overflow > 0) {
-				udata = udata + offset;
-				sg_map = fill_sg_buf(sc, chnl, sc->recv[chnl]->buf_addr, udata, length, overflow, DMA_FROM_DEVICE);
-				if (sg_map == NULL || sg_map->num_sg == 0)
-					return (unsigned int)(recvd>>2);
-				// Update based on the sg_mapping
-				udata += sg_map->length;
-				length -= sg_map->length;
-				overflow -= sg_map->overflow;
-				sc->recv[chnl]->sg_map_1 = sg_map;
-				// Let FPGA know about the scatter gather buffer.
-				write_reg(sc, CHNL_REG(chnl, TX_SG_ADDR_LO_REG_OFF), (sc->recv[chnl]->buf_hw_addr & 0xFFFFFFFF));
-				write_reg(sc, CHNL_REG(chnl, TX_SG_ADDR_HI_REG_OFF), ((sc->recv[chnl]->buf_hw_addr>>32) & 0xFFFFFFFF));
-				write_reg(sc, CHNL_REG(chnl, TX_SG_LEN_REG_OFF), 4 * sg_map->num_sg);
-				DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, recv sg buf populated, %d sent\n", sc->id, chnl, sg_map->num_sg);
-			}
-			break;
+		switch (msg_type) {
+		/*case EVENT_TXN_OFFLAST:
+			TXN_OFFLAST = 0; // TXN_OFFLAST is only to be used as a single event
+			break;*/
 
 		case EVENT_SG_BUF_READ:
+			//RECV_SG_BUF_READ = 0; // only to be used as a single event
+			DEBUG_MSG(KERN_INFO "EVENT_SG_BUF_READ chnl_recv()\n"); // added by cheng fei
 			// Ignore if we haven't received offlast/len.
-			if (last == -1)
+			if (last == -1) {
+				DEBUG_MSG(KERN_INFO "EVENT_SG_BUF_READ (last == -1)\n"); // added by cheng fei
 				break;
+			}
 			// Release the previous scatter gather data.
 			if (sc->recv[chnl]->sg_map_0 != NULL)
 				recvd += sc->recv[chnl]->sg_map_0->length;
@@ -686,8 +740,10 @@ static inline unsigned int chnl_recv(struct fpga_state * sc, int chnl,
 			sc->recv[chnl]->sg_map_0 = NULL;
 			// Populate the common buffer with more scatter gather data?
 			if (length > 0 || overflow > 0) {
+				DEBUG_MSG(KERN_INFO "EVENT_SG_BUF_READ (length > 0 || overflow > 0)\n"); // added by cheng fei
 				sg_map = fill_sg_buf(sc, chnl, sc->recv[chnl]->buf_addr, udata, length, overflow, DMA_FROM_DEVICE);
 				if (sg_map == NULL || sg_map->num_sg == 0) {
+					DEBUG_MSG(KERN_INFO "EVENT_SG_BUF_READ (sg_map == NULL || sg_map->num_sg == 0)\n"); // added by cheng fei
 					free_sg_buf(sc, sc->recv[chnl]->sg_map_0);
 					free_sg_buf(sc, sc->recv[chnl]->sg_map_1);
 					return (unsigned int)(recvd>>2);
@@ -706,9 +762,12 @@ static inline unsigned int chnl_recv(struct fpga_state * sc, int chnl,
 			break;
 
 		case EVENT_TXN_DONE:
+			DEBUG_MSG(KERN_INFO "EVENT_TXN_DONE chnl_recv()\n"); // added by cheng fei
 			// Ignore if we haven't received offlast/len.
-			if (last == -1)
+			if (last == -1) {
+				DEBUG_MSG(KERN_INFO "EVENT_TXN_DONE (last == -1)\n"); // added by cheng fei
 				break;
+			}
 			// Update with the true value of words transferred.
 			recvd = (((unsigned long long)msg)<<2);
 			// Return if this was the last transaction.
@@ -722,7 +781,7 @@ static inline unsigned int chnl_recv(struct fpga_state * sc, int chnl,
 			break;
 
 		default: 
-			printk(KERN_ERR "riffa: fpga:%d chnl:%d, received unknown msg: %08x\n", sc->id, chnl, msg);
+			DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, received unknown msg: %08x\n", sc->id, chnl, msg);
 			break;
 		}
 	}
@@ -734,25 +793,47 @@ static inline unsigned int chnl_recv_wrapcheck(struct fpga_state * sc, int chnl,
 				char  __user * bufp, unsigned int len, unsigned long long timeout)
 {
 	unsigned long udata = (unsigned long)bufp;
-	unsigned int ret;
+	unsigned int ret = 0; // initially no words are sent
+	
+	#ifdef BATCH_TRANSACTION	
+	const unsigned int recv_len = 1024;  // smaller receive batches of 1024 words
+	unsigned int len_cnt;
+	#endif
 
 	// Validate the parameters.
 	if (chnl >= sc->num_chnls || chnl < 0) {
-		printk(KERN_INFO "riffa: fpga:%d chnl:%d, recv channel invalid!\n", sc->id, chnl);
+		DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, recv channel invalid!\n", sc->id, chnl);
 		return 0;
 	}
 	if (udata & 0x3) {
-		printk(KERN_INFO "riffa: fpga:%d chnl:%d, recv user buffer must be 32 bit word aligned!\n", sc->id, chnl);
+		DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, recv user buffer must be 32 bit word aligned!\n", sc->id, chnl);
 		return -EINVAL;
 	}
 
 	// Ensure no simultaneous operations from several threads
 	if (test_and_set_bit(CHNL_FLAG_BUSY, &sc->recv[chnl]->flags) != 0) {
-		printk(KERN_ERR "riffa: fpga:%d chnl:%d, recv conflict between threads!\n", sc->id, chnl);
+		DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, recv conflict between threads!\n", sc->id, chnl);
 		return -EBUSY;
 	}
 
+	DEBUG_MSG(KERN_INFO "chnl_recv_wrapcheck len = %d\n", len); // added by cheng fei
+
+	#ifndef BATCH_TRANSACTION	
 	ret = chnl_recv(sc, chnl, bufp, len, timeout);
+	#else
+
+	if(len <= recv_len){
+		ret = chnl_recv(sc, chnl, bufp, len, timeout);
+	}
+	else{
+		for(len_cnt=recv_len; ret<=len; len_cnt=(len-ret >= recv_len) ? recv_len : (len-ret)){
+			ret += chnl_recv(sc, chnl, bufp+ret, len_cnt, timeout);
+			DEBUG_MSG(KERN_INFO "chnl_recv_wrapcheck ret = %d\n", ret); // added by cheng fei
+			if(ret == len) // finished receiving all batches
+				break;
+		}
+	}
+	#endif
 
 	// Clear the busy flag
 	clear_bit(CHNL_FLAG_BUSY, &sc->recv[chnl]->flags);
@@ -785,15 +866,20 @@ static inline unsigned int chnl_send(struct fpga_state * sc, int chnl,
 	unsigned long long length = (((unsigned long long)len)<<2);
 	unsigned long udata = (unsigned long)bufp;
 
+	//DEBUG_MSG(KERN_INFO "before send DEFINE_WAIT(wait)\n");
 	DEFINE_WAIT(wait);
+	DEBUG_MSG(KERN_INFO "after send DEFINE_WAIT(wait)\n");  // added by cheng fei
+
+	//send_param.sched_priority = 1;
+	//sched_setscheduler(0, SCHED_RR, &send_param);
 
 	// Convert timeout to jiffies.
 	tymeout = (timeout == 0 ? MAX_SCHEDULE_TIMEOUT : (timeout * HZ/1000 > LONG_MAX ? LONG_MAX : timeout * HZ/1000));
 	tymeouto = tymeout;
-
+	DEBUG_MSG(KERN_INFO "before send message queue is cleared\n"); // added by cheng fei
 	// Clear the message queue.
 	while (!pop_circ_queue(sc->send[chnl]->msgs, &msg_type, &msg));
-
+	DEBUG_MSG(KERN_INFO "after send message queue is cleared\n"); // added by cheng fei
 	// Initialize the sg_maps
 	sc->send[chnl]->sg_map_0 = NULL;
 	sc->send[chnl]->sg_map_1 = NULL;
@@ -823,11 +909,23 @@ static inline unsigned int chnl_send(struct fpga_state * sc, int chnl,
 
 	// Continue until we get a message or timeout.
 	while (1) {
+		//if((unsigned int)(sent>>2) >= 1024) yield();  // let receiving thread do a bit of work, so that the FPGA hardware FIFO will not be full so soon
+
 		while ((nomsg = pop_circ_queue(sc->send[chnl]->msgs, &msg_type, &msg))) {
-			prepare_to_wait(&sc->send[chnl]->waitq, &wait, TASK_INTERRUPTIBLE);
+			DEBUG_MSG(KERN_INFO "before send prepare_to_wait()\n");   // added by cheng fei
+			prepare_to_wait(&sc->send[chnl]->waitq, &wait, TASK_UNINTERRUPTIBLE);
+			DEBUG_MSG(KERN_INFO "after send prepare_to_wait()\n");   // added by cheng fei
 			// Another check before we schedule.
-			if ((nomsg = pop_circ_queue(sc->send[chnl]->msgs, &msg_type, &msg)))
-				tymeout = schedule_timeout(tymeout);
+			if ((nomsg = pop_circ_queue(sc->send[chnl]->msgs, &msg_type, &msg))){
+				DEBUG_MSG(KERN_INFO "before send schedule_timeout()\n");  // added by cheng fei
+				//if((unsigned int)(sent>>2) >= 1024) {
+					tymeout = schedule_timeout(tymeout << 10 );  // let the wake up countdown clock timeout slower, so that sending thread sleeps longer, giving more priority to receiving thread in some sense
+				/*}
+				else{
+					tymeout = schedule_timeout(tymeout);
+				}*/
+				DEBUG_MSG(KERN_INFO "after send schedule_timeout()\n");  // added by cheng fei
+			}
 			finish_wait(&sc->send[chnl]->waitq, &wait);
 			if (signal_pending(current)) {
 				free_sg_buf(sc, sc->send[chnl]->sg_map_0);
@@ -837,10 +935,10 @@ static inline unsigned int chnl_send(struct fpga_state * sc, int chnl,
 			if (!nomsg)
 				break;
 			if (tymeout == 0) {
-				printk(KERN_ERR "riffa: fpga:%d chnl:%d, send timed out\n", sc->id, chnl);
-				free_sg_buf(sc, sc->send[chnl]->sg_map_0);
+				DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, send timed out\n", sc->id, chnl);
+				/*free_sg_buf(sc, sc->send[chnl]->sg_map_0);
 				free_sg_buf(sc, sc->send[chnl]->sg_map_1);
-				return (unsigned int)(sent>>2);
+				return (unsigned int)(sent>>2);*/ 
 			}
 		}
 		tymeout = tymeouto;
@@ -871,6 +969,7 @@ static inline unsigned int chnl_send(struct fpga_state * sc, int chnl,
 				write_reg(sc, CHNL_REG(chnl, RX_SG_LEN_REG_OFF), 4 * sg_map->num_sg);
 				DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, send sg buf populated, %d sent\n", sc->id, chnl, sg_map->num_sg);
 			}
+			schedule_timeout(tymeout); // for loopback case, allow software recv thread accesses its received data
 			break;
 
 		case EVENT_TXN_DONE:
@@ -884,7 +983,7 @@ static inline unsigned int chnl_send(struct fpga_state * sc, int chnl,
 			break;
 
 		default: 
-			printk(KERN_ERR "riffa: fpga:%d chnl:%d, received unknown msg: %08x\n", sc->id, chnl, msg);
+			DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, received unknown msg: %08x\n", sc->id, chnl, msg);
 			break;
 		}
 	}
@@ -899,30 +998,51 @@ static inline unsigned int chnl_send_wrapcheck(struct fpga_state * sc, int chnl,
 	unsigned long long length = (((unsigned long long)len)<<2);
 	unsigned long udata = (unsigned long)bufp;
 	unsigned long max_ptr;
-	unsigned int ret;
+	unsigned int ret = 0; // initially no words are sent
+	
+	#ifdef BATCH_TRANSACTION	
+	const unsigned int send_len = 1024;  // smaller send batches of 1024 words
+	unsigned int len_cnt;
+	#endif
 
 	// Validate the parameters.
 	if (chnl >= sc->num_chnls || chnl < 0) {
-		printk(KERN_INFO "riffa: fpga:%d chnl:%d, send channel invalid!\n", sc->id, chnl);
+		DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, send channel invalid!\n", sc->id, chnl);
 		return 0;
 	}
 	max_ptr = (unsigned long)(udata + length - 1);
 	if (max_ptr < udata) {
-		printk(KERN_ERR "riffa: fpga:%d chnl:%d, send pointer address overflow\n", sc->id, chnl);
+		DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, send pointer address overflow\n", sc->id, chnl);
 		return -EINVAL;
 	}
 	if (udata & 0x3) {
-		printk(KERN_INFO "riffa: fpga:%d chnl:%d, send user buffer must be 32 bit word aligned!\n", sc->id, chnl);
+		DEBUG_MSG(KERN_INFO "riffa: fpga:%d chnl:%d, send user buffer must be 32 bit word aligned!\n", sc->id, chnl);
 		return -EINVAL;
 	}
 
 	// Ensure no simultaneous operations from several threads
 	if (test_and_set_bit(CHNL_FLAG_BUSY, &sc->send[chnl]->flags) != 0) {
-		printk(KERN_ERR "riffa: fpga:%d chnl:%d, send conflict between threads!\n", sc->id, chnl);
+		DEBUG_MSG(KERN_ERR "riffa: fpga:%d chnl:%d, send conflict between threads!\n", sc->id, chnl);
 		return -EBUSY;
 	}
-
+	DEBUG_MSG(KERN_INFO "chnl_send_wrapcheck len = %d\n", len); // added by cheng fei
+	
+	#ifndef BATCH_TRANSACTION	
 	ret = chnl_send(sc, chnl, bufp, len, offset, last, timeout);
+	#else
+
+	if(len <= send_len){
+		ret = chnl_send(sc, chnl, bufp, len, offset, last, timeout);
+	}
+	else{
+		for(len_cnt=send_len; ret<=len; len_cnt=(len-ret >= send_len) ? send_len : (len-ret)){
+			ret += chnl_send(sc, chnl, bufp+ret, len_cnt, offset, last, timeout);
+			DEBUG_MSG(KERN_INFO "chnl_send_wrapcheck ret = %d\n", ret); // added by cheng fei
+			if(ret == len) // finished sending all batches
+				break;
+		}
+	}
+	#endif
 
 	// Clear the busy flag
 	clear_bit(CHNL_FLAG_BUSY, &sc->send[chnl]->flags);
@@ -1010,7 +1130,7 @@ static long fpga_ioctl(struct file *filp, unsigned int ioctlnum,
 	switch (ioctlnum) {
 	case IOCTL_SEND:
 		if ((rc = copy_from_user(&io, (void *)ioctlparam, sizeof(fpga_chnl_io)))) {
-			printk(KERN_ERR "riffa: cannot read ioctl user parameter.\n");
+			DEBUG_MSG(KERN_ERR "riffa: cannot read ioctl user parameter.\n");
 			return rc;
 		}
 		if (io.id < 0 || io.id >= NUM_FPGAS || !atomic_read(&used_fpgas[io.id]))
@@ -1019,7 +1139,7 @@ static long fpga_ioctl(struct file *filp, unsigned int ioctlnum,
 				io.last, io.timeout);
 	case IOCTL_RECV:
 		if ((rc = copy_from_user(&io, (void *)ioctlparam, sizeof(fpga_chnl_io)))) {
-			printk(KERN_ERR "riffa: cannot read ioctl user parameter.\n");
+			DEBUG_MSG(KERN_ERR "riffa: cannot read ioctl user parameter.\n");
 			return rc;
 		}
 		if (io.id < 0 || io.id >= NUM_FPGAS || !atomic_read(&used_fpgas[io.id]))
@@ -1028,7 +1148,7 @@ static long fpga_ioctl(struct file *filp, unsigned int ioctlnum,
 	case IOCTL_LIST:
 		list_fpgas(&list);
 		if ((rc = copy_to_user((void *)ioctlparam, &list, sizeof(fpga_info_list))))
-			printk(KERN_ERR "riffa: cannot write ioctl user parameter.\n");
+			DEBUG_MSG(KERN_ERR "riffa: cannot write ioctl user parameter.\n");
 		return rc;
 	case IOCTL_RESET:
 		reset((int)ioctlparam);
@@ -1127,7 +1247,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	// Setup the PCIe device.
 	error = pci_enable_device(dev);
 	if (error < 0) {
-		printk(KERN_ERR "riffa: pci_enable_device returned %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pci_enable_device returned %d\n", error);
 		return (-ENODEV);
 	}
 
@@ -1139,7 +1259,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	if (!error)
 		error = pci_set_consistent_dma_mask(dev, DMA_BIT_MASK(64));
 	if (error) {
-		printk(KERN_ERR "riffa: cannot set 64 bit DMA mode\n");
+		DEBUG_MSG(KERN_ERR "riffa: cannot set 64 bit DMA mode\n");
 		pci_disable_device(dev);
 		return error;
 	}
@@ -1147,7 +1267,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	// Allocate device structure.
 	sc = kzalloc(sizeof(*sc), GFP_KERNEL);
 	if (sc == NULL) {
-		printk(KERN_ERR "riffa: not enough memory to allocate sc\n");
+		DEBUG_MSG(KERN_ERR "riffa: not enough memory to allocate sc\n");
 		pci_disable_device(dev);
 		return (-ENOMEM);
 	}
@@ -1155,14 +1275,14 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	snprintf(sc->name, sizeof(sc->name), "%s%d", pci_name(dev), 0);
 	sc->vendor_id = dev->vendor;
 	sc->device_id = dev->device;
-	printk(KERN_INFO "riffa: found FPGA with name: %s\n", sc->name);
-	printk(KERN_INFO "riffa: vendor id: 0x%04X\n", sc->vendor_id);
-	printk(KERN_INFO "riffa: device id: 0x%04X\n", sc->device_id);
+	DEBUG_MSG(KERN_INFO "riffa: found FPGA with name: %s\n", sc->name);
+	DEBUG_MSG(KERN_INFO "riffa: vendor id: 0x%04X\n", sc->vendor_id);
+	DEBUG_MSG(KERN_INFO "riffa: device id: 0x%04X\n", sc->device_id);
 
 	// Setup the BAR memory regions
 	error = pci_request_regions(dev, sc->name);
 	if (error < 0) {
-		printk(KERN_ERR "riffa: pci_request_regions returned error: %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pci_request_regions returned error: %d\n", error);
 		pci_disable_device(dev);
 		kfree(sc);
 		return (-ENODEV);
@@ -1172,10 +1292,10 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	sc->bar0_addr = pci_resource_start(dev, 0);
 	sc->bar0_len = pci_resource_len(dev, 0);
 	sc->bar0_flags = pci_resource_flags(dev, 0);
-	printk(KERN_INFO "riffa: BAR 0 address: %llx\n", sc->bar0_addr);
-	printk(KERN_INFO "riffa: BAR 0 length: %lld bytes\n", sc->bar0_len);
+	DEBUG_MSG(KERN_INFO "riffa: BAR 0 address: %llx\n", sc->bar0_addr);
+	DEBUG_MSG(KERN_INFO "riffa: BAR 0 length: %lld bytes\n", sc->bar0_len);
 	if (sc->bar0_len != 1024) {
-		printk(KERN_ERR "riffa: BAR 0 incorrect length\n");
+		DEBUG_MSG(KERN_ERR "riffa: BAR 0 incorrect length\n");
 		pci_release_regions(dev);
 		pci_disable_device(dev);
 		kfree(sc);
@@ -1183,7 +1303,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	}
 	sc->bar0 = ioremap(sc->bar0_addr, sc->bar0_len);
 	if (!sc->bar0) {
-		printk(KERN_ERR "riffa: could not ioremap BAR 0\n");
+		DEBUG_MSG(KERN_ERR "riffa: could not ioremap BAR 0\n");
 		pci_release_regions(dev);
 		pci_disable_device(dev);
 		kfree(sc);
@@ -1193,7 +1313,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	// Setup MSI interrupts 
 	error = pci_enable_msi(dev);
 	if (error != 0) {
-		printk(KERN_ERR "riffa: pci_enable_msi returned error: %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pci_enable_msi returned error: %d\n", error);
 		iounmap(sc->bar0);
 		pci_release_regions(dev);
 		pci_disable_device(dev);
@@ -1204,7 +1324,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	// Request an interrupt
 	error = request_irq(dev->irq, intrpt_handler, IRQF_SHARED, sc->name, sc);
 	if (error != 0) {
-		printk(KERN_ERR "riffa: request_irq(%d) returned error: %d\n", dev->irq, error);
+		DEBUG_MSG(KERN_ERR "riffa: request_irq(%d) returned error: %d\n", dev->irq, error);
 		pci_disable_msi(dev);
 		iounmap(sc->bar0);
 		pci_release_regions(dev);
@@ -1213,12 +1333,12 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 		return error;
 	}
 	sc->irq = dev->irq;
-	printk(KERN_INFO "riffa: MSI setup on irq %d\n", dev->irq);
+	DEBUG_MSG(KERN_INFO "riffa: MSI setup on irq %d\n", dev->irq);
 
 	// Set extended tag bit
     error = pcie_capability_read_dword(dev,PCI_EXP_DEVCTL,&devctl_result);
 	if (error != 0) {
-		printk(KERN_ERR "riffa: pcie_capability_read_dword returned error: %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pcie_capability_read_dword returned error: %d\n", error);
 		free_irq(dev->irq, sc);
 		pci_disable_msi(dev);
 		iounmap(sc->bar0);
@@ -1227,11 +1347,11 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 		kfree(sc);
 		return error;
 	}
-	printk(KERN_INFO "riffa: PCIE_EXP_DEVCTL register: %x\n",devctl_result);  
+	DEBUG_MSG(KERN_INFO "riffa: PCIE_EXP_DEVCTL register: %x\n",devctl_result);  
 
 	error = pcie_capability_write_dword(dev,PCI_EXP_DEVCTL,(devctl_result|PCI_EXP_DEVCTL_EXT_TAG));
 	if (error != 0) {
-		printk(KERN_ERR "riffa: pcie_capability_write_dword returned error: %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pcie_capability_write_dword returned error: %d\n", error);
 		free_irq(dev->irq, sc);
 		pci_disable_msi(dev);
 		iounmap(sc->bar0);
@@ -1244,7 +1364,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	// Set IDO bits
 	error = pcie_capability_read_dword(dev,PCI_EXP_DEVCTL2,&devctl2_result);
 	if (error != 0) {
-		printk(KERN_ERR "riffa: pcie_capability_read_dword returned error: %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pcie_capability_read_dword returned error: %d\n", error);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL,devctl_result);
 		free_irq(dev->irq, sc);
 		pci_disable_msi(dev);
@@ -1254,11 +1374,11 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 		kfree(sc);
 		return error;
 	}
-	printk(KERN_INFO "riffa: PCIE_EXP_DEVCTL2 register: %x\n",devctl2_result);  
+	DEBUG_MSG(KERN_INFO "riffa: PCIE_EXP_DEVCTL2 register: %x\n",devctl2_result);  
 
 	error = pcie_capability_write_dword(dev,PCI_EXP_DEVCTL2,(devctl2_result | PCI_EXP_DEVCTL2_IDO_REQ_EN | PCI_EXP_DEVCTL2_IDO_CMP_EN));
 	if (error != 0) {
-		printk(KERN_ERR "riffa: pcie_capability_write_dword returned error: %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pcie_capability_write_dword returned error: %d\n", error);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL,devctl_result);
 		free_irq(dev->irq, sc);
 		pci_disable_msi(dev);
@@ -1272,7 +1392,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	// Set RCB to 128
     error = pcie_capability_read_dword(dev,PCI_EXP_LNKCTL,&lnkctl_result);
 	if (error != 0) {
-		printk(KERN_ERR "riffa: pcie_capability_read_dword returned error: %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pcie_capability_read_dword returned error: %d\n", error);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL2,devctl2_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL,devctl_result);
 		free_irq(dev->irq, sc);
@@ -1283,11 +1403,11 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 		kfree(sc);
 		return error;
 	}
-	printk(KERN_INFO "riffa: PCIE_EXP_LNKCTL register: %x\n",lnkctl_result);  
+	DEBUG_MSG(KERN_INFO "riffa: PCIE_EXP_LNKCTL register: %x\n",lnkctl_result);  
 
 	error = pcie_capability_write_dword(dev,PCI_EXP_LNKCTL,(lnkctl_result|PCI_EXP_LNKCTL_RCB));
 	if (error != 0) {
-		printk(KERN_ERR "riffa: pcie_capability_write_dword returned error: %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pcie_capability_write_dword returned error: %d\n", error);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL2,devctl2_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL,devctl_result);
 		free_irq(dev->irq, sc);
@@ -1303,16 +1423,16 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	sc->num_chnls = ((reg>>0) & 0xF);
 	sc->num_sg = SG_ELEMS*((reg>>19) & 0xF);
 	sc->sg_buf_size = SG_BUF_SIZE*((reg>>19) & 0xF);
-	printk(KERN_INFO "riffa: number of channels: %d\n", ((reg>>0) & 0xF));
-	printk(KERN_INFO "riffa: bus interface width: %d\n", ((reg>>19) & 0xF)<<5);
-	printk(KERN_INFO "riffa: bus master enabled: %d\n", ((reg>>4) & 0x1));
-	printk(KERN_INFO "riffa: negotiated link width: %d\n", ((reg>>5) & 0x3F));
-	printk(KERN_INFO "riffa: negotiated link rate: %d MTs\n", ((reg>>11) & 0x3)*2500);
-	printk(KERN_INFO "riffa: max downstream payload: %d bytes\n", 128<<((reg>>13) & 0x7) );
-	printk(KERN_INFO "riffa: max upstream payload: %d bytes\n", 128<<((reg>>16) & 0x7) );
+	DEBUG_MSG(KERN_INFO "riffa: number of channels: %d\n", ((reg>>0) & 0xF));
+	DEBUG_MSG(KERN_INFO "riffa: bus interface width: %d\n", ((reg>>19) & 0xF)<<5);
+	DEBUG_MSG(KERN_INFO "riffa: bus master enabled: %d\n", ((reg>>4) & 0x1));
+	DEBUG_MSG(KERN_INFO "riffa: negotiated link width: %d\n", ((reg>>5) & 0x3F));
+	DEBUG_MSG(KERN_INFO "riffa: negotiated link rate: %d MTs\n", ((reg>>11) & 0x3)*2500);
+	DEBUG_MSG(KERN_INFO "riffa: max downstream payload: %d bytes\n", 128<<((reg>>13) & 0x7) );
+	DEBUG_MSG(KERN_INFO "riffa: max upstream payload: %d bytes\n", 128<<((reg>>16) & 0x7) );
 
 	if (((reg>>4) & 0x1) != 1) {
-		printk(KERN_ERR "riffa: bus master not enabled!\n");
+		DEBUG_MSG(KERN_ERR "riffa: bus master not enabled!\n");
 		pcie_capability_write_dword(dev,PCI_EXP_LNKCTL,lnkctl_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL2,devctl2_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL,devctl_result);
@@ -1326,7 +1446,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	}
 
 	if (((reg>>5) & 0x3F) == 0 || ((reg>>11) & 0x3) == 0) {
-		printk(KERN_ERR "riffa: bad link parameters!\n");
+		DEBUG_MSG(KERN_ERR "riffa: bad link parameters!\n");
 		pcie_capability_write_dword(dev,PCI_EXP_LNKCTL,lnkctl_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL2,devctl2_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL,devctl_result);
@@ -1340,7 +1460,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	}
 
 	if ((reg & 0xF) == 0 || (reg & 0xF) > MAX_CHNLS) {
-		printk(KERN_ERR "riffa: bad number of channels!\n");
+		DEBUG_MSG(KERN_ERR "riffa: bad number of channels!\n");
 		pcie_capability_write_dword(dev,PCI_EXP_LNKCTL,lnkctl_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL2,devctl2_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL,devctl_result);
@@ -1354,7 +1474,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	}
 
 	if (((reg>>19) & 0xF) == 0 || ((reg>>19) & 0xF) > MAX_BUS_WIDTH_PARAM) {
-		printk(KERN_ERR "riffa: bad bus width!\n");
+		DEBUG_MSG(KERN_ERR "riffa: bad bus width!\n");
 		pcie_capability_write_dword(dev,PCI_EXP_LNKCTL,lnkctl_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL2,devctl2_result);
 		pcie_capability_write_dword(dev,PCI_EXP_DEVCTL,devctl_result);
@@ -1371,7 +1491,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	sc->recv = (struct chnl_dir **) kzalloc(sc->num_chnls*sizeof(struct chnl_dir*), GFP_KERNEL);  
 	sc->send = (struct chnl_dir **) kzalloc(sc->num_chnls*sizeof(struct chnl_dir*), GFP_KERNEL);  
 	if (sc->recv == NULL || sc->send == NULL) {
-		printk(KERN_ERR "riffa: not enough memory to allocate chnl_dir arrays\n");
+		DEBUG_MSG(KERN_ERR "riffa: not enough memory to allocate chnl_dir arrays\n");
 		if (sc->recv != NULL)
 			kfree(sc->recv);
 		if (sc->send != NULL)
@@ -1390,7 +1510,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	j = allocate_chnls(dev, sc);
 	if (j < sc->num_chnls) {
 		sc->num_chnls = j;
-		printk(KERN_ERR "riffa: not enough memory to allocate chnl_dir structs\n");
+		DEBUG_MSG(KERN_ERR "riffa: not enough memory to allocate chnl_dir structs\n");
 		for (i = 0; i < sc->num_chnls; ++i) {
 			pci_free_consistent(dev, sc->sg_buf_size, sc->send[i]->buf_addr, 
 					(dma_addr_t)sc->send[i]->buf_hw_addr);
@@ -1419,7 +1539,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 	sc->spill_buf_addr = pci_alloc_consistent(dev, SPILL_BUF_SIZE, &hw_addr);
 	sc->spill_buf_hw_addr = hw_addr;
 	if (sc->spill_buf_addr == NULL) {
-		printk(KERN_ERR "riffa: not enough memory to allocate spill buffer\n");
+		DEBUG_MSG(KERN_ERR "riffa: not enough memory to allocate spill buffer\n");
 		for (i = 0; i < sc->num_chnls; ++i) {
 			pci_free_consistent(dev, sc->sg_buf_size, sc->send[i]->buf_addr, 
 					(dma_addr_t)sc->send[i]->buf_hw_addr);
@@ -1455,7 +1575,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 		}
 	}
 	if (sc->id == -1) {
-		printk(KERN_ERR "riffa: could not save FPGA information, %d is limit.\n", NUM_FPGAS);
+		DEBUG_MSG(KERN_ERR "riffa: could not save FPGA information, %d is limit.\n", NUM_FPGAS);
 		for (i = 0; i < sc->num_chnls; ++i) {
 			pci_free_consistent(dev, sc->sg_buf_size, sc->send[i]->buf_addr, 
 					(dma_addr_t)sc->send[i]->buf_hw_addr);
@@ -1482,7 +1602,7 @@ static int __devinit fpga_probe(struct pci_dev *dev, const struct pci_device_id 
 		return (-ENOMEM);
 	}
 	else {
-		printk(KERN_INFO "riffa: saved FPGA with id: %d\n", sc->id);
+		DEBUG_MSG(KERN_INFO "riffa: saved FPGA with id: %d\n", sc->id);
 	}
 
 	return 0;
@@ -1575,20 +1695,20 @@ static int __init fpga_init(void)
 
 	error = pci_register_driver(&fpga_driver);
 	if (error != 0) {
-		printk(KERN_ERR "riffa: pci_module_register returned %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: pci_module_register returned %d\n", error);
 		return (error);
 	}
 
 	error = register_chrdev(MAJOR_NUM, DEVICE_NAME, &fpga_fops);
 	if (error < 0) {
-		printk(KERN_ERR "riffa: register_chrdev returned %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: register_chrdev returned %d\n", error);
 		return (error);
 	}
 
 	mymodule_class = class_create(THIS_MODULE, DEVICE_NAME);
 	if (IS_ERR(mymodule_class)) {
 		error = PTR_ERR(mymodule_class);
-		printk(KERN_ERR "riffa: class_create() returned %d\n", error);
+		DEBUG_MSG(KERN_ERR "riffa: class_create() returned %d\n", error);
 		return (error);
 	}
 

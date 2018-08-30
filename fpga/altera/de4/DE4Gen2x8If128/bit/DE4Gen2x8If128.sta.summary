@@ -3,39 +3,39 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 900mV 85C Model Setup 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : -0.776
-TNS   : -52.516
+Slack : -0.324
+TNS   : -5.642
 
 Type  : Slow 900mV 85C Model Setup 'pcie_inst|serdes|PCIeGen2x8If128_serdes_alt4gxb_9uoa_component|central_clk_div0|coreclkout'
-Slack : 1.187
+Slack : 1.294
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'clk125'
-Slack : 5.851
+Slack : 7.373
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'clk50'
-Slack : 9.665
+Slack : 9.870
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'n/a'
-Slack : 10.068
+Slack : 10.624
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'altera_reserved_tck'
-Slack : 44.817
+Slack : 44.033
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : -0.409
-TNS   : -1.516
-
-Type  : Slow 900mV 85C Model Hold 'clk50'
-Slack : 0.238
-TNS   : 0.000
+Slack : -0.398
+TNS   : -0.398
 
 Type  : Slow 900mV 85C Model Hold 'clk125'
-Slack : 0.258
+Slack : 0.257
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Hold 'clk50'
+Slack : 0.266
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'altera_reserved_tck'
@@ -43,27 +43,27 @@ Slack : 0.285
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'pcie_inst|serdes|PCIeGen2x8If128_serdes_alt4gxb_9uoa_component|central_clk_div0|coreclkout'
-Slack : 0.591
+Slack : 0.530
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'n/a'
-Slack : 1.454
+Slack : 1.392
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : 1.207
+Slack : 0.740
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 94.792
+Slack : 94.284
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : 0.508
+Slack : 0.452
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.725
+Slack : 0.707
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'clk50'
@@ -75,7 +75,7 @@ Slack : 0.154
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'pcie_inst|serdes|PCIeGen2x8If128_serdes_alt4gxb_9uoa_component|central_clk_div0|coreclkout'
-Slack : 0.405
+Slack : 0.420
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|pllfixedclk'
@@ -87,7 +87,7 @@ Slack : 1.000
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'clk125'
-Slack : 3.419
+Slack : 3.431
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'refclk'
@@ -103,11 +103,11 @@ Slack : 9.439
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'alt_cal_edge_detect_ff0q_clk'
-Slack : 9.464
+Slack : 9.465
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'alt_cal_edge_detect_ff1q_clk'
-Slack : 9.472
+Slack : 9.471
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'OSCILLATOR_CLK'
@@ -115,71 +115,71 @@ Slack : 9.951
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.198
+Slack : 49.241
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : -0.637
-TNS   : -30.131
+Slack : -0.217
+TNS   : -3.145
 
 Type  : Slow 900mV 0C Model Setup 'pcie_inst|serdes|PCIeGen2x8If128_serdes_alt4gxb_9uoa_component|central_clk_div0|coreclkout'
-Slack : 1.220
+Slack : 1.316
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'clk125'
-Slack : 5.978
+Slack : 7.399
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'clk50'
-Slack : 9.718
+Slack : 9.908
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'n/a'
-Slack : 10.667
+Slack : 11.174
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'altera_reserved_tck'
-Slack : 45.062
+Slack : 44.359
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : -0.392
-TNS   : -1.450
-
-Type  : Slow 900mV 0C Model Hold 'clk50'
-Slack : 0.233
-TNS   : 0.000
+Slack : -0.384
+TNS   : -0.384
 
 Type  : Slow 900mV 0C Model Hold 'clk125'
-Slack : 0.251
+Slack : 0.247
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Hold 'clk50'
+Slack : 0.253
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.275
+Slack : 0.279
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'pcie_inst|serdes|PCIeGen2x8If128_serdes_alt4gxb_9uoa_component|central_clk_div0|coreclkout'
-Slack : 0.565
+Slack : 0.513
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'n/a'
-Slack : 1.427
+Slack : 1.365
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : 1.337
+Slack : 0.873
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 95.043
+Slack : 94.586
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : 0.487
+Slack : 0.438
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.688
+Slack : 0.674
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'clk50'
@@ -191,7 +191,7 @@ Slack : 0.154
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'pcie_inst|serdes|PCIeGen2x8If128_serdes_alt4gxb_9uoa_component|central_clk_div0|coreclkout'
-Slack : 0.398
+Slack : 0.409
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|pllfixedclk'
@@ -203,7 +203,7 @@ Slack : 1.000
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'clk125'
-Slack : 3.438
+Slack : 3.433
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'refclk'
@@ -219,11 +219,11 @@ Slack : 9.445
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'alt_cal_edge_detect_ff0q_clk'
-Slack : 9.453
+Slack : 9.455
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'alt_cal_edge_detect_ff1q_clk'
-Slack : 9.464
+Slack : 9.469
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'OSCILLATOR_CLK'
@@ -231,71 +231,71 @@ Slack : 9.962
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.182
+Slack : 49.236
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : 0.087
+Slack : 0.362
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'pcie_inst|serdes|PCIeGen2x8If128_serdes_alt4gxb_9uoa_component|central_clk_div0|coreclkout'
-Slack : 1.565
+Slack : 1.608
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'clk125'
-Slack : 6.694
+Slack : 7.661
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'n/a'
-Slack : 13.749
+Slack : 13.873
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'clk50'
-Slack : 14.566
+Slack : 14.712
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'altera_reserved_tck'
-Slack : 47.216
+Slack : 46.701
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : -0.258
-TNS   : -0.945
-
-Type  : Fast 900mV 0C Model Hold 'clk50'
-Slack : 0.135
-TNS   : 0.000
+Slack : -0.251
+TNS   : -0.251
 
 Type  : Fast 900mV 0C Model Hold 'clk125'
-Slack : 0.140
+Slack : 0.141
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'clk50'
+Slack : 0.147
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.157
+Slack : 0.163
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'pcie_inst|serdes|PCIeGen2x8If128_serdes_alt4gxb_9uoa_component|central_clk_div0|coreclkout'
-Slack : 0.323
+Slack : 0.301
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'n/a'
-Slack : 0.889
+Slack : 0.876
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : 2.336
+Slack : 2.064
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 96.734
+Slack : 96.466
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|coreclkout'
-Slack : 0.277
+Slack : 0.264
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.404
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'clk50'
@@ -307,7 +307,7 @@ Slack : 0.154
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'pcie_inst|serdes|PCIeGen2x8If128_serdes_alt4gxb_9uoa_component|central_clk_div0|coreclkout'
-Slack : 0.615
+Slack : 0.622
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'pcie_inst|wrapper|altpcie_hip_pipen1b_inst|stratix_iv.stratixiv_hssi_pcie_hip|pllfixedclk'
@@ -319,7 +319,7 @@ Slack : 1.000
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'clk125'
-Slack : 3.621
+Slack : 3.625
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'refclk'
@@ -335,11 +335,11 @@ Slack : 9.637
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'alt_cal_edge_detect_ff0q_clk'
-Slack : 9.656
+Slack : 9.655
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'alt_cal_edge_detect_ff1q_clk'
-Slack : 9.657
+Slack : 9.656
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'OSCILLATOR_CLK'
@@ -347,7 +347,7 @@ Slack : 9.693
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.134
+Slack : 49.119
 TNS   : 0.000
 
 ------------------------------------------------------------

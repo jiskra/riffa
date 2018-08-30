@@ -54,12 +54,15 @@ module tx_multiplexer_128
       parameter C_PCI_DATA_WIDTH = 128,
       parameter C_NUM_CHNL = 12,
       parameter C_TAG_WIDTH = 5,                             // Number of outstanding requests 
-      parameter C_VENDOR = "ALTERA"
+      parameter C_VENDOR = "ALTERA",
+		parameter C_FIFO_DEPTH = 512,
+	   parameter C_FIFO_DEPTH_WIDTH = clog2((2**clog2(C_FIFO_DEPTH))+1)
       )
     (
      input                                     CLK,
      input                                     RST_IN,
 
+	  input [C_FIFO_DEPTH_WIDTH-1:0] 			  WBUFCOUNT, // Tx fifo count 	  
      input [C_NUM_CHNL-1:0]                    WR_REQ, // Write request
      input [(C_NUM_CHNL*`SIG_ADDR_W)-1:0]      WR_ADDR, // Write address
      input [(C_NUM_CHNL*`SIG_LEN_W)-1:0]       WR_LEN, // Write data length
@@ -341,7 +344,7 @@ module tx_multiplexer_128
                 _rCountAddr64 = rCapAddr64;
                 _rCount = rCapLen;
                 _rCountDone = (rCapLen <= 3'd4);
-                _rWrDataRen = ((TXR_META_READY & rCapState[3] & rCapIsWr)<<(rCapChnl[3:0])); // S_TXENGUPR128_CAP_REL
+                _rWrDataRen = ((TXR_META_READY & rCapState[3] /*&& (WBUFCOUNT > 0)*/ & rCapIsWr)<<(rCapChnl[3:0])); // S_TXENGUPR128_CAP_REL
                 _rCountValid = (TXR_META_READY & rCapState[3]);
                 _rCountStart = (TXR_META_READY & rCapState[3]);
                 if (TXR_META_READY && rCapState[3] && rCapIsWr && (rCapAddr64 || (rCapLen != 10'd1))) // S_TXENGUPR128_CAP_REL

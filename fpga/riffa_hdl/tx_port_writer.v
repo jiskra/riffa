@@ -74,6 +74,7 @@ module tx_port_writer (
 	output TXN_DONE,					// Write transaction done
 	output TXN_ERR,						// Write transaction encountered an error
 	input TXN_DONE_ACK,					// Write transaction actual transfer length read
+	output TXN_STARTING,				// Write transaction is just about to start
 
 	input NEW_TXN,						// Transaction parameters are valid
 	output NEW_TXN_ACK,					// Transaction parameter read, continue
@@ -163,6 +164,7 @@ reg									rPartialDone=0, _rPartialDone=0;
 assign NEW_TXN_ACK = rMainState[1]; // S_TXPORTWR_MAIN_CHECK
 
 assign TXN = rMainState[2]; // S_TXPORTWR_MAIN_SIG_NEW
+assign TXN_STARTING = (rMainState == `S_TXPORTWR_MAIN_WRITE); 
 assign TXN_DONE = (rMainState[6] | rPartialDone); // S_TXPORTWR_MAIN_SIG_DONE
 assign TXN_LEN = rWords;
 assign TXN_OFF_LAST = rOffLast;

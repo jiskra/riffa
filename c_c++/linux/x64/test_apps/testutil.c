@@ -48,8 +48,8 @@ struct thread_info {    /* Used as argument to thread_start() */
 	unsigned int chnl;     
 	unsigned int * buffer;
 	unsigned int len;
-	unsigned int offset;
-	unsigned int last;
+	unsigned int offset; // only for fpga_send thread
+	unsigned int last; // only for fpga_send thread
 	long long timeout;
 };
 
@@ -181,7 +181,7 @@ int main(int argc, char** argv) {
 
 				unsigned int offset_for_sending = 0;
 				unsigned int is_last_send = 1;
-				unsigned int chnl_timeout = 25000;  // timeout is 5ms, for low-latency purpose, please see the description at http://xillybus.com/doc/xillybus-latency
+				unsigned int chnl_timeout = 1;  // timeout is 5ms, for low-latency purpose, please see the description at http://xillybus.com/doc/xillybus-latency
 
 				assert(tinfo != NULL); // null check
 
@@ -191,20 +191,20 @@ int main(int argc, char** argv) {
 				tinfo[0].len = numWords;  // try to send all words before thread switching due to timeout
 				tinfo[0].offset = offset_for_sending;
 				tinfo[0].last = is_last_send;
-				tinfo[0].timeout = chnl_timeout;  
+				tinfo[0].timeout = chnl_timeout;  // less priority for sending thread
 
-				pthread_create(&tid[0], NULL, &fpga_send, &tinfo[0]);
+				//pthread_create(&tid[0], NULL, &fpga_send, &tinfo[0]);
 				//printf("\n value of loop = %d\n", 0);
 
 				tinfo[1].fpga = fpga;
 				tinfo[1].chnl = chnl;
 				tinfo[1].buffer = recvBuffer;
 				tinfo[1].len = numWords;  // try to receive all words that have been sent before thread switching due to timeout
-				tinfo[1].timeout = chnl_timeout;  
+				tinfo[1].timeout = chnl_timeout;  // give more priority to receiving thread
 
 				pthread_create(&tid[1], NULL, &fpga_recv, &tinfo[1]);
 				//printf("\n value of loop = %d\n", 1);
-
+				pthread_create(&tid[0], NULL, &fpga_send, &tinfo[0]);
 				/** Synch of threads in order to exit normally*/
 				GET_TIME_VAL(0);
 
@@ -238,6 +238,8 @@ int main(int argc, char** argv) {
 					}
 					printf("Overall bandwidth: %f GBps\n\n", (double)BIRECTION*numWords*(double)BYTES_PER_WORD/(double)GIGA_CONVERSION/total_execution_time);
 				}
+				
+				if(numWords == maxWords) break; // last iteration, so exit the loop
 		}
 
 		// Done with device

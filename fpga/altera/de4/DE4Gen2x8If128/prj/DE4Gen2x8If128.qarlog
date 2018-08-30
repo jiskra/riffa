@@ -1,0 +1,27 @@
+Quartus Prime Archive log --	/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/DE4Gen2x8If128.qarlog
+
+Archive:	/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/DE4Gen2x8If128.qar
+Date:		Wed Aug 29 18:39:42 2018
+Quartus Prime		17.1.0 Build 590 10/25/2017 SJ Standard Edition
+
+	=========== Files Selected: ===========
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.cmp.atm
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.cmp.cfm
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.cmp.dpi
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.cmp.hdbx
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.cmp.map.kpt
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.cmp.qxp_info
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.cmp.rcf
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.cmp.scidsc
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.map.atm
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.map.cfm
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.map.dpi
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.map.hdbx
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.map.map.kpt
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.map.qxp_info
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/DE4Gen2x8If128.map.scidsc
+/home/phung/Documents/fpga_overlay/riffa/fpga/altera/de4/DE4Gen2x8If128/prj/db/DE4Gen2x8If128_tmp_qic_export/qic_export_file_list
+	======= Total: 16 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
